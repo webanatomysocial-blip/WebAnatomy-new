@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mosol9/OneDrive/Desktop/new-webanatomy/src/components/Home/HomeBanner.jsx"],"sourcesContent":["\"use client\";\r\n\r\nimport Image from \"next/image\";\r\nimport \"@/css/HomeComponents/HomeBanner.css\";\r\n\r\nexport default function HomeBanner() {\r\n  return (\r\n    <>\r\n      <div className=\"home-banner\"></div>\r\n    </>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;;AAKe,SAAS;IACtB,qBACE;kBACE,cAAA,8OAAC;YAAI,WAAU;;;;;;;AAGrB"}}]
+}

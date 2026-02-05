@@ -1,0 +1,290 @@
+/* src/css/header.css */
+
+/* Add smooth transition for the hide/show effect */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-family: var(--font-secondary);
+  backdrop-filter: blur(1px);
+}
+
+/* Hidden state (scroll down) */
+.header-container.hidden {
+  transform: translateY(-100%);
+}
+
+/* Transparent Header State (for Top Sections) */
+.header-container.header-transparent {
+  background-color: transparent !important;
+  color: var(--white-color) !important;
+}
+
+.header-container.header-transparent .logo img {
+  filter: brightness(0) invert(1);
+}
+
+.header-container.header-transparent .nav-link,
+.header-container.header-transparent .header-icon-btn {
+  color: var(--white-color) !important;
+  border-color: var(--white-color);
+}
+.header-container.header-transparent .contact-btn {
+  color: var(--white-color) !important;
+  border-color: var(--white-color);
+}
+
+/* Hover State (Works specifically on Services hover at top) */
+/* Or generally if needed, but logic is handled via class removal in JSX usually */
+
+.header-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 90px;
+  gap: 100px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Navigation */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: static;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--black-color);
+  font-size: 16px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  padding: 10px 0;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 60px 40px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Show Mega Menu on Hover of Parent List Item */
+.nav-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mega Menu Content Grid */
+.mega-menu-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* Mega Menu Titles & Links */
+.mega-column h3 {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: var(--white-color);
+}
+
+.mega-column h4 {
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white-color);
+}
+
+.mega-icon {
+  font-size: 14px;
+}
+
+.mega-column ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mega-column ul li a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 15px;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.mega-column ul li a:hover {
+  color: var(--white-color);
+}
+
+.mega-link-footer {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.mega-link-footer:hover {
+  border-bottom: 1px solid var(--white-color);
+}
+
+/* Header Right Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.header-icon-btn:hover {
+  opacity: 0.6;
+}
+
+.contact-btn {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+  border: 1px solid var(--black-color);
+  transition: all 0.3s ease;
+  width: fit-content;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-inside-btn-1,
+.icon-inside-btn-2 {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+/* Initial State: 1 is visible, 2 is hidden to the left */
+.icon-inside-btn-1 {
+  transform: translateX(0);
+}
+
+.icon-inside-btn-2 {
+  transform: translateX(
+    -20px
+  ); /* -15px as requested, slightly more to be safe */
+}
+
+/* Hover State: 1 moves right, 2 moves to center */
+.contact-btn:hover .icon-inside-btn-1 {
+  transform: translateX(20px); /* 15px requested */
+}
+
+.contact-btn:hover .icon-inside-btn-2 {
+  transform: translateX(0);
+}
+
+.menu-toggle {
+  display: none; /* Hidden on Desktop */
+}
+
+/* Responsive (simplified for task scope) */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none; /* Hide nav links on smaller screens for now */
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}

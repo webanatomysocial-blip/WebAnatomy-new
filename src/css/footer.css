@@ -1,0 +1,137 @@
+/* src/css/footer.css */
+
+.footer-container {
+  background-color: #ffffff;
+  color: var(--black-color);
+  padding: 80px 60px 0 60px;
+  font-family: var(--font-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 100px;
+  width: 100%;
+  /* max-width: 1440px; */
+  margin: 0 auto;
+}
+
+/* Left Side: Nav */
+.footer-nav {
+  display: flex;
+  gap: 100px;
+}
+
+.footer-column h4 {
+  font-family: var(--font-secondary); /* Text looks like standard sans */
+  font-size: 20px;
+  font-weight: 400 !important;
+  margin-bottom: 20px;
+  color: var(--black-color);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333; /* Dark Grey */
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-column ul li a:hover {
+  color: #000;
+  /* font-weight: 500; */
+}
+
+/* Right Side: Contact */
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns left as per image, but container is on right */
+  gap: 40px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.social-icons a {
+  color: var(--black-color);
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-details p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black-color);
+  margin: 0;
+}
+
+.contact-email {
+  font-size: 32px; /* Bigger font for email */
+  font-weight: 600;
+  color: var(--black-color);
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: var(--font-primary); /* Maybe branding font? */
+}
+
+/* Bottom Image */
+.footer-bottom-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.footer-bottom-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* max-height: 300px; */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .footer-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .contact-email {
+    font-size: 24px;
+  }
+}

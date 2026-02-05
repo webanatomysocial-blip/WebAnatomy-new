@@ -1,0 +1,312 @@
+/* [project]/src/css/index.css [app-client] (css) */
+:root {
+  --white-color: white;
+  --black-color: black;
+  --Yellow-color: #fd0;
+  --blue: #0033bf;
+  --grey: #f5f5f5;
+  --grey-bg: #9b9b9b;
+  --progress-active-bg: #747474;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  --transition-slow: 1.2s cubic-bezier(.65, 0, .35, 1);
+  --transition-medium: .5s ease-in-out;
+  --transition-fast: .3s ease;
+}
+
+html {
+  scrollbar-color: var(--Yellow-color) var(--black-color);
+  scrollbar-width: thin;
+  scroll-behavior: auto !important;
+}
+
+html::-webkit-scrollbar {
+  width: 4px;
+}
+
+html::-webkit-scrollbar-track {
+  background: none;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--Yellow-color);
+  border-radius: 2px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--Yellow-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: TASAOrbiter;
+  src: url("../media/TASAOrbiter-Regular.e60c3602.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  line-height: 0px;
+}
+
+@font-face {
+  font-family: TASAOrbiter;
+  src: url("../media/TASAOrbiter-Medium.80ecbb5e.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TASAOrbiter;
+  src: url("../media/TASAOrbiter-SemiBold.6d66361c.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TASAOrbiter;
+  src: url("../media/TASAOrbiter-Bold.9088baba.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TASAOrbiter;
+  src: url("../media/TASAOrbiter-ExtraBold.74a476c0.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+}
+
+ul, li, p, a, span, button {
+  line-height: 1.4em;
+  transition: all .3s ease-in-out !important;
+}
+
+.big-head-text {
+  font-size: 120px;
+  font-family: var(--font-primary);
+  color: var(--black-color);
+  font-weight: 300;
+  font-weight: 400 !important;
+}
+
+.big-head-text-white {
+  font-size: 120px;
+  font-family: var(--font-primary);
+  color: var(--white-color);
+  font-weight: 300;
+  font-weight: 400 !important;
+}
+
+.head-text {
+  font-size: 50px;
+  font-family: var(--font-primary);
+  color: var(--black-color);
+  font-weight: 300;
+  font-weight: 400 !important;
+}
+
+.head-text-white {
+  font-size: 50px;
+  font-family: var(--font-primary);
+  color: var(--white-color);
+  font-weight: 400 !important;
+}
+
+.para-text {
+  font-size: 18px;
+  font-family: var(--font-secondary);
+  color: var(--progress-active-bg);
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.para-text-white {
+  font-size: 18px;
+  font-family: var(--font-secondary);
+  color: var(--white-color);
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.sub-head-text {
+  font-size: 26px;
+  font-family: var(--font-primary);
+  color: var(--black-color);
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.sub-head-text-white {
+  font-size: 26px;
+  font-family: var(--font-primary);
+  color: var(--white-color);
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.sub-para-text {
+  font-size: 16px;
+  font-family: var(--font-secondary);
+  color: var(--progress-active-bg);
+  padding-bottom: 20px;
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.sub-para-text-white {
+  font-size: 16px;
+  font-family: var(--font-secondary);
+  color: var(--white-color);
+  font-weight: 300;
+  line-height: 1.4em;
+  font-weight: 400 !important;
+}
+
+.black-bg-btn {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border: 1px solid var(--black-color);
+  border-radius: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex;
+}
+
+.black-bg-btn:hover {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.icon-btn {
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  transition: all .3s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.black-bg-btn:hover .icon-inside-btn-1 {
+  transform: translateX(20px);
+}
+
+.black-bg-btn:hover .icon-inside-btn-2 {
+  transform: translateX(0);
+}
+
+.white-bg-btn {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
+  border-radius: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex;
+}
+
+.white-bg-btn:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.white-bg-btn:hover .icon-inside-btn-1 {
+  transform: translateX(20px);
+}
+
+.white-bg-btn:hover .icon-inside-btn-2 {
+  transform: translateX(0);
+}
+
+.gradient-bg-btn {
+  color: var(--white-color);
+  background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+  border: 1px solid #0000;
+  border-radius: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex;
+}
+
+.gradient-bg-btn:hover {
+  background: var(--black-color);
+  color: var(--white-color);
+  border-color: var(--black-color);
+}
+
+.icon-inside-btn-1, .icon-inside-btn-2 {
+  transition: transform .3s;
+  position: absolute;
+}
+
+.icon-inside-btn-1 {
+  transform: translateX(0);
+}
+
+.icon-inside-btn-2 {
+  transform: translateX(-20px);
+}
+
+.gradient-bg-btn:hover .icon-inside-btn-1 {
+  transform: translateX(20px);
+}
+
+.gradient-bg-btn:hover .icon-inside-btn-2 {
+  transform: translateX(0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=src_css_index_css_bad6b30c._.single.css.map*/

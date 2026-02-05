@@ -1,0 +1,473 @@
+[00:00:01.534] Server  LOG     ✓ Ready in 1008ms
+[00:00:12.439] Browser ERROR   uncaughtError: TypeError: Cannot set properties of undefined (setting 'vars')
+[00:03:42.820] Browser ERROR   uncaughtError: TypeError: Cannot set properties of undefined (setting 'vars')
+[00:04:39.766] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:40.077] Server  LOG     ✓ Compiled in 221ms
+[00:04:42.504] Server  LOG     ✓ Compiled in 123ms
+[00:05:42.393] Server  LOG     ✓ Compiled in 35ms
+[00:05:51.345] Server  LOG     ✓ Compiled in 80ms
+[00:06:01.405] Server  LOG     ✓ Compiled in 15ms
+[00:06:01.822] Browser ERROR   ./src/components/Home/HomeBanner.jsx:25:14
+Parsing ecmascript source code failed
+  23 |       ".home-banner-video-container",
+  24 |       {
+> 25 |         top: ,
+     |              ^
+  26 |         right: 500,
+  27 |         duration: 1,
+  28 |         width: "100px",
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:06:05.928] Server  LOG     ✓ Compiled in 56ms
+[00:06:07.151] Server  LOG     ✓ Compiled in 43ms
+[00:06:08.668] Server  LOG     ✓ Compiled in 67ms
+[00:07:16.997] Server  LOG     ✓ Compiled in 26ms
+[00:07:17.812] Browser ERROR   ./src/components/Home/HomeBanner.jsx:16:16
+Parsing ecmascript source code failed
+  14 |       scrollTrigger: {
+  15 |         trigger: ".home-banner",
+> 16 |         start: "top ,
+     |                ^^^^^^
+  17 |         end: "bottom bottom",
+  18 |         scrub: 1,
+  19 |         markers: true,
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:07:20.812] Browser ERROR   ./src/components/Home/HomeBanner.jsx:16:16
+Parsing ecmascript source code failed
+  14 |       scrollTrigger: {
+  15 |         trigger: ".home-banner",
+> 16 |         start: "top top,
+     |                ^^^^^^^^^
+  17 |         end: "bottom bottom",
+  18 |         scrub: 1,
+  19 |         markers: true,
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:07:26.121] Server  LOG     ✓ Compiled in 87ms
+[00:08:18.940] Server  LOG     ✓ Compiled in 48ms
+[00:08:20.238] Server  LOG     ✓ Compiled in 15ms
+[00:08:20.810] Browser ERROR   ./src/components/Home/HomeBanner.jsx:49:11
+Parsing ecmascript source code failed
+  47 |         <div className="home-banner-video-container">
+  48 |           <
+> 49 |           <video
+     |           ^
+  50 |             src="/assets/videos/banner-video/Web-anatomy-showreel.mp4"
+  51 |             autoPlay
+  52 |             loop
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:08:23.257] Server  LOG     ✓ Compiled in 58ms
+[00:08:28.033] Server  LOG     ✓ Compiled in 49ms
+[00:08:35.275] Server  LOG     ✓ Compiled in 44ms
+[00:08:40.837] Server  LOG     ✓ Compiled in 73ms
+[00:08:44.910] Server  LOG     ✓ Compiled in 101ms
+[00:08:47.764] Server  LOG     ✓ Compiled in 69ms
+[00:08:51.243] Server  LOG     ✓ Compiled in 40ms
+[00:08:53.318] Server  LOG     ✓ Compiled in 68ms
+[00:09:00.551] Server  LOG     ✓ Compiled in 57ms
+[00:09:02.876] Server  LOG     ✓ Compiled in 35ms
+[00:09:03.954] Server  LOG     ✓ Compiled in 32ms
+[00:09:05.917] Server  LOG     ✓ Compiled in 42ms
+[00:09:06.817] Browser ERROR   uncaughtError: ReferenceError: font is not defined
+[00:09:11.562] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:12.070] Server  ERROR   ⨯ ReferenceError: fontSize is not defined
+[00:09:12.098] Server  LOG     ✓ Compiled in 68ms
+[00:09:12.105] Browser ERROR   uncaughtError: ReferenceError: fontSize is not defined
+[00:09:13.570] Server  LOG     ✓ Compiled in 12ms
+[00:09:13.821] Browser ERROR   uncaughtError: ReferenceError: fontSize is not defined
+[00:09:13.821] Browser ERROR   ./src/components/Home/HomeBanner.jsx:50:11
+Parsing ecmascript source code failed
+  48 |           <p className="para-text-white" style={{
+  49 |             fontSize: 
+> 50 |           }}>( Show Reel )</p>
+     |           ^
+  51 |           <video
+  52 |             src="/assets/videos/banner-video/Web-anatomy-showreel.mp4"
+  53 |             autoPlay
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:09:15.590] Server  LOG     ✓ Compiled in 16ms
+[00:09:15.826] Browser ERROR   ./src/components/Home/HomeBanner.jsx:49:25
+Parsing ecmascript source code failed
+  47 |         <div className="home-banner-video-container">
+  48 |           <p className="para-text-white" style={{
+> 49 |             fontSize: 10px
+     |                         ^^
+  50 |           }}>( Show Reel )</p>
+  51 |           <video
+  52 |             src="/assets/videos/banner-video/Web-anatomy-showreel.mp4"
+
+Expected '</', got 'ident'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:09:19.295] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:19.334] Server  LOG     ✓ Compiled in 110ms
+[00:09:21.581] Server  LOG     ✓ Compiled in 55ms
+[00:09:34.783] Server  LOG     ✓ Compiled in 3ms
+[00:09:38.508] Server  LOG     ✓ Compiled in 4ms
+[00:09:41.696] Server  LOG     ✓ Compiled in 5ms
+[00:09:44.793] Server  LOG     ✓ Compiled in 3ms
+[00:09:45.910] Server  LOG     ✓ Compiled in 3ms
+[00:09:50.075] Server  LOG     ✓ Compiled in 3ms
+[00:10:07.606] Server  LOG     ✓ Compiled in 13ms
+[00:10:07.823] Browser ERROR   ./src/components/Home/HomeBanner.jsx:48:9
+Parsing ecmascript source code failed
+  46 |       <div className="home-banner">
+  47 |         <
+> 48 |         <div className="home-banner-video-container">
+     |         ^
+  49 |           <p
+  50 |             className="para-text-white"
+  51 |             style={{
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:10:12.068] Server  LOG     ✓ Compiled in 67ms
+[00:10:14.475] Server  LOG     ✓ Compiled in 112ms
+[00:10:21.069] Server  LOG     ✓ Compiled in 84ms
+[00:10:29.394] Server  LOG     ✓ Compiled in 20ms
+[00:10:29.810] Browser ERROR   ./src/css/HomeComponents/HomeBanner.css:48:1
+Parsing CSS source code failed
+  46 | }
+  47 | .background-overlay-banner
+> 48 |
+     | ^
+
+Unexpected end of input
+
+Import trace:
+  Client Component Browser:
+    ./src/css/HomeComponents/HomeBanner.css [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Server Component]
+    ./src/app/page.js [Server Component]
+[00:10:35.319] Server  LOG     ✓ Compiled in 4ms
+[00:10:39.175] Server  LOG     ✓ Compiled in 5ms
+[00:10:42.228] Server  LOG     ✓ Compiled in 3ms
+[00:10:45.847] Server  LOG     ✓ Compiled in 4ms
+[00:10:50.755] Server  LOG     ✓ Compiled in 4ms
+[00:11:00.973] Server  LOG     ✓ Compiled in 4ms
+[00:11:03.464] Server  LOG     ✓ Compiled in 3ms
+[00:11:10.989] Server  LOG     ✓ Compiled in 3ms
+[00:11:15.403] Server  LOG     ✓ Compiled in 3ms
+[00:11:22.257] Server  LOG     ✓ Compiled in 92ms
+[00:11:26.276] Server  LOG     ✓ Compiled in 47ms
+[00:11:30.932] Server  LOG     ✓ Compiled in 4ms
+[00:11:31.737] Server  LOG     ✓ Compiled in 3ms
+[00:11:39.328] Server  LOG     ✓ Compiled in 4ms
+[00:11:46.619] Server  LOG     ✓ Compiled in 4ms
+[00:11:47.981] Server  LOG     ✓ Compiled in 4ms
+[00:12:06.059] Server  LOG     ✓ Compiled in 42ms
+[00:12:06.306] Server  LOG     ✓ Compiled in 41ms
+[00:12:17.986] Server  LOG     ✓ Compiled in 40ms
+[00:12:24.721] Server  LOG     ✓ Compiled in 54ms
+[00:12:28.442] Browser ERROR   uncaughtError: TypeError: videoContainer.To is not a function
+[00:12:37.058] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:37.570] Server  LOG     ✓ Compiled in 49ms
+[00:13:02.926] Server  LOG     ✓ Compiled in 65ms
+[00:13:22.030] Server  LOG     ✓ Compiled in 39ms
+[00:13:45.553] Server  LOG     ✓ Compiled in 62ms
+[00:14:17.682] Server  LOG     ✓ Compiled in 102ms
+[00:14:43.554] Server  LOG     ✓ Compiled in 39ms
+[00:14:48.835] Server  LOG     ✓ Compiled in 111ms
+[00:15:03.788] Server  LOG     ✓ Compiled in 59ms
+[00:15:06.650] Server  LOG     ✓ Compiled in 61ms
+[00:15:12.795] Server  LOG     ✓ Compiled in 25ms
+[00:15:13.819] Browser ERROR   ./src/components/Home/HomeBanner.jsx:35:8
+Parsing ecmascript source code failed
+  33 |         opacity: 1,
+  34 |         duration: 1,
+> 35 |       }"");
+     |        ^^
+  36 |   }, []);
+  37 |   return (
+  38 |     <>
+
+Expected ',', got 'string literal'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:15:19.814] Browser ERROR   ./src/components/Home/HomeBanner.jsx:35:8
+Parsing ecmascript source code failed
+  33 |         opacity: 1,
+  34 |         duration: 1,
+> 35 |       }"s");
+     |        ^^^
+  36 |   }, []);
+  37 |   return (
+  38 |     <>
+
+Expected ',', got 'string literal'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:15:26.820] Server  LOG     ✓ Compiled in 17ms
+[00:15:27.821] Browser ERROR   ./src/components/Home/HomeBanner.jsx:31:10
+Parsing ecmascript source code failed
+  29 |         width: "90%",
+  30 |         height: "auto",
+> 31 |       "a"})
+     |          ^
+  32 |       .to(".background-overlay-banner", {
+  33 |         opacity: 1,
+  34 |         duration: 1,
+
+Unexpected token `}`. Expected identifier
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:15:38.824] Server  LOG     ✓ Compiled in 18ms
+[00:15:39.820] Browser ERROR   ./src/components/Home/HomeBanner.jsx:31:9
+Parsing ecmascript source code failed
+  29 |         width: "90%",
+  30 |         height: "auto",
+> 31 |       }[])
+     |         ^
+  32 |       .to(".background-overlay-banner", {
+  33 |         opacity: 1,
+  34 |         duration: 1,
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:15:47.038] Server  LOG     ✓ Compiled in 47ms
+[00:15:48.952] Server  LOG     ✓ Compiled in 41ms
+[00:16:09.311] Server  LOG     ✓ Compiled in 18ms
+[00:16:09.820] Browser ERROR   ./src/components/Home/HomeBanner.jsx:35:8
+Parsing ecmascript source code failed
+  33 |         opacity: 1,
+  34 |         duration: 1,
+> 35 |       }same);
+     |        ^^^^
+  36 |   }, []);
+  37 |   return (
+  38 |     <>
+
+Expected ',', got 'ident'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:16:11.817] Browser ERROR   ./src/components/Home/HomeBanner.jsx:35:8
+Parsing ecmascript source code failed
+  33 |         opacity: 1,
+  34 |         duration: 1,
+> 35 |       }sametime);
+     |        ^^^^^^^^
+  36 |   }, []);
+  37 |   return (
+  38 |     <>
+
+Expected ',', got 'ident'
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:18:06.176] Server  LOG     ✓ Compiled in 103ms
+[00:18:30.947] Server  LOG     ✓ Compiled in 43ms
+[00:18:37.030] Server  LOG     ✓ Compiled in 45ms
+[00:18:39.661] Server  LOG     ✓ Compiled in 72ms
+[00:22:38.634] Server  LOG     ✓ Compiled in 114ms
+[00:25:10.395] Server  LOG     ✓ Compiled in 77ms
+[00:25:34.247] Server  LOG     ✓ Compiled in 35ms
+[00:26:19.946] Server  LOG     ✓ Compiled in 47ms
+[00:26:30.335] Server  LOG     ✓ Compiled in 16ms
+[00:26:32.894] Server  LOG     ✓ Compiled in 4ms
+[00:26:41.300] Server  LOG     ✓ Compiled in 5ms
+[00:26:43.709] Server  LOG     ✓ Compiled in 3ms
+[00:26:44.852] Server  LOG     ✓ Compiled in 38ms
+[00:27:15.983] Server  LOG     ✓ Compiled in 37ms
+[00:27:20.153] Server  LOG     ✓ Compiled in 38ms
+[00:27:25.574] Server  LOG     ✓ Compiled in 59ms
+[00:27:28.841] Server  LOG     ✓ Compiled in 58ms
+[00:27:31.782] Server  LOG     ✓ Compiled in 36ms
+[00:27:34.128] Server  LOG     ✓ Compiled in 71ms
+[00:27:35.620] Server  LOG     ✓ Compiled in 36ms
+[00:27:39.252] Server  LOG     ✓ Compiled in 43ms
+[00:27:40.224] Server  LOG     ✓ Compiled in 66ms
+[00:27:46.460] Server  LOG     ✓ Compiled in 37ms
+[00:27:52.269] Server  LOG     ✓ Compiled in 18ms
+[00:27:52.810] Browser ERROR   ./src/components/Home/HomeBanner.jsx:50:7
+Parsing ecmascript source code failed
+  48 |       ).to(".home-banner-video-container .para-text-white",{
+  49 |         color :
+> 50 |       })
+     |       ^
+  51 |   }, []);
+  52 |   return (
+  53 |     <>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:27:57.227] Server  LOG     ✓ Compiled in 87ms
+[00:27:58.746] Server  LOG     ✓ Compiled in 48ms
+[00:28:15.046] Server  LOG     ✓ Compiled in 19ms
+[00:28:15.823] Browser ERROR   ./src/components/Home/HomeBanner.jsx:50:21
+Parsing ecmascript source code failed
+  48 |       )
+  49 |       .to(".home-banner-video-container .para-text-white", {
+> 50 |         color: black",
+     |                     ^^
+  51 |       });
+  52 |   }, []);
+  53 |   return (
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./src/components/Home/HomeBanner.jsx
+    ./src/app/page.js
+[00:29:01.535] Server  LOG     ✓ Compiled in 109ms
+[00:29:03.861] Server  LOG     ✓ Compiled in 104ms
+[00:29:57.419] Server  LOG     ✓ Compiled in 46ms
+[00:29:58.654] Server  LOG     ✓ Compiled in 49ms
+[00:30:01.676] Server  LOG     ✓ Compiled in 113ms
+[00:31:04.717] Server  LOG     ✓ Compiled in 18ms
+[00:31:05.815] Browser ERROR   ./src/css/HomeComponents/HomeBanner.css:34:1
+Parsing CSS source code failed
+  32 |   z-index: 200;
+  33 |   bor
+> 34 | }
+     | ^
+  35 | .banner-video {
+  36 |   width: 100%;
+  37 |   height: auto;
+
+Unexpected end of input
+
+Import trace:
+  Client Component Browser:
+    ./src/css/HomeComponents/HomeBanner.css [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Server Component]
+    ./src/app/page.js [Server Component]
+[00:31:09.899] Server  LOG     ✓ Compiled in 4ms
+[00:31:22.691] Server  LOG     ✓ Compiled in 28ms
+[00:31:26.357] Server  LOG     ✓ Compiled in 5ms
+[00:31:34.625] Server  LOG     ✓ Compiled in 5ms
+[00:31:54.243] Server  LOG     ✓ Compiled in 43ms
+[00:31:56.702] Server  LOG     ✓ Compiled in 41ms
+[00:32:01.231] Server  LOG     ✓ Compiled in 39ms
+[00:32:57.288] Server  LOG     ✓ Compiled in 39ms
+[00:32:59.629] Server  LOG     ✓ Compiled in 49ms
+[00:33:01.868] Server  LOG     ✓ Compiled in 37ms
+[00:33:03.881] Server  LOG     ✓ Compiled in 98ms
+[00:33:34.610] Server  LOG     ✓ Compiled in 4ms
+[00:33:35.339] Server  LOG     ✓ Compiled in 4ms
+[00:33:46.861] Server  LOG     ✓ Compiled in 71ms
+[00:34:09.143] Server  LOG     ✓ Compiled in 69ms
+[00:34:43.028] Server  LOG     ✓ Compiled in 61ms
+[00:34:54.500] Server  LOG     ✓ Compiled in 99ms
+[00:35:02.627] Server  LOG     ✓ Compiled in 37ms
+[00:35:14.378] Server  LOG     ✓ Compiled in 37ms
+[00:35:20.915] Server  LOG     ✓ Compiled in 79ms
+[00:35:27.174] Server  LOG     ✓ Compiled in 45ms
+[00:35:33.661] Server  LOG     ✓ Compiled in 81ms
+[00:35:41.463] Server  LOG     ✓ Compiled in 53ms
+[00:35:55.605] Server  LOG     ✓ Compiled in 99ms
+[00:36:06.815] Server  LOG     ✓ Compiled in 80ms
+[00:36:17.626] Server  LOG     ✓ Compiled in 41ms
+[00:36:33.870] Server  LOG     ✓ Compiled in 74ms
+[00:36:35.016] Server  LOG     ✓ Compiled in 95ms
+[00:36:41.162] Server  LOG     ✓ Compiled in 36ms
+[00:45:46.891] Server  LOG     ✓ Compiled in 72ms
+[00:45:49.846] Server  LOG     ✓ Compiled in 34ms
+[00:45:50.880] Server  LOG     ✓ Compiled in 64ms
+[00:45:55.785] Server  LOG     ✓ Compiled in 70ms
+[00:45:58.569] Server  LOG     ✓ Compiled in 63ms
+[00:46:05.963] Server  LOG     ✓ Compiled in 32ms
+[00:46:32.837] Server  LOG     ✓ Compiled in 35ms
+[00:46:33.948] Server  LOG     ✓ Compiled in 33ms
+[00:46:49.682] Server  LOG     ✓ Compiled in 39ms
+[00:46:52.562] Server  LOG     ✓ Compiled in 72ms
+[00:47:04.921] Server  LOG     ✓ Compiled in 4ms
+[00:47:06.238] Server  LOG     ✓ Compiled in 5ms
+[00:47:13.900] Server  LOG     ✓ Compiled in 5ms
+[00:47:20.756] Server  LOG     ✓ Compiled in 4ms
+[00:47:23.045] Server  LOG     ✓ Compiled in 4ms
+[00:47:31.479] Server  LOG     ✓ Compiled in 5ms
+[00:47:33.351] Server  LOG     ✓ Compiled in 4ms
+[00:47:38.829] Server  LOG     ✓ Compiled in 5ms
+[00:47:45.390] Server  LOG     ✓ Compiled in 3ms
+[00:47:46.116] Server  LOG     ✓ Compiled in 5ms
+[00:47:53.968] Server  LOG     ✓ Compiled in 24ms
+[00:47:54.820] Browser ERROR   ./src/css/HomeComponents/HomeBanner.css:40:1
+Parsing CSS source code failed
+  38 |   width: 20%;
+  39 |   font
+> 40 | }
+     | ^
+  41 | .banner-video {
+  42 |   width: 100%;
+  43 |   height: auto;
+
+Unexpected end of input
+
+Import trace:
+  Client Component Browser:
+    ./src/css/HomeComponents/HomeBanner.css [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Client Component Browser]
+    ./src/components/Home/HomeBanner.jsx [Server Component]
+    ./src/app/page.js [Server Component]
+[00:47:57.169] Server  LOG     ✓ Compiled in 4ms
+[00:48:05.464] Server  LOG     ✓ Compiled in 4ms
+[00:48:21.002] Server  LOG     ✓ Compiled in 64ms
+[00:48:22.578] Server  LOG     ✓ Compiled in 73ms
+[00:48:28.735] Server  LOG     ✓ Compiled in 28ms
+[00:48:36.091] Server  LOG     ✓ Compiled in 4ms
+[00:48:37.741] Server  LOG     ✓ Compiled in 4ms
+[00:48:47.794] Server  LOG     ✓ Compiled in 3ms
+[00:48:53.053] Server  LOG     ✓ Compiled in 38ms
+[00:48:56.446] Server  LOG     ✓ Compiled in 6ms
+[00:48:58.409] Server  LOG     ✓ Compiled in 4ms
+[00:49:08.237] Server  LOG     ✓ Compiled in 4ms
