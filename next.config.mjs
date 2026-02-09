@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true,
-  distDir: 'dist',
+  output: 'export',
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

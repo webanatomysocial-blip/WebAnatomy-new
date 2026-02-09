@@ -99,6 +99,8 @@
 }
 
 /* Mega Menu */
+/* Mega Menu */
+/* Mega Menu */
 .mega-menu {
   position: absolute;
   top: 90px;
@@ -107,21 +109,18 @@
   background-color: var(--black-color);
   color: var(--white-color);
   padding: 60px 40px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease-in-out;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  display: flex;
+  display: none;
   justify-content: center;
-  z-index: 999;
+  z-index: 999999;
+}
+.mega-menu:hover .header-container {
+  background-color: var(--white-color);
 }
 
-/* Show Mega Menu on Hover of Parent List Item */
-.nav-item:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+/* Show Mega Menu when Services nav-item or mega-menu is hovered (via React state) */
+.mega-menu.mega-menu-visible {
+  display: flex;
 }
 
 /* Mega Menu Content Grid */
@@ -286,5 +285,11 @@
     display: block;
     font-size: 24px;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 5px 20px;
   }
 }

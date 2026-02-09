@@ -1,9 +1,9 @@
 // src/components/HomeTextFade.jsx
-
+"use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "../css/HomeTextFade.css";
+import "@/css/HomeComponents/HomeTextFade.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,11 +21,16 @@ const HomeTextFade = () => {
       },
     });
 
-    // Animate ALL spans from gray to white, staggered
-    tl.to(".char-span", {
+    // Animate normal chars to white
+    tl.to(".char-span:not(.gradient-char)", {
       color: "white",
       duration: 1,
-      stagger: 0.1, // Adjust speed here
+      stagger: 0.1,
+      ease: "power1.inOut",
+    }).to(".gradient-char", {
+      color: "transparent",
+      duration: 1,
+      stagger: 0.1,
       ease: "power1.inOut",
     });
 
@@ -41,35 +46,55 @@ seamlessly, meaningfully, and beautifully.
 And our mission is to imagine the possibilities.`;
 
   const lines = text.split("\n");
+  const targetPhrase = "imagine the possibilities.";
 
   return (
     <section className="Text-Section" ref={sectionRef}>
       <div className="text-container">
-        {lines.map((line, lineIndex) => (
-          <div key={lineIndex} className="line">
-            {line.split("").map((char, charIndex) => {
-              if (char === " ") {
-                return <span key={charIndex} className="space" />;
-              }
+        {lines.map((line, lineIndex) => {
+          // Identify if this line contains the target phrase
+          // For the last line: "And our mission is to imagine the possibilities."
+          // We want to verify index.
+          const isTargetLine = line.includes(targetPhrase);
+          const targetStartIndex = line.indexOf(targetPhrase);
 
-              // Hide the final period visually (keeps layout identical)
-              const isLastPeriod =
-                lineIndex === lines.length - 1 &&
-                charIndex === line.length - 2 &&
-                char === ".";
+          return (
+            <div key={lineIndex} className="line">
+              {line.split("").map((char, charIndex) => {
+                if (char === " ") {
+                  return <span key={charIndex} className="space" />;
+                }
 
-              return (
-                <span
-                  key={charIndex}
-                  className={`char-span ${isLastPeriod ? "visi" : ""}`}
-                >
-                  {char}
-                </span>
-              );
-            })}
-            {lineIndex < lines.length - 1 && <br />}
-          </div>
-        ))}
+                // Hide the final period visually (keeps layout identical)
+                const isLastPeriod =
+                  lineIndex === lines.length - 1 &&
+                  charIndex === line.length - 2 &&
+                  char === ".";
+
+                // Check if this char is part of the target phrase
+                let isGradientChar = false;
+                if (isTargetLine && charIndex >= targetStartIndex) {
+                  // Ensure it's within the bounds of the phrase length
+                  if (charIndex < targetStartIndex + targetPhrase.length) {
+                    isGradientChar = true;
+                  }
+                }
+
+                return (
+                  <span
+                    key={charIndex}
+                    className={`char-span ${isLastPeriod ? "visi" : ""} ${
+                      isGradientChar ? "gradient-char" : ""
+                    }`}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+              {lineIndex < lines.length - 1 && <br />}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -120,6 +120,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .footer-container {
+    padding: 60px 20px 0 20px;
+  }
   .footer-top {
     flex-direction: column;
     gap: 60px;

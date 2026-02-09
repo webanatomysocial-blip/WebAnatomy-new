@@ -1,0 +1,142 @@
+.goals-container {
+  padding: 100px 60px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.goals-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  max-width: 1400px;
+  align-items: stretch;
+}
+.mySwiper .swiper-pagination {
+  bottom: 22px !important;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.goal-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+}
+
+.goal-card.light {
+  background-color: #f1f1f1;
+  padding: 36px;
+  justify-content: space-between;
+}
+
+.goal-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.goal-card-image-bottom {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.goal-card-image-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+
+.gradient-overlay-top {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #f1f1f1 35%,
+    rgba(241, 241, 241, 0.9) 50%,
+    rgba(241, 241, 241, 0.4) 90%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.goal-card.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.goal-swiper-container {
+  height: 50%;
+  width: 100%;
+}
+
+.goal-swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.goal-swiper-container .swiper-slide {
+  height: 250px !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.goal-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.goal-swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goal-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.goal-card.dark .goal-card-details {
+  height: 35%;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .goals-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .goals-cards-container {
+    grid-template-columns: 1fr;
+  }
+  .goals-container {
+    padding: 60px 20px;
+  }
+  .goal-card {
+    height: 500px;
+  }
+}

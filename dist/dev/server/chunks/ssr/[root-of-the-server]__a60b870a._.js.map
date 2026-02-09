@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Mosol9/OneDrive/Desktop/new-webanatomy/src/app/page.js"],"sourcesContent":["\n\nexport default function Home() {\n  return (\n   <>\n  \n   </>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACC;AAIH"}}]
-}

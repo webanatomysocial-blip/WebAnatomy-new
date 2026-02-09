@@ -1,7 +1,7 @@
 "use client";
 
 import { FaArrowRight } from "react-icons/fa";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,17 +23,33 @@ const Header = () => {
   // Active when in the top sections (Carousel, TextFade, Scroll)
   const [isTransparent, setIsTransparent] = useState(false);
 
-  // State for Services Hover
+  // State for Services Hover (0.5s delay before closing)
   const [isServicesHovered, setIsServicesHovered] = useState(false);
+  const closeMenuTimeoutRef = useRef(null);
 
   const pathname = usePathname();
+
+  const handleServicesMouseEnter = () => {
+    if (closeMenuTimeoutRef.current) {
+      clearTimeout(closeMenuTimeoutRef.current);
+      closeMenuTimeoutRef.current = null;
+    }
+    setIsServicesHovered(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    closeMenuTimeoutRef.current = setTimeout(() => {
+      setIsServicesHovered(false);
+      closeMenuTimeoutRef.current = null;
+    }, 200);
+  };
 
   // Scroll Direction & Logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > 90) {
+      if (currentScrollY > 0) {
         if (currentScrollY > lastScrollY) {
           setIsScrolledDown(true);
         } else if (currentScrollY < lastScrollY) {
@@ -69,9 +85,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleTransparency);
   });
 
+  useEffect(() => {
+    return () => {
+      if (closeMenuTimeoutRef.current) clearTimeout(closeMenuTimeoutRef.current);
+    };
+  }, []);
+
   const isAtTop = lastScrollY === 0;
-  const shouldShowTransparent =
-    isTransparent && !(isAtTop && isServicesHovered);
+  // Always disable transparency if Services is hovered
+  const shouldShowTransparent = isTransparent && !isServicesHovered;
 
   return (
     <header
@@ -85,19 +107,18 @@ const Header = () => {
         </Link>
         <nav>
           <ul className="nav-menu">
-            <li className="nav-item">
-              <Link
-                href="/services"
-                className="nav-link"
-                onMouseEnter={() => setIsServicesHovered(true)}
-                onMouseLeave={() => setIsServicesHovered(false)}
-              >
+            <li
+              className="nav-item"
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
+            >
+              <Link href="/services" className="nav-link">
                 Services
               </Link>
               <div
-                className="mega-menu"
-                onMouseEnter={() => setIsServicesHovered(true)}
-                onMouseLeave={() => setIsServicesHovered(false)}
+                className={`mega-menu ${isServicesHovered ? "mega-menu-visible" : ""}`}
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
               >
                 <div className="mega-menu-content">
                   <div className="mega-column">

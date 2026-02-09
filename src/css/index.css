@@ -121,28 +121,27 @@ span,
 button {
   transition: all 0.3s ease-in-out !important;
   line-height: 1.4em;
+  font-family: var(--font-primary);
 }
 
 .big-head-text {
-  font-size: 120px;
+  font-size: 100px;
   font-family: var(--font-primary);
-  font-weight: 300;
   color: var(--black-color);
   font-weight: 400 !important;
 }
 .big-head-text-white {
-  font-size: 120px;
+  font-size: 100px;
   font-family: var(--font-primary);
-  font-weight: 300;
   color: var(--white-color);
-  font-weight: 400 !important;
+  font-weight: 200 !important;
 }
 .head-text {
   font-size: 50px;
   font-family: var(--font-primary);
-  font-weight: 300;
   color: var(--black-color);
   font-weight: 400 !important;
+  line-height: 1.2em !important;
 }
 
 .head-text-white {
@@ -150,6 +149,7 @@ button {
   font-family: var(--font-primary);
   color: var(--white-color);
   font-weight: 400 !important;
+  line-height: 1.2em !important;
 }
 
 .para-text {
@@ -171,7 +171,7 @@ button {
 }
 
 .sub-head-text {
-  font-size: 26px;
+  font-size: 28px;
   font-family: var(--font-primary);
   font-weight: 300;
   line-height: 1.4em;
@@ -180,7 +180,7 @@ button {
 }
 
 .sub-head-text-white {
-  font-size: 26px;
+  font-size: 28px;
   font-family: var(--font-primary);
   font-weight: 300;
   line-height: 1.4em;
@@ -189,7 +189,7 @@ button {
 }
 
 .sub-para-text {
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-secondary);
   font-weight: 300;
   line-height: 1.4em;
@@ -199,7 +199,7 @@ button {
 }
 
 .sub-para-text-white {
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-secondary);
   font-weight: 300;
   line-height: 1.4em;
@@ -227,6 +227,7 @@ button {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .black-bg-btn:hover {
   background-color: var(--white-color);
@@ -274,6 +275,7 @@ button {
   text-decoration: none;
   font-size: 14px;
   font-weight: 300;
+  font-family: var(--font-primary);
   border: 1px solid var(--black-color);
   transition: all 0.3s ease;
   width: fit-content;
@@ -283,11 +285,12 @@ button {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .white-bg-btn:hover {
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: rgb(255, 255, 255, 0.8);
+  color: var(--black-color);
 }
 
 .icon-inside-btn-1,
@@ -315,14 +318,14 @@ button {
 }
 
 .gradient-bg-btn {
-  background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+  background: var(--black-color);
   color: var(--white-color);
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 300;
-  border: 1px solid transparent; /* No visible border for gradient */
-  transition: all 0.3s ease;
+  border: none;
+  transition: all 0.3s ease-in-out;
   width: fit-content;
   border-radius: 50px;
   display: flex;
@@ -330,11 +333,31 @@ button {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
+
+.gradient-bg-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+  z-index: -1;
+  border-radius: 50px; /* Match parent */
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.gradient-bg-btn:hover::before {
+  opacity: 0;
+}
+
 .gradient-bg-btn:hover {
-  background: var(--black-color); /* Black */
-  color: var(--white-color); /* White */
-  border-color: var(--black-color);
+  /* background managed by pseudo-element opacity */
+  color: var(--white-color);
+  border-color: var(--white-color);
 }
 
 .icon-inside-btn-1,

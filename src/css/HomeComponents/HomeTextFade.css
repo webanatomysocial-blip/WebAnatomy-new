@@ -1,0 +1,49 @@
+/* src/css/HomeTextFade.css */
+
+.Text-Section {
+  background-color: black;
+  min-height: 200vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 100px;
+}
+
+.text-container {
+  width: 100%;
+  text-align: left;
+  /* height: 100vh; */
+  padding: 100px 0px 0px 210px;
+  position: sticky;
+  top: 100px;
+  left: 0;
+}
+
+.line {
+  line-height: 1.4;
+}
+
+.char-span {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 300;
+  color: #555;
+}
+
+.gradient-char {
+  background: linear-gradient(90deg, #fb7239 30%, #b92d67 50%, #f209d6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-attachment: fixed;
+  color: #555;
+}
+
+.char-span.visi {
+  visibility: hidden;
+}
+
+.space {
+  display: inline-block;
+  width: 0.8em;
+}

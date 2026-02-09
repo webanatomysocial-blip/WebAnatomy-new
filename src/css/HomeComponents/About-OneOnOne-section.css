@@ -1,0 +1,83 @@
+.wa-about-one-on-one-section {
+  padding: 0px 0px 0px 0px;
+  /* height: 400vh; -- Let GSAP handle pin alignment */
+  position: relative;
+}
+.wa-about-one-on-one-bg-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.wa-about-one-on-one-total-sticky-container {
+  /* position: sticky; -- Removing for GSAP Pin */
+  /* top: 0px; */
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+.wa-about-one-on-one-left-outer-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+  padding-left: 60px;
+  z-index: 200;
+}
+.wa-about-one-on-one-right-outer-container {
+  width: 50%; /* Adjusted width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  overflow: hidden;
+  padding-right: 60px;
+  z-index: 200;
+}
+
+.wa-about-one-on-one-right-inner-transparent-container {
+  width: 100%;
+  position: relative;
+  height: 50vh;
+}
+
+/* Items positioned absolutely to overlap */
+.wa-about-one-on-one-right-inner-transparent-container-first-inner-container {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  opacity: 0;
+  border-top: 2px solid rgb(255, 255, 255);
+}
+
+.service-card-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.service-card-title-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,196 @@
+/* src/css/OurStoryHome.css */
+
+.our-story-home {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 100px 60px 100px 60px;
+  color: white;
+  min-height: 100vh;
+}
+
+.our-story-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+}
+
+.success-stories-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 40px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px; /* Increased height to prevent overflow */
+  /* gap: 30px; */
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px 0px;
+}
+
+.story-title {
+  font-size: 20px;
+  font-family: var(--font-secondary);
+}
+
+.story-number {
+  font-size: 80px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.story-desc {
+  font-size: 16px;
+  font-family: var(--font-secondary);
+  color: #666;
+}
+
+/* Vertical Carousel Indicator */
+.carousel-indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px; /* Space between indicators */
+}
+
+.indicator-track {
+  width: 4px;
+  height: 40px; /* Shorter separate tracks */
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.indicator-fill {
+  width: 100%;
+  height: 0%;
+  background-color: #000;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Transition handled in JS for active, CSS mainly for base style */
+}
+
+.video-section {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 300px;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  background-color: #000;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.our-story-heading {
+  font-size: 40px;
+  font-family: var(--font-primary);
+  color: white;
+}
+
+.our-story-desc {
+  font-size: 18px;
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.recognitions-title {
+  font-size: 32px;
+  font-family: var(--font-primary);
+  color: white;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.recognitions-carousel {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px; /* Optional: giving it a container look like the image */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Swiper Styles */
+.swiper-slide {
+  height: auto;
+}
+
+.success-stories-swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.success-stories-card .swiper-slide {
+  display: flex !important; /* Swiper sets display block by default */
+  align-items: center;
+}
+
+.recognitions-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.recognitions-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recognition-logo {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  /* Make logos greyscale or colored as per preference, usually greyscale for recognitions unless specified otherwise. Image shows colored. */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .our-story-main {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-story-home {
+    padding: 60px 20px;
+  }
+}
