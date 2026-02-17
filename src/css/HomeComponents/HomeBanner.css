@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: hidden !important;
+  position: relative;
 }
 
 .home-banner-top {
@@ -19,7 +20,7 @@
   align-items: start;
   justify-content: end;
   flex-direction: column;
-  padding: 40px 60px;
+  padding: 100px 60px;
   gap: 20px;
   overflow: hidden !important;
 }
@@ -44,7 +45,7 @@
   right: 80px;
   width: 10%;
   /* line-height: 1.4em; */
-  font-size: 12px;
+  font-size: 12px !important;
 }
 .banner-video {
   width: 100%;

@@ -12,7 +12,7 @@
 .our-story-main {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 30px;
 }
 
 .left-section {
@@ -25,13 +25,12 @@
 .success-stories-card {
   background-color: white;
   border-radius: 5px;
-  padding: 40px;
+  padding: 0px 40px;
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 400px; /* Increased height to prevent overflow */
-  /* gap: 30px; */
+  height: 260px;
   overflow: hidden;
   border: 1px solid black;
 }
@@ -51,7 +50,7 @@
 .story-number {
   font-size: 80px;
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1;
 }
 

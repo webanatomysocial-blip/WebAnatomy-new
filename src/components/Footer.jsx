@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import {
   FaLinkedinIn,
@@ -12,6 +10,8 @@ import {
   FaBehance,
   FaXTwitter,
 } from "react-icons/fa6";
+import "../css/footer.css";
+import footerImg from "../assets/images/footer/footer-img.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,19 +26,19 @@ const Footer = () => {
             <h4>Company</h4>
             <ul>
               <li>
-                <Link href="/about">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link href="/services">Services</Link>
+                <Link to="/services">Services</Link>
               </li>
               <li>
-                <Link href="/industries">Industries</Link>
+                <Link to="/industries">Industries</Link>
               </li>
               <li>
-                <Link href="/works">Works</Link>
+                <Link to="/works">Works</Link>
               </li>
               <li>
-                <Link href="/careers">Careers</Link>
+                <Link to="/careers">Careers</Link>
               </li>
             </ul>
           </div>
@@ -48,16 +48,16 @@ const Footer = () => {
             <h4>Services</h4>
             <ul>
               <li>
-                <Link href="/services/branding">Branding</Link>
+                <Link to="/services/branding">Branding</Link>
               </li>
               <li>
-                <Link href="/services/experience">Experience Design</Link>
+                <Link to="/services/experience">Experience Design</Link>
               </li>
               <li>
-                <Link href="/services/technology">Technology</Link>
+                <Link to="/services/technology">Technology</Link>
               </li>
               <li>
-                <Link href="/services/marketing">Digital Marketing</Link>
+                <Link to="/services/marketing">Digital Marketing</Link>
               </li>
             </ul>
           </div>
@@ -98,10 +98,7 @@ const Footer = () => {
       {/* Bottom Section: Giant Text/Image */}
       <div className="footer-bottom-image">
         {/* Assumes footer-img.png is in src/assets/images/footer/ */}
-        <img
-          src={require("@/assets/images/footer/footer-img.png").default.src}
-          alt="Web Anatomy"
-        />
+        <img src={footerImg} alt="Footer Bottom" className="footer-img" />
       </div>
     </footer>
   );

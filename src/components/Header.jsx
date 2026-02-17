@@ -1,33 +1,22 @@
-"use client";
-
-import { FaArrowRight } from "react-icons/fa";
+import "../css/header.css";
 import React, { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { Link, useLocation } from "react-router-dom";
 
-import logo from "@/assets/images/main-logo.png";
-import {
-  BsTelephone,
-  BsSearch,
-  BsBookmark,
-  BsArrowRight,
-} from "react-icons/bs";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import logo from "../assets/images/main-logo.png";
+import { BsArrowRight } from "react-icons/bs";
 
 const Header = () => {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { pathname } = useLocation();
 
-  // State for Transparent Header (White text, transparent BG)
-  // Active when in the top sections (Carousel, TextFade, Scroll)
-  const [isTransparent, setIsTransparent] = useState(false);
-
-  // State for Services Hover (0.5s delay before closing)
+  const [isTransparent, setIsTransparent] = useState(() => {
+    const isTransPage = pathname === "/" || pathname === "/about";
+    const isAtTop = typeof window !== "undefined" ? window.scrollY < 50 : true;
+    return isTransPage && isAtTop;
+  });
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const closeMenuTimeoutRef = useRef(null);
-
-  const pathname = usePathname();
 
   const handleServicesMouseEnter = () => {
     if (closeMenuTimeoutRef.current) {
@@ -44,15 +33,15 @@ const Header = () => {
     }, 200);
   };
 
-  // Scroll Direction & Logic
+  // Scroll Direction & Logic (Hide/Show Header)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > 0) {
-        if (currentScrollY > lastScrollY) {
+        if (currentScrollY > lastScrollY + 5) {
           setIsScrolledDown(true);
-        } else if (currentScrollY < lastScrollY) {
+        } else if (currentScrollY < lastScrollY - 5) {
           setIsScrolledDown(false);
         }
       } else {
@@ -65,29 +54,24 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Logic for Transparent Header (Home Page + Top of Page)
+  // Logic for Transparent Header (Home/About Page + Top of Page)
   useEffect(() => {
     const handleTransparency = () => {
-      const isHome = pathname === "/";
-      const isAtTop = window.scrollY < 10;
+      const isTransparentPage = pathname === "/";
+      const isAtTop = window.scrollY < 50;
 
-      if (isHome && isAtTop) {
-        setIsTransparent(true);
-      } else {
-        setIsTransparent(false);
-      }
+      setIsTransparent(isTransparentPage && isAtTop);
     };
 
-    // Run on mount and scroll
     handleTransparency();
     window.addEventListener("scroll", handleTransparency, { passive: true });
-
     return () => window.removeEventListener("scroll", handleTransparency);
-  });
+  }, [pathname]);
 
   useEffect(() => {
     return () => {
-      if (closeMenuTimeoutRef.current) clearTimeout(closeMenuTimeoutRef.current);
+      if (closeMenuTimeoutRef.current)
+        clearTimeout(closeMenuTimeoutRef.current);
     };
   }, []);
 
@@ -102,8 +86,8 @@ const Header = () => {
       }`}
     >
       <div className="header-wrapper">
-        <Link href="/" className="logo">
-          <Image src={logo} alt="WAC Logo" />
+        <Link to="/" className="logo">
+          <img src={logo} alt="WAC Logo" />
         </Link>
         <nav>
           <ul className="nav-menu">
@@ -112,7 +96,7 @@ const Header = () => {
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
             >
-              <Link href="/services" className="nav-link">
+              <Link to="/services" className="nav-link">
                 Services
               </Link>
               <div
@@ -123,7 +107,7 @@ const Header = () => {
                 <div className="mega-menu-content">
                   <div className="mega-column">
                     <h3>Building Strong Capabilities to Empower Your Brand</h3>
-                    <Link href="/services" className="mega-link-footer">
+                    <Link to="/services" className="mega-link-footer">
                       Go to overview <BsArrowRight />
                     </Link>
                   </div>
@@ -133,25 +117,25 @@ const Header = () => {
                     </h4>
                     <ul>
                       <li>
-                        <Link href="/services/brand-consulting">
+                        <Link to="/services/brand-consulting">
                           Brand Consulting
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/logo-design">Logo Design</Link>
+                        <Link to="/services/logo-design">Logo Design</Link>
                       </li>
                       <li>
-                        <Link href="/services/industrial-design">
+                        <Link to="/services/industrial-design">
                           Industrial / Product Design
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/graphic-design">
+                        <Link to="/services/graphic-design">
                           Graphic Design
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/visualisation">
+                        <Link to="/services/visualisation">
                           2D / 3D Visualisation
                         </Link>
                       </li>
@@ -162,20 +146,20 @@ const Header = () => {
                       </h4>
                       <ul>
                         <li>
-                          <Link href="/services/ui-ux">UI/UX Design</Link>
+                          <Link to="/services/ui-ux">UI/UX Design</Link>
                         </li>
                         <li>
-                          <Link href="/services/website-design">
+                          <Link to="/services/website-design">
                             Website Design
                           </Link>
                         </li>
                         <li>
-                          <Link href="/services/mobile-experience">
+                          <Link to="/services/mobile-experience">
                             Mobile Experience
                           </Link>
                         </li>
                         <li>
-                          <Link href="/services/commerce-experience">
+                          <Link to="/services/commerce-experience">
                             Commerce Experience
                           </Link>
                         </li>
@@ -188,41 +172,39 @@ const Header = () => {
                     </h4>
                     <ul>
                       <li>
-                        <Link href="/services/ai-ml">
-                          AI & Machine Learning
-                        </Link>
+                        <Link to="/services/ai-ml">AI & Machine Learning</Link>
                       </li>
                       <li>
-                        <Link href="/services/devops">DevOps Consulting</Link>
+                        <Link to="/services/devops">DevOps Consulting</Link>
                       </li>
                       <li>
-                        <Link href="/services/data-analytics">
+                        <Link to="/services/data-analytics">
                           Data & Analytics
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/web-development">
+                        <Link to="/services/web-development">
                           Web Development
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/mobile-development">
+                        <Link to="/services/mobile-development">
                           Mobile App Development
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/ecommerce">E-commerce</Link>
+                        <Link to="/services/ecommerce">E-commerce</Link>
                       </li>
                       <li>
-                        <Link href="/services/qa-testing">
+                        <Link to="/services/qa-testing">
                           Quality Assurance & Testing
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/cloud">Cloud Services</Link>
+                        <Link to="/services/cloud">Cloud Services</Link>
                       </li>
                       <li>
-                        <Link href="/services/cyber-security">
+                        <Link to="/services/cyber-security">
                           Cyber Security
                         </Link>
                       </li>
@@ -234,32 +216,32 @@ const Header = () => {
                     </h4>
                     <ul>
                       <li>
-                        <Link href="/services/seo">
+                        <Link to="/services/seo">
                           Search Engine Optimisation
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/social-media">
+                        <Link to="/services/social-media">
                           Social Media Management
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/performance-marketing">
+                        <Link to="/services/performance-marketing">
                           Performance Marketing
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/content-marketing">
+                        <Link to="/services/content-marketing">
                           Content Marketing
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/automation">
+                        <Link to="/services/automation">
                           Marketing Automation
                         </Link>
                       </li>
                       <li>
-                        <Link href="/services/analytics">Analytics</Link>
+                        <Link to="/services/analytics">Analytics</Link>
                       </li>
                     </ul>
                   </div>
@@ -267,27 +249,27 @@ const Header = () => {
               </div>
             </li>
             <li className="nav-item">
-              <Link href="/solutions" className="nav-link">
+              <Link to="/solutions" className="nav-link">
                 Solutions
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/industries" className="nav-link">
+              <Link to="/industries" className="nav-link">
                 Industries
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/works" className="nav-link">
+              <Link to="/works" className="nav-link">
                 Works
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/about" className="nav-link">
+              <Link to="/about" className="nav-link">
                 About
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/careers" className="nav-link">
+              <Link to="/careers" className="nav-link">
                 Careers
               </Link>
             </li>
@@ -295,7 +277,7 @@ const Header = () => {
         </nav>
       </div>
       <div className="header-actions">
-        <Link href="/contact" className="contact-btn">
+        <Link to="/contact" className="contact-btn">
           Contact Us
           <span className="icon-btn">
             <BsArrowRight className="icon-inside-btn-1" />

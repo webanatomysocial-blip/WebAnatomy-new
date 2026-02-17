@@ -22,7 +22,7 @@
 
 .swiper {
   width: 100%;
-  padding-bottom: 50px !important;
+  /* padding-bottom: 50px !important; */
   overflow: visible !important;
   /* Allow slides to be cut off by the screen, not the container */
 }
@@ -84,7 +84,7 @@
   line-height: 1.4;
   color: #fff;
   margin-bottom: 40px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .testimonial-divider {
@@ -101,7 +101,7 @@
 
 .author-name {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 300;
   color: #ffffff;
 }
 

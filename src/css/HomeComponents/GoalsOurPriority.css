@@ -78,7 +78,7 @@
 }
 
 .goal-swiper-container {
-  height: 50%;
+  height: 60%;
   width: 100%;
 }
 
@@ -86,12 +86,12 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
 }
 
 .goal-swiper-container .swiper-slide {
-  height: 250px !important;
+  height: 300px !important;
   width: 100% !important;
   object-fit: cover;
 }

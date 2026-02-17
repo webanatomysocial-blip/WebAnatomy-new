@@ -13,7 +13,7 @@ export default function Cta() {
               Lorem ipsum <br /> dolor sit
             </h2>
             <p className="para-text-white">
-              Let's transform your vision <br /> into reality with our
+              Let&apos;s transform your vision <br /> into reality with our
               cutting-edge
             </p>
           </div>

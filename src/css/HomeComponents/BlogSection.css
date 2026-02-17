@@ -1,0 +1,150 @@
+/* src/css/HomeComponents/BlogSection.css */
+
+.blog-section {
+  padding: 100px 0 100px 60px;
+  background-color: #fff; /* Match reference image white background */
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-head-container {
+  margin-bottom: 50px;
+  padding-right: 60px; /* Compensate for removed container padding */
+}
+
+.blog-title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.blog-desc {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.blog-swiper {
+  width: 100%;
+  padding-bottom: 50px; /* Space for pagination/navigation if needed */
+  overflow: visible; /* Allow shadows to show */
+}
+
+.swiper-slide {
+  height: auto; /* Allow content to dictate height */
+}
+
+.blog-card {
+  background: #fdfdfd;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #eee; */
+  cursor: pointer;
+}
+
+.blog-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.blog-content {
+  padding: 20px 10px; /* Minimal padding */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.blog-card-title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #111;
+  margin: 0;
+}
+
+/* Custom Navigation Arrows */
+.blog-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #111;
+}
+
+.blog-nav-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.blog-prev {
+  left: 10px;
+}
+
+.blog-next {
+  right: 10px;
+}
+
+.blog-nav-btn.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  color: #ccc;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 60px 0 60px 20px;
+  }
+  .blog-title {
+    font-size: 2.2rem;
+  }
+  .blog-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

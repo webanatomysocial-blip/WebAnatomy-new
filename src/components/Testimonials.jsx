@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import lady from "../assets/images/Testimonials/lady.png";
@@ -75,12 +72,18 @@ export default function Testimonials() {
             <SwiperSlide key={testimonial.id}>
               <div className="testimonial-card">
                 <div className="testimonial-image-wrapper">
-                  <Image
+                  <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    fill
-                    sizes="(max-width: 768px) 250px, 300px"
-                    priority={testimonial.id === 1}
+                    className="testimonial-img"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      inset: "0px",
+                      objectFit: "cover",
+                      color: "transparent",
+                    }}
                   />
                 </div>
                 <div className="testimonial-content">

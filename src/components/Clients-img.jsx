@@ -1,9 +1,7 @@
-"use client";
 import React from "react";
 import "../css/Clients-img.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
@@ -153,7 +151,7 @@ export default function ClientsImg() {
               {rowLogos.map((logo, index) => (
                 <div key={index} className="client-slide-marquee">
                   <div className="Clients-img-wrapper">
-                    <Image
+                    <img
                       src={logo}
                       alt={`Client logo ${index + 1}`}
                       className="Clients-img"

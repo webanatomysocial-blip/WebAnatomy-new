@@ -21,6 +21,15 @@ const SmoothScrolling = ({ children }) => {
       infinite: false,
     });
 
+    window.lenis = lenis;
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Integarte with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -30,8 +39,10 @@ const SmoothScrolling = ({ children }) => {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      gsap.ticker.remove(lenis.raf);
+      // Clean up
+      window.lenis = null;
       lenis.destroy();
+      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 

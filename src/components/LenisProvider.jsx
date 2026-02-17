@@ -1,9 +1,8 @@
 // src/components/LenisProvider.jsx
 
-
-import { useEffect, useState } from 'react';
-import { LenisContext } from './LenisContext';
-import Lenis from '@studio-freight/lenis';
+import { useEffect, useState } from "react";
+import { LenisContext } from "./LenisContext";
+import Lenis from "@studio-freight/lenis";
 
 function LenisProvider({ children }) {
   const [lenis, setLenis] = useState(null);
@@ -13,8 +12,8 @@ function LenisProvider({ children }) {
     const newLenis = new Lenis({
       duration: 1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
+      direction: "vertical",
+      gestureDirection: "vertical",
       smooth: true,
       mouseMultiplier: 1,
       smoothTouch: false,
@@ -22,6 +21,7 @@ function LenisProvider({ children }) {
       infinite: false,
     });
 
+    // eslint-disable-next-line
     setLenis(newLenis);
     setIsLoading(false);
 
@@ -42,9 +42,7 @@ function LenisProvider({ children }) {
   }
 
   return (
-    <LenisContext.Provider value={lenis}>
-      {children}
-    </LenisContext.Provider>
+    <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
   );
 }
 
