@@ -1,11 +1,12 @@
 /* OurProcess.css */
 
-.OurProcess {
+.about-workflow-section {
   width: 100%;
-  padding: 100px 60px;
+  padding: 100px 0px 40px 0px;
   background-color: var(--white-color);
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  height: 400vh; /* Increased height for the extra steps */
 }
 
 .process-bg-wrapper {
@@ -31,33 +32,29 @@
   object-fit: contain;
 }
 
-.process-head {
+.workflow-header {
   position: relative;
   z-index: 2;
-  max-width: 800px;
   margin-bottom: 80px;
+  padding: 0px 60px;
 }
 
-.process-title {
+.workflow-title {
   font-size: 60px;
   margin-bottom: 20px;
   font-weight: 300;
 }
 
-.process-desc {
+.workflow-desc {
   font-size: 18px;
   color: #555;
   max-width: 600px;
 }
 
-.process-steps-container {
+.workflow-steps-inner {
   position: relative;
-  display: grid;
-
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  max-width: 1600px;
-  margin: 0 auto;
+  width: 140vw; /* As requested */
+  margin: 0;
   min-height: 500px;
 }
 
@@ -73,10 +70,10 @@
 .process-side-bg.left {
   width: 150px;
   left: 0px;
-  bottom: 30px;
+  top: 30px;
 }
 .process-side-bg.right {
-  right: 0px;
+  right: -80px;
   width: 200px;
 }
 
@@ -85,29 +82,43 @@
   height: auto;
 }
 
-.process-card {
-  background-color: #fff;
+.workflow-step-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 60px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
+  width: 270px;
+  height: 220px;
   border: 1px solid #f0f0f0;
-  min-width: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.step-top {
+.workflow-step-card:first-of-type {
+  opacity: 1;
+  visibility: visible;
+}
+.workflow-card-text {
+  font-size: 14px !important;
+  z-index: 2 !important;
+  line-height: 1.5;
+  color: #666;
+}
+.process-step-top {
   align-self: flex-start;
   margin-top: 0;
 }
 
-.step-bottom {
+.process-step-bottom {
   align-self: flex-end;
   margin-bottom: 0;
 }
@@ -116,22 +127,29 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 140vw; /* Match container width */
   height: 100%;
   z-index: 1;
   pointer-events: none;
   overflow: visible;
 }
 
-.zigzag-line {
+.process-zigzag-line {
   fill: none;
   stroke: #000;
   stroke-width: 2;
-  stroke-dasharray: 6 6;
-  opacity: 0.3;
+  stroke-dasharray: 8 8;
+  opacity: 0.2;
 }
 
-.card-icon-wrapper {
+/* Mask styles */
+#line-mask path {
+  fill: none;
+  stroke: white;
+  stroke-width: 4; /* Slightly thicker than the line to ensure full coverage */
+}
+
+.workflow-icon-hold {
   position: relative;
   width: 40px;
   height: 40px;
@@ -141,7 +159,7 @@
   margin-bottom: 20px;
 }
 
-.card-icon-bg {
+.workflow-icon-bg {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -155,39 +173,27 @@
   border-radius: 50%;
 }
 
-.card-title {
+.workflow-card-heading {
   font-size: 24px;
   margin-bottom: 10px;
   font-weight: 300;
+  z-index: 2 !important;
 }
 
-.card-desc {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #666;
-  z-index: 2;
-}
-.glass-start {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  backdrop-filter: blur(10px);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+.process-glass-start {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
 }
 
-.glass-end {
-  background: linear-gradient(
-    -90deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  backdrop-filter: blur(10px);
+.process-glass-end {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-.card-bg-number {
-  z-index: 1;
+.workflow-bg-number {
+  z-index: 0;
   font-size: 180px;
   font-weight: 300;
   line-height: 1;
@@ -209,7 +215,7 @@
 }
 
 @media (max-width: 1024px) {
-  .process-steps-container {
+  .workflow-steps-inner {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -218,7 +224,7 @@
     display: none;
   }
 
-  .process-card {
+  .workflow-step-card {
     align-self: stretch !important;
     height: auto;
   }

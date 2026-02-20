@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "../../css/AboutComponents/AboutBanner.css";
 import image1 from "../../assets/images/about-page/BANNER/1.png";
 import image2 from "../../assets/images/about-page/BANNER/2.png";
@@ -14,13 +14,14 @@ import image11 from "../../assets/images/about-page/BANNER/11.png";
 import { BsArrowRight } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 const AboutBanner = () => {
   const sectionRef = useRef(null);
   const imageContainerRef = useRef(null);
   const headContainerRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -93,13 +94,13 @@ const AboutBanner = () => {
           A design-led, engineering-driven <br /> studio building sophisticated{" "}
           <br /> digital products.
         </h1>
-        <a href="#" className="black-bg-btn">
+        <Link to="/contact" className="black-bg-btn">
           Contact Us
           <span className="icon-btn">
             <BsArrowRight className="icon-inside-btn-1" />
             <BsArrowRight className="icon-inside-btn-2" />
           </span>
-        </a>
+        </Link>
       </div>
     </section>
   );

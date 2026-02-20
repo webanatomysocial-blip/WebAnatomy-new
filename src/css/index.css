@@ -175,13 +175,7 @@ button {
   color: var(--black-color);
   font-weight: 300;
 }
-.sub-small-head{
-  font-size: 16px;
-  font-family: var(--font-primary);
-  line-height: 1.4em;
-  color: var(--black-color);
-  font-weight: 300;
-}
+
 .sub-head-text-white {
   font-size: 28px;
   font-family: var(--font-primary);
@@ -189,7 +183,6 @@ button {
   color: var(--white-color);
   font-weight: 300;
 }
-
 .sub-para-text {
   font-size: 14px;
   font-family: var(--font-secondary);
@@ -205,6 +198,45 @@ button {
   line-height: 1.4em;
   color: var(--white-color);
   font-weight: 300;
+}
+
+.sub-small-head {
+  font-size: 16px;
+  font-family: var(--font-primary);
+  line-height: 1.4em;
+  color: var(--black-color);
+  font-weight: 300;
+}
+.sub-small-head-white {
+  font-size: 16px;
+  font-family: var(--font-primary);
+  line-height: 1.4em;
+  color: var(--white-color);
+  font-weight: 300;
+}
+.sub-small-para {
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  line-height: 1.4em;
+  color: var(--black-color);
+  font-weight: 300;
+}
+.sub-small-para-white {
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  line-height: 1.4em;
+  color: var(--white-color);
+  font-weight: 300;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+  padding: 10px 0px;
 }
 
 /* fonts End  */

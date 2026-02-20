@@ -3,7 +3,7 @@ import "../../css/AboutComponents/OurImpact.css";
 
 const OurImpact = () => {
   return (
-    <section className="OurImpact" suppressHydrationWarning>
+    <section className="OurImpact">
       <div className="impact-head-container">
         <h2 className="head-text impact-title">Our Impact</h2>
         <p className="para-text impact-subtext">

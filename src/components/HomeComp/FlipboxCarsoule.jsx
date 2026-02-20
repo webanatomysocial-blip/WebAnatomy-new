@@ -90,12 +90,12 @@ export default function FlipboxCarsoule() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=300%", // Reduced from 500% to make it faster
+          end: "+=300%",
           pin: true,
-          scrub: 0.5, // Faster scrub response
+          scrub: 0.5,
           snap: {
-            snapTo: "labels", // Snap to the nearest label in the timeline
-            duration: { min: 0.1, max: 0.3 }, // Faster snap duration
+            snapTo: "labels",
+            duration: { min: 0.1, max: 0.3 },
             delay: 0.1,
             ease: "power1.inOut",
           },

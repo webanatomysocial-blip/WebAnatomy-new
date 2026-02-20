@@ -4,7 +4,7 @@ import HomeTextFade from "../components/HomeComp/HomeTextFade";
 import FlipboxCarsoule from "../components/HomeComp/FlipboxCarsoule";
 import AboutOneOnOneSection from "../components/HomeComp/About-OneOnOne-section";
 import OurStoryHomePage from "../components/HomeComp/Our-story-home-page";
-// import BlogSection from "../components/BlogSection";
+import BlogSection from "../components/BlogSection";
 import Testimonials from "../components/Testimonials";
 import WhatWeDoData from "../components/HomeComp/whatWeDoData";
 import Cta from "../components/Cta";
@@ -20,12 +20,16 @@ export default function Home() {
       <FlipboxCarsoule />
       <AboutOneOnOneSection />
       <OurStoryHomePage />
-      {/* <BlogSection/> */}
       <Testimonials />
       <WhatWeDoData />
       <Cta />
       <GoalsOurPriority />
       <ClientsImg />
+      <BlogSection
+        backgroundColor="#fff"
+        paddingBottom="40px"
+        paddingTop="140px"
+      />
       <Recognitions />
     </>
   );

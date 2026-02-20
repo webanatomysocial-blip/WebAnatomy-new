@@ -20,14 +20,14 @@
   margin-left: 0px;
 }
 
-.swiper {
+.hear-from-container .swiper {
   width: 100%;
   /* padding-bottom: 50px !important; */
   overflow: visible !important;
   /* Allow slides to be cut off by the screen, not the container */
 }
 
-.swiper-slide {
+.hear-from-container .swiper-slide {
   width: auto !important;
   /* Required for slidesPerView: 'auto' */
   display: flex;
@@ -112,12 +112,12 @@
 }
 
 /* Swiper Pagination Styles */
-.swiper-pagination-bullet {
+.hear-from-container .swiper-pagination-bullet {
   background: rgba(255, 255, 255, 0.3) !important;
   opacity: 1 !important;
 }
 
-.swiper-pagination-bullet-active {
+.hear-from-container .swiper-pagination-bullet-active {
   background: #fff !important;
 }
 

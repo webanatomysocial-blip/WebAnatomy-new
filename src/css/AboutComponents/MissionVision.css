@@ -1,0 +1,140 @@
+/* MissionVision.css */
+
+.mission-vision {
+  width: 100%;
+  padding: 100px 60px 40px 60px;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.mission-vision-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mission-vision-container {
+  display: flex;
+  gap: 20px;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+}
+
+/* Left Side */
+.mv-left-side {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 600px; /* Adjust based on content */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.mv-main-title {
+  margin-bottom: 20px;
+}
+
+.mv-main-desc {
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+/* Button overrides */
+.mv-btn {
+  align-self: flex-start;
+
+  margin-top: 20px;
+}
+
+/* Right Side Grid */
+.mv-right-side {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.mv-card {
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  gap: 10px;
+  min-height: 300px;
+  justify-content: space-between;
+}
+
+/* Card Variants */
+.black-card {
+  background-color: var(--black-color);
+  justify-content: start;
+}
+
+.white-card {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.orange-card {
+  background: linear-gradient(180deg, #fffbf0 0%, #ffecd2 40%, #fcb69f 100%);
+  position: relative;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.black-card-cube {
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* Specific Card Content */
+.mv-card-title-center {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.mv-card-content-top {
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mission-vision-container {
+    flex-direction: column;
+  }
+
+  .mv-left-side {
+    min-height: 500px;
+  }
+
+  .mv-right-side {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    padding: 60px 20px;
+  }
+
+  .mv-right-side {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-card {
+    min-height: 250px;
+  }
+}

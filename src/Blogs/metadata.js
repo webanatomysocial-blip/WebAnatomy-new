@@ -1,4 +1,4 @@
-import dummyImage from "../assets/images/Our-services/service-1.webp";
+import dummyImage from "../Blogs/blogs-images/blog-1.jpg";
 
 export const blogMetadata = [
   {
@@ -8,7 +8,7 @@ export const blogMetadata = [
     date: "October 28, 2025",
     readTime: "5 mins reading",
     image: dummyImage,
-    slug: "brand-strategy-small-business",
+    slug: "brand-strategy-small-busi",
   },
   {
     id: 2,

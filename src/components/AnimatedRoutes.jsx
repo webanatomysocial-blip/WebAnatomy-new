@@ -4,32 +4,43 @@ import { AnimatePresence } from "framer-motion";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import PageTransition from "./PageTransition";
+import Blogs from "../pages/Blogs";
+import DynamicBlog from "../components/DynamicBlog";
+import { Helmet } from "react-helmet-async";
 
 function AnimatedRoutes() {
   const location = useLocation();
 
-  return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <PageTransition>
-              <Home />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <PageTransition>
-              <About />
-            </PageTransition>
-          }
-        />
-      </Routes>
-    </AnimatePresence>
+  const appRoutes = (
+    <Routes location={location} key={location.pathname}>
+      <Route
+        path="/"
+        element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <PageTransition>
+            <About />
+          </PageTransition>
+        }
+      />
+
+      <Route path="/blogs" element={<Blogs />} />
+      <Route path="/blogs/:blogId" element={<DynamicBlog />} />
+    </Routes>
   );
+
+  // Disable page transition animation for dynamic blog posts
+  if (location.pathname.startsWith("/blogs/")) {
+    return appRoutes;
+  }
+
+  return <AnimatePresence mode="wait">{appRoutes}</AnimatePresence>;
 }
 
 export default AnimatedRoutes;

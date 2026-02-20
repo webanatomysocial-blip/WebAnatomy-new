@@ -24,7 +24,7 @@ export default function OurStoryHomePage() {
     <div className="our-story-home">
       <div className="our-story-main">
         {/* Left Section */}
-        <div className="left-section">
+        <div className="our-story-left">
           {/* Vertical Carousel Card - Now using Swiper */}
           <div className="success-stories-card">
             <div style={{ width: "80%", height: "100%" }}>
@@ -92,7 +92,7 @@ export default function OurStoryHomePage() {
         </div>
 
         {/* Right Section - Text Content */}
-        <div className="right-section">
+        <div className="our-story-right">
           <h2 className="head-text-white">Our Story</h2>
           <p className="para-text-white">
             We&apos;re a purpose-led crew of dreamers and doers — driven by
