@@ -15,9 +15,9 @@ import Recognitions from "../components/HomeComp/Recognitions";
 export default function Home() {
   return (
     <>
-      {/* <HomeBanner />
+      <HomeBanner />
       <HomeTextFade />
-      <FlipboxCarsoule /> */}
+      <FlipboxCarsoule />
       <AboutOneOnOneSection />
       <OurStoryHomePage />
       <Testimonials />
