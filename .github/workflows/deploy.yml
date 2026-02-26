@@ -1,0 +1,43 @@
+name: Deploy Vite App to Hostinger
+
+on:
+  push:
+    branches:
+      - main # deploys whenever you push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Clear Old Files on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.WEBANATOMYURL }}
+          username: ${{ secrets.WEBANATOMYSSHUSER }}
+          key: ${{ secrets.WEBANATOMYSSHKEY }}
+          script: |
+            rm -rf /home/u466434331/public_html/*
+
+      - name: Upload New Build Files
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.WEBANATOMYURL }}
+          username: ${{ secrets.WEBANATOMYSSHUSER}}
+          key: ${{ secrets.WEBANATOMYSSHKEY }}
+          source: "dist/*"
+          target: "/home/u466434331/public_html"
