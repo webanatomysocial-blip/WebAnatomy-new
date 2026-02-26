@@ -37,6 +37,7 @@ export default function HomeBanner() {
             top: "200px",
             right: "260px",
             width: "130px",
+            height: "100px",
             x: "0%",
             y: "0%",
           },

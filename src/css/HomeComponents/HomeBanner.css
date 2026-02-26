@@ -30,7 +30,7 @@
   top: 200px;
   right: 260px;
   width: 130px;
-  height: auto;
+  height: 100px;
   display: flex;
   flex-direction: column;
   gap: 10px;
