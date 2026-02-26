@@ -32,7 +32,7 @@ jobs:
           key: ${{ secrets.WEBANATOMYSSHKEY }}
           port: 65002
           script: |
-            rm -rf public_html/web/*
+            rm -rf /home/u466434331/domains/wadev.com/public_html/web/*
 
       - name: Upload New Build Files
         uses: appleboy/scp-action@v0.1.7
@@ -42,5 +42,5 @@ jobs:
           key: ${{ secrets.WEBANATOMYSSHKEY }}
           port: 65002
           source: "dist/*"
-          target: "public_html/web"
+          target: "/home/u466434331/domains/wadev.com/public_html/web"
           strip_components: 1
