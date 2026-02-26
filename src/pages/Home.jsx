@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <>
       <HomeBanner />
-      {/* <HomeTextFade /> */}
+      <HomeTextFade />
       <FlipboxCarsoule />
-      <AboutOneOnOneSection />
+      {/* <AboutOneOnOneSection /> */}
       <OurStoryHomePage />
       <Testimonials />
       <WhatWeDoData />
