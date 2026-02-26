@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Clear Old Files on Server
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.WEBANATOMYURL }}
           username: ${{ secrets.WEBANATOMYSSHUSER }}
@@ -35,7 +35,7 @@ jobs:
             rm -rf /home/u466434331/public_html/web*
 
       - name: Upload New Build Files
-        uses: appleboy/scp-action@main
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.WEBANATOMYURL }}
           username: ${{ secrets.WEBANATOMYSSHUSER }}
