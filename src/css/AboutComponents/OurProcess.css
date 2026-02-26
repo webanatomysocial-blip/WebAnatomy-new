@@ -6,7 +6,7 @@
   background-color: var(--white-color);
   overflow-x: hidden;
   position: relative;
-  height: 400vh; /* Increased height for the extra steps */
+  height: 400vh;
 }
 
 .process-bg-wrapper {
@@ -64,17 +64,19 @@
   transform: translateY(-50%);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .process-side-bg.left {
   width: 150px;
   left: 0px;
   top: 30px;
+  z-index: 10;
 }
 .process-side-bg.right {
-  right: -80px;
+  right: -100px;
   width: 200px;
+  z-index: 10;
 }
 
 .side-bg-img {
@@ -92,7 +94,6 @@
   position: absolute;
   top: 0;
   left: 60px;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -101,6 +102,7 @@
   border: 1px solid #f0f0f0;
   opacity: 0;
   visibility: hidden;
+  z-index: 20000 !important;
 }
 
 .workflow-step-card:first-of-type {

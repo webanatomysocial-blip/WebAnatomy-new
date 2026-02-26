@@ -1,0 +1,99 @@
+.open-roles-container {
+  padding: 40px 60px 100px 60px;
+  background-color: var(--white-color);
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.open-roles-description {
+  max-width: 600px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.open-roles-list {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0 200px; */
+}
+
+.open-roles-item {
+  border-bottom: 1px solid #d0d0d0;
+  overflow: hidden;
+}
+
+.open-roles-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.open-roles-question:hover {
+  opacity: 0.65;
+}
+
+.open-roles-title {
+  /* Inherits head-text but slightly smaller for list context */
+  font-size: 35px;
+}
+
+.open-roles-answer-wrapper {
+  overflow: hidden;
+}
+
+.open-roles-answer {
+  padding-bottom: 36px;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.open-roles-answer .para-text {
+  margin: 0;
+  max-width: 560px;
+  opacity: 0.75;
+}
+
+.open-roles-btn {
+  /* White-bg-btn already has styles, just anchor it left */
+  align-self: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .open-roles-list {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .open-roles-container {
+    padding: 60px 20px;
+  }
+
+  .open-roles-description {
+    margin-bottom: 40px;
+  }
+
+  .open-roles-list {
+    padding: 0;
+  }
+
+  .open-roles-question {
+    padding: 20px 0;
+  }
+
+  .open-roles-answer {
+    padding-bottom: 24px;
+    padding-right: 0;
+  }
+}

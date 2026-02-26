@@ -97,6 +97,11 @@ const OurProcess = () => {
         duration: 1,
       });
       workflowTimeline.to(
+        workflowInnerRef.current,
+        { x: "-5vw", duration: 1 },
+        "<",
+      );
+      workflowTimeline.to(
         pathRef.current,
         { strokeDashoffset: pathLength * 0.85, duration: 1 },
         "<",
@@ -120,6 +125,11 @@ const OurProcess = () => {
         duration: 1,
       });
       workflowTimeline.to(
+        workflowInnerRef.current,
+        { x: "-12vw", duration: 1 },
+        "<",
+      );
+      workflowTimeline.to(
         pathRef.current,
         { strokeDashoffset: pathLength * 0.7, duration: 1 },
         "<",
@@ -142,6 +152,11 @@ const OurProcess = () => {
         duration: 1,
       });
       workflowTimeline.to(
+        workflowInnerRef.current,
+        { x: "-20vw", duration: 1 },
+        "<",
+      );
+      workflowTimeline.to(
         pathRef.current,
         { strokeDashoffset: pathLength * 0.55, duration: 1 },
         "<",
@@ -163,8 +178,17 @@ const OurProcess = () => {
         duration: 1,
       });
       workflowTimeline.to(
+        workflowInnerRef.current,
+        { x: "-28vw", duration: 1 },
+        "<",
+      );
+      workflowTimeline.to(
         pathRef.current,
-        { strokeDashoffset: pathLength * 0.4, duration: 1 },
+        {
+          strokeDashoffset: pathLength * 0.4,
+          duration: 1,
+          ease: "power1.inOut",
+        },
         "<",
       );
 
@@ -186,7 +210,7 @@ const OurProcess = () => {
       );
       workflowTimeline.to(
         workflowInnerRef.current,
-        { x: "-20vw", duration: 1 },
+        { x: "-36vw", duration: 1 },
         "move-6",
       );
       workflowTimeline.to(
@@ -224,60 +248,62 @@ const OurProcess = () => {
   }, []);
 
   return (
-    <section className="about-workflow-section" ref={workflowSectionRef}>
-      <div className="workflow-header">
-        <h2 className="head-text workflow-title">Our Process</h2>
-        <p className="para-text workflow-desc">
-          Every innovation that happens here is out of a quest to get better at
-          what we are already doing.
-        </p>
-      </div>
-
-      <div className="workflow-steps-inner" ref={workflowInnerRef}>
-        <div className="process-side-bg left">
-          <img src={ellipse} alt="bg-left" className="side-bg-img" />
-        </div>
-        <div className="process-side-bg right">
-          <img src={groupBg} alt="bg-right" className="side-bg-img" />
+    <>
+      <section className="about-workflow-section" ref={workflowSectionRef}>
+        <div className="workflow-header">
+          <h2 className="head-text workflow-title">Our Process</h2>
+          <p className="para-text workflow-desc">
+            Every innovation that happens here is out of a quest to get better
+            at what we are already doing.
+          </p>
         </div>
 
-        <svg className="process-lines-svg" viewBox="0 0 2000 500">
-          <defs>
-            <mask id="line-mask">
-              <path
-                ref={pathRef}
-                d="M 204 110 L 490 410 L 775 110 L 1061 410 L 1347 110 L 1632 410 L 1918 110"
-              />
-            </mask>
-          </defs>
-          <path
-            className="process-zigzag-line"
-            mask="url(#line-mask)"
-            d="M 204 110 L 490 410 L 775 110 L 1061 410 L 1347 110 L 1632 410 L 1918 110"
-          />
-        </svg>
-
-        {workflowStepsData.map((step, index) => (
-          <div
-            key={step.id}
-            className="workflow-step-card"
-            style={{ zIndex: workflowStepsData.length - step.id }}
-            ref={(el) => (stepCardsRefs.current[index] = el)}
-          >
-            <div className="workflow-icon-hold">
-              <img src={group} alt="icon" className="workflow-icon-bg" />
-            </div>
-
-            <h3 className="sub-head-text workflow-card-heading">
-              {step.title}
-            </h3>
-            <p className="para-text workflow-card-text">{step.desc}</p>
-
-            <span className="workflow-bg-number">{step.number}</span>
+        <div className="workflow-steps-inner" ref={workflowInnerRef}>
+          <div className="process-side-bg left">
+            <img src={ellipse} alt="bg-left" className="side-bg-img" />
           </div>
-        ))}
-      </div>
-    </section>
+          <div className="process-side-bg right">
+            <img src={groupBg} alt="bg-right" className="side-bg-img" />
+          </div>
+
+          <svg className="process-lines-svg" viewBox="0 0 2000 500">
+            <defs>
+              <mask id="line-mask">
+                <path
+                  ref={pathRef}
+                  d="M 204 110 L 490 410 L 775 110 L 1061 410 L 1347 110 L 1632 410 L 1918 110"
+                />
+              </mask>
+            </defs>
+            <path
+              className="process-zigzag-line"
+              mask="url(#line-mask)"
+              d="M 204 110 L 490 410 L 775 110 L 1061 410 L 1347 110 L 1632 410 L 1918 110"
+            />
+          </svg>
+
+          {workflowStepsData.map((step, index) => (
+            <div
+              key={step.id}
+              className="workflow-step-card"
+              style={{ zIndex: workflowStepsData.length + step.id }}
+              ref={(el) => (stepCardsRefs.current[index] = el)}
+            >
+              <div className="workflow-icon-hold">
+                <img src={group} alt="icon" className="workflow-icon-bg" />
+              </div>
+
+              <h3 className="sub-head-text workflow-card-heading">
+                {step.title}
+              </h3>
+              <p className="para-text workflow-card-text">{step.desc}</p>
+
+              <span className="workflow-bg-number">{step.number}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

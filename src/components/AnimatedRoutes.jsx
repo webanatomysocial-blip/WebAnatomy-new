@@ -3,10 +3,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Services from "../pages/Services";
 import PageTransition from "./PageTransition";
 import Blogs from "../pages/Blogs";
 import DynamicBlog from "../components/DynamicBlog";
 import { Helmet } from "react-helmet-async";
+import Careers from "../pages/Careers";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -26,6 +28,24 @@ function AnimatedRoutes() {
         element={
           <PageTransition>
             <About />
+          </PageTransition>
+        }
+      />
+
+      <Route
+        path="/services"
+        element={
+          <PageTransition>
+            <Services />
+          </PageTransition>
+        }
+      />
+
+      <Route
+        path="/careers"
+        element={
+          <PageTransition>
+            <Careers />
           </PageTransition>
         }
       />

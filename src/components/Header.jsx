@@ -57,7 +57,7 @@ const Header = () => {
   // Logic for Transparent Header (Home/About Page + Top of Page)
   useEffect(() => {
     const handleTransparency = () => {
-      const isTransparentPage = pathname === "/";
+      const isTransparentPage = pathname === "/" || pathname === "/services";
       const isAtTop = window.scrollY < 50;
 
       setIsTransparent(isTransparentPage && isAtTop);

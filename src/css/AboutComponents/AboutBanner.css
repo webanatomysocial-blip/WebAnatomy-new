@@ -17,7 +17,14 @@
   z-index: 100;
   perspective: 1000px;
 }
-
+.scroll-down-img-about-page {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  z-index: 10000000000;
+}
 .image-flip-about-page-container img {
   width: 100%;
   height: 100%;

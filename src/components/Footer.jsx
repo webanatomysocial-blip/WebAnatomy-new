@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import {
@@ -12,9 +13,29 @@ import {
 } from "react-icons/fa6";
 import "../css/footer.css";
 import footerImg from "../assets/images/footer/footer-img.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    // Set initial state hidden to avoid flash before ScrollTrigger starts
+    gsap.set(".footer-bottom-image", { opacity: 0 });
+
+    gsap.to(".footer-bottom-image", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".footer-container",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  }, []);
 
   return (
     <footer className="footer-container">

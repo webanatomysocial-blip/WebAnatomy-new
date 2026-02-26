@@ -4,16 +4,15 @@ import "../../css/header.css";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import img1 from "../../assets/images/about-page/f-left.png";
-// import largeCardBg from "../../assets/images/Our-services/service-3.webp";
-// import graphBg from "../../assets/images/Our-services/service-6.webp";
-// import cubeBg from "../../assets/images/Our-services/service-5.webp";
+
 
 const WhoWeAre = () => {
   return (
     <section className="WhoWeAre">
+      <h2 className="sub-small-head">Who we Are</h2>
       <div className="firstContainer">
         <div className="who-we-are-col-1">
-          <h2 className="sub-small-head">Who we Are</h2>
+          
           <div className="small-image-wrapper">
             {/* <img src={img1} alt="Team collaboration" className="small-image" /> */}
           </div>

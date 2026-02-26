@@ -1,0 +1,46 @@
+.services-impact-section {
+  padding: 100px 60px;
+  background-color: var(--white-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.impact-header {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.impact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.impact-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.impact-stat-item .para-text {
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 991px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

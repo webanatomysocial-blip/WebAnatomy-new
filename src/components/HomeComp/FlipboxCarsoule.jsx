@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../css/HomeComponents/FlipboxCarsoule.css";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
+// import "../../css/index.css";
 
 // Placeholder images - using repeats for 8 items
 import img1 from "../../assets/images/Home-images/flipbox/flip-1.png";
@@ -80,7 +83,7 @@ export default function FlipboxCarsoule() {
     const q = gsap.utils.selector(sectionRef);
     const cards = q(".flip-card-inner");
     // Target only the first 4 cards for the initial animation
-    const initialCards = cards.slice(0, 4);
+    const initialCards = cards.slice(0, 5);
 
     const ctx = gsap.context(() => {
       // Set initial states
@@ -159,6 +162,10 @@ export default function FlipboxCarsoule() {
           <h2 className="head-text" style={{ pointerEvents: "auto" }}>
             Case Studies
           </h2>
+          <a href="/contact" className="read-more-btn">
+            Read More
+            <BsArrowRight className="arrow-icon" />
+          </a>
         </div>
 
         <div className="flipbox-viewport">

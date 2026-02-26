@@ -3,6 +3,10 @@
   padding: 100px 60px 40px 60px;
   background-color: var(--white-color);
   color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .firstContainer {
@@ -23,6 +27,12 @@
   min-height: 350px;
   gap: 20px;
 }
+/* .WhoWeAre .sub-small-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+} */
 
 .small-image-wrapper {
   margin-top: auto;

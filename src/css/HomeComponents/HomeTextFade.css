@@ -32,7 +32,13 @@
 }
 
 .gradient-char {
-  background: linear-gradient(90deg, #fb7239 30%, #b92d67 50%, #f209d6 100%);
+  background: linear-gradient(
+    90deg,
+    #fb73395e 30%,
+    #fb7239 60%,
+    #b92d67 50%,
+    #f209d6 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   background-attachment: fixed;

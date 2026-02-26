@@ -17,7 +17,6 @@ const HomeTextFade = () => {
         start: "top 5%",
         end: "bottom bottom",
         scrub: 0.1,
-        // markers: true,
       },
     });
 

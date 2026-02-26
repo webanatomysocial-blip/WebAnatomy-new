@@ -15,11 +15,13 @@ import { BsArrowRight } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import scrollDown from "../../assets/images/about-page/scroll-down.gif";
 
 const AboutBanner = () => {
   const sectionRef = useRef(null);
   const imageContainerRef = useRef(null);
   const headContainerRef = useRef(null);
+  const scrollDownRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -54,6 +56,14 @@ const AboutBanner = () => {
             ease: "power4.out",
           },
           "-=0.6",
+        )
+        .to(
+          scrollDownRef.current,
+          {
+            opacity: 0,
+            ease: "power4.out",
+          },
+          "+=0.6",
         )
         .to(
           headContainerRef.current,
@@ -102,6 +112,13 @@ const AboutBanner = () => {
           </span>
         </Link>
       </div>
+
+      <img
+        src={scrollDown}
+        alt="scrollDown"
+        className="scroll-down-img-about-page"
+        ref={scrollDownRef}
+      />
     </section>
   );
 };
