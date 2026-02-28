@@ -51,9 +51,6 @@ And our mission is to imagine the possibilities.`;
     <section className="Text-Section" ref={sectionRef}>
       <div className="text-container">
         {lines.map((line, lineIndex) => {
-          // Identify if this line contains the target phrase
-          // For the last line: "And our mission is to imagine the possibilities."
-          // We want to verify index.
           const isTargetLine = line.includes(targetPhrase);
           const targetStartIndex = line.indexOf(targetPhrase);
 
@@ -64,16 +61,13 @@ And our mission is to imagine the possibilities.`;
                   return <span key={charIndex} className="space" />;
                 }
 
-                // Hide the final period visually (keeps layout identical)
                 const isLastPeriod =
                   lineIndex === lines.length - 1 &&
                   charIndex === line.length - 2 &&
                   char === ".";
 
-                // Check if this char is part of the target phrase
                 let isGradientChar = false;
                 if (isTargetLine && charIndex >= targetStartIndex) {
-                  // Ensure it's within the bounds of the phrase length
                   if (charIndex < targetStartIndex + targetPhrase.length) {
                     isGradientChar = true;
                   }
