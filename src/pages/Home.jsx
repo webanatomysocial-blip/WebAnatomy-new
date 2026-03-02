@@ -19,9 +19,9 @@ export default function Home() {
       <HomeBanner />
       <HomeTextFade />
       <FlipboxCarsoule />
-      {/* <AboutOneOnOneSection /> */}
-      <ZoomScroll id="zoomScroll" />
-      {/* <OurStoryHomePage /> */}
+      <AboutOneOnOneSection />
+      {/* <ZoomScroll id="zoomScroll" /> */}
+      <OurStoryHomePage />
       <WhatWeDoData />
       <Testimonials />
       <GoalsOurPriority />
