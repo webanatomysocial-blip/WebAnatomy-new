@@ -1,55 +1,84 @@
-/* src/css/HomeTextFade.css */
-
-.Text-Section {
-  background-color: black;
-  min-height: 200vh;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  padding: 100px;
-}
-
-.text-container {
+.reveal-container {
   width: 100%;
-  text-align: left;
-  /* height: 100vh; */
-  padding: 100px 0px 0px 210px;
-  position: sticky;
-  top: 100px;
-  left: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black-color);
+  color: var(--white-color);
+  padding: 150px 0;
 }
 
-.line {
-  line-height: 1.4;
+.intro-reveal h1 {
+  font-family: "TASAOrbiter", sans-serif;
+  font-size: 1rem;
+  font-weight: 300 !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white-color);
 }
 
-.char-span {
+.reveal-container .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.reveal-container .line span {
+  letter-spacing: 2px;
   display: inline-block;
-  font-family: var(--font-primary);
-  font-size: 40px;
-  font-weight: 300;
-  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: none !important;
 }
 
-.gradient-char {
-  background: linear-gradient(
-    90deg,
-    #fb73395e 30%,
-    #fb7239 60%,
-    #b92d67 50%,
-    #f209d6 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-attachment: fixed;
-  color: #555;
-}
-
-.char-span.visi {
-  visibility: hidden;
-}
-
-.space {
+.img-span {
+  height: 110px;
+  width: 0px;
+  /* background-color: #1a1a1a; */
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
   display: inline-block;
-  width: 0.8em;
+  will-change: width;
+  transition: none !important; /* Overriding global index.css span transition */
+}
+
+.img-span img {
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  left: 0%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center center;
+  will-change: transform;
+  transform: translateZ(0); /* Force 3D */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .reveal-container .line span {
+    font-size: 5rem;
+  }
+  .img-span {
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reveal-container .line span {
+    font-size: 3rem;
+    letter-spacing: -2px;
+  }
+  .img-span {
+    height: 50px;
+  }
+  .reveal-container .line {
+    gap: 10px;
+  }
 }

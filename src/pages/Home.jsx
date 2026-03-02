@@ -11,6 +11,7 @@ import Cta from "../components/Cta";
 import GoalsOurPriority from "../components/HomeComp/Goals-Our-Priority";
 import ClientsImg from "../components/Clients-img";
 import Recognitions from "../components/HomeComp/Recognitions";
+import ZoomScroll from "../components/HomeComp/ZoomScroll";
 
 export default function Home() {
   return (
@@ -18,18 +19,20 @@ export default function Home() {
       <HomeBanner />
       <HomeTextFade />
       <FlipboxCarsoule />
-      <AboutOneOnOneSection />
-      <OurStoryHomePage />
-      <Testimonials />
+      {/* <AboutOneOnOneSection /> */}
+      <ZoomScroll id="zoomScroll" />
+      {/* <OurStoryHomePage /> */}
       <WhatWeDoData />
-      <Cta />
+      <Testimonials />
       <GoalsOurPriority />
       <ClientsImg />
+
       <BlogSection
         backgroundColor="#fff"
-        paddingBottom="40px"
-        paddingTop="140px"
+        paddingBottom="100px"
+        paddingTop="100px"
       />
+      <Cta />
       <Recognitions />
     </>
   );
