@@ -11,7 +11,7 @@
 }
 
 .flipbox-header {
-  padding: 0 60px;
+  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,7 +25,7 @@
 
 /* CAROUSEL VIEWPORT */
 .flipbox-viewport {
-  margin: 0px 60px;
+  margin: 0px 100px;
   /* overflow: hidden; */
 }
 
@@ -119,12 +119,10 @@
 
 .flip-card-inner:hover .dental-title-bg {
   height: 70%;
-  background: linear-gradient(
-    to top,
-    rgb(21 72 88 / 0.85) 70%,
-    rgb(21 72 88 / 0.35) 35%,
-    #fff0 0%
-  );
+  background: linear-gradient(to top,
+      rgb(21 72 88 / 0.85) 70%,
+      rgb(21 72 88 / 0.35) 35%,
+      #fff0 0%);
 }
 
 .dental-title {

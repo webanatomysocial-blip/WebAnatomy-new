@@ -26,7 +26,7 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
         paddingTop: paddingTop,
       }}
     >
-      <div className="blogs-header" style={{ padding: '0 60px', marginBottom: '50px' }}>
+      <div className="blogs-header" style={{ padding: '0 100px', marginBottom: '50px' }}>
         <div className="blogs-header-content">
           <h2 className="head-text blog-title">Blogs</h2>
           <p className="para-text blog-desc">
@@ -42,7 +42,7 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
         </div>
       </div>
 
-      <div className="blog-grid-container"> 
+      <div className="blog-grid-container">
         {recentBlogs.map((blog) => (
           <div className="blog-card-new blog-card-light" key={blog.id}>
             <div className="blog-image-container">

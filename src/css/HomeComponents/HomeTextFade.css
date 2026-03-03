@@ -10,10 +10,10 @@
 }
 
 .text-container {
-  width: 100%;
+  width: 76%;
   text-align: left;
   /* height: 100vh; */
-  padding: 100px 0px 0px 210px;
+  padding: 100px 0px 0px 100px;
   position: sticky;
   top: 100px;
   left: 0;
@@ -26,7 +26,7 @@
 .char-span {
   display: inline-block;
   font-family: var(--font-primary);
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 300;
   color: #555;
 }
