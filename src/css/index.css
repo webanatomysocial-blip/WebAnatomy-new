@@ -9,8 +9,8 @@
   --grey: #e7e7e7;
   --grey-bg: #9b9b9b;
   --progress-active-bg: rgb(116, 116, 116);
-  --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Poppins", sans-serif;
+  --font-primary: "TASAOrbiter", sans-serif;
+  --font-secondary: "TASAOrbiter", sans-serif;
   --transition-slow: 1.2s cubic-bezier(0.65, 0, 0.35, 1);
   --transition-medium: 0.5s ease-in-out;
   --transition-fast: 0.3s ease;
@@ -50,7 +50,7 @@ html::-webkit-scrollbar-thumb:hover {
 @font-face {
   font-family: "TASAOrbiter";
   src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Regular.ttf");
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   line-height: 0px;
@@ -61,7 +61,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "TASAOrbiter";
   src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Medium.ttf")
     format("truetype");
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -71,7 +71,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "TASAOrbiter";
   src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-SemiBold.ttf")
     format("truetype");
-  font-weight: 300;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -81,7 +81,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "TASAOrbiter";
   src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Bold.ttf")
     format("truetype");
-  font-weight: 300;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -91,7 +91,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "TASAOrbiter";
   src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-ExtraBold.ttf")
     format("truetype");
-  font-weight: 300;
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -106,6 +106,7 @@ h6 {
   padding: 0;
   line-height: 1.4em;
   letter-spacing: 0px;
+  font-weight: 400;
 }
 ul,
 li,

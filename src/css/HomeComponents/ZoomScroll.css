@@ -1,0 +1,228 @@
+/* src/css/HomeComponents/ZoomScroll.css */
+
+/* ─────────────────────────────────────────────
+   WRAPPER
+───────────────────────────────────────────── */
+.zs-wrapper {
+  width: 100%;
+  background-color: #000;
+  padding-top: 100px;
+  position: relative;
+}
+.zs-wrapper .head-text-white {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.zs-wrapper .para-text-white {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────
+   PART 2: IMAGE EXPAND (500px → full screen)
+───────────────────────────────────────────── */
+.zs-image-expand-section {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.zs-expand-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+.zs-expand-img {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  will-change: width, height, border-radius;
+  transition: none !important;
+  flex-shrink: 0;
+
+  /* Added for nested tabs */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.zs-img-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  opacity: 0; /* Updated dynamically via JS */
+  pointer-events: none;
+  transition: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   PART 3: STICKY TABS (Now inside the image)
+───────────────────────────────────────────── */
+
+.zs-tabs-sticky {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 60px 80px;
+  box-sizing: border-box;
+  opacity: 0; /* Hidden initially, faded in via JS */
+  z-index: 10;
+}
+
+/* Tab nav — top */
+.zs-tabs-nav {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.zs-tab-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.zs-tab-label {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5); /* Contrast vs Image overlay */
+  transition: color 0.5s ease !important;
+}
+
+.zs-tab-label.active {
+  color: #fff;
+}
+
+.zs-tab-indicator-track {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  min-width: 80px;
+}
+
+.zs-tab-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.zs-tab-indicator.active {
+  transform: scaleX(1);
+}
+
+/* Headings — center */
+.zs-tab-headings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.zs-tab-headings .head-text-white {
+  max-width: 600px;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.zs-tab-headings .head-text-white.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content — bottom right */
+.zs-tab-contents {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.zs-tab-content {
+  max-width: 380px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  color: #fff;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.zs-tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--white-color);
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .zs-tabs-sticky {
+    padding: 40px;
+  }
+  .zs-tab-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .zs-expand-img {
+    width: 90vw;
+    height: 90vw;
+  }
+  .zs-image-expand-section {
+    height: 300vh; /* Mobile might need different height pacing */
+  }
+  .zs-tabs-sticky {
+    padding: 30px 20px;
+    grid-template-rows: auto 1fr auto;
+  }
+  .zs-tabs-nav {
+    gap: 24px;
+  }
+  .zs-tab-content {
+    max-width: 100%;
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+  .zs-tab-contents {
+    justify-content: flex-start;
+  }
+}

@@ -10,6 +10,8 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const { pathname } = useLocation();
 
+  const [isZoomScrollVisible, setIsZoomScrollVisible] = useState(false);
+
   const [isTransparent, setIsTransparent] = useState(() => {
     const isTransPage = pathname === "/" || pathname === "/about";
     const isAtTop = typeof window !== "undefined" ? window.scrollY < 50 : true;
@@ -68,6 +70,31 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleTransparency);
   }, [pathname]);
 
+  // Track if #zoomScroll section is active in the viewport
+  useEffect(() => {
+    const zoomSection = document.getElementById("zoomScroll");
+    if (!zoomSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsZoomScrollVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        // Trigger only when the top of the zoomScroll section reaches the very top of the viewport
+        // and untrigger when it leaves.
+        rootMargin: "-90px 0px -100% 0px",
+        threshold: 0,
+      },
+    );
+
+    observer.observe(zoomSection);
+
+    return () => {
+      observer.unobserve(zoomSection);
+    };
+  }, [pathname]);
+
   useEffect(() => {
     return () => {
       if (closeMenuTimeoutRef.current)
@@ -77,7 +104,8 @@ const Header = () => {
 
   const isAtTop = lastScrollY === 0;
   // Always disable transparency if Services is hovered
-  const shouldShowTransparent = isTransparent && !isServicesHovered;
+  const shouldShowTransparent =
+    (isTransparent || isZoomScrollVisible) && !isServicesHovered;
 
   return (
     <header

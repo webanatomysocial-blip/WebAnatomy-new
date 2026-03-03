@@ -1,6 +1,4 @@
 import React from "react";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "../css/HomeComponents/BlogSection.css";
 import "../css/Blog.css";
@@ -9,10 +7,10 @@ import { blogMetadata } from "../Blogs/metadata";
 const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
   const [mounted, setMounted] = React.useState(false);
 
-  // Sort by date (newest first) and take the first 5
+  // Sort by date (newest first) and take the first 3
   const recentBlogs = [...blogMetadata]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 5);
+    .slice(0, 3);
 
   React.useEffect(() => {
     setMounted(true);
@@ -35,65 +33,30 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
         </p>
       </div>
 
-      <div className="blog-carousel-container" style={{ position: "relative" }}>
-        {mounted && (
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={3.5}
-            centeredSlides={false}
-            loop={false}
-            observer={true}
-            observeParents={true}
-            watchSlidesProgress={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.2,
-                spaceBetween: 20,
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
-              },
-              640: {
-                slidesPerView: 2.2,
-                spaceBetween: 20,
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
-              },
-
-              1280: {
-                slidesPerView: 3.5,
-                spaceBetween: 30,
-                slidesOffsetBefore: 60,
-                slidesOffsetAfter: -200,
-              },
-            }}
-            className="blog-swiper"
-          >
-            {recentBlogs.map((blog, index) => (
-              <SwiperSlide key={blog.id}>
-                <div className="blog-card-new blog-card-light">
-                  <div className="blog-image-container">
-                    <img src={blog.image} alt={blog.title} />
-                    <div className="blog-badge-overlay">BLOG</div>
-                  </div>
-                  <div className="blog-content-new">
-                    <div className="blog-meta-new">
-                      <span>{blog.date}</span>
-                      <span>{blog.readTime}</span>
-                    </div>
-                    <Link
-                      to={`/blogs/${blog.slug}`}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <h3 className="blog-title-below">
-                        {blog.title.slice(0, 50)}
-                      </h3>
-                    </Link>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
+      <div className="blog-grid-container">
+        {recentBlogs.map((blog) => (
+          <div className="blog-card-new blog-card-light" key={blog.id}>
+            <div className="blog-image-container">
+              <img src={blog.image} alt={blog.title} />
+            </div>
+            <div className="blog-content-new blog-content-old">
+              <div className="blog-meta-new">
+                <span className="blog-meta-left">
+                  Blog <span className="dot-separator">·</span> {blog.readTime}
+                </span>
+                <span className="blog-meta-right">{blog.date}</span>
+              </div>
+              <Link
+                to={`/blogs/${blog.slug}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <h3 className="blog-title-old">
+                  {blog.title}
+                </h3>
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

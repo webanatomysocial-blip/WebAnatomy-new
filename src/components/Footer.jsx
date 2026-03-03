@@ -12,7 +12,8 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import "../css/footer.css";
-import footerImg from "../assets/images/footer/footer-img.png";
+// import footerImg from "../assets/images/footer/footer-img.png"; // Replaced by 3D Scene
+import Footer3D from "./Footer3D";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -118,8 +119,7 @@ const Footer = () => {
 
       {/* Bottom Section: Giant Text/Image */}
       <div className="footer-bottom-image">
-        {/* Assumes footer-img.png is in src/assets/images/footer/ */}
-        <img src={footerImg} alt="Footer Bottom" className="footer-img" />
+        <Footer3D />
       </div>
     </footer>
   );
