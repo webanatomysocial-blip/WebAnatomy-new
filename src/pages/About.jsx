@@ -15,7 +15,7 @@ const About = () => {
       <OurImpact />
       <MissionVision />
       <OurProcess />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <Faq />
     </>
   );

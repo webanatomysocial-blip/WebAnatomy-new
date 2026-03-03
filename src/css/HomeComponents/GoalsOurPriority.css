@@ -11,9 +11,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   align-items: stretch;
 }
+
 .mySwiper .swiper-pagination {
   bottom: 22px !important;
 }
@@ -62,13 +63,11 @@
 .gradient-overlay-top {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    #f1f1f1 35%,
-    rgba(241, 241, 241, 0.9) 50%,
-    rgba(241, 241, 241, 0.4) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      #f1f1f1 35%,
+      rgba(241, 241, 241, 0.9) 50%,
+      rgba(241, 241, 241, 0.4) 90%,
+      transparent 100%);
   z-index: 1;
 }
 
@@ -114,6 +113,7 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .goal-card.dark .goal-card-details {
   height: 35%;
   padding: 30px 40px;
@@ -133,9 +133,11 @@
   .goals-cards-container {
     grid-template-columns: 1fr;
   }
+
   .goals-container {
     padding: 60px 20px;
   }
+
   .goal-card {
     height: 500px;
   }

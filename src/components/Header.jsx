@@ -276,16 +276,16 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/solutions" className="nav-link">
                 Solutions
               </Link>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            {/* <li className="nav-item">
               <Link to="/industries" className="nav-link">
                 Industries
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/works" className="nav-link">
                 Works

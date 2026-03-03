@@ -1,14 +1,23 @@
 .cta-section {
   padding: 100px 0;
-  background: url("../assets/images/Cta/globe.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
+
+.cta-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .cta-text {
   display: flex;
   flex-direction: column;

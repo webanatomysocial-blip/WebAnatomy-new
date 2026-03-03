@@ -1,4 +1,6 @@
-import dummyImage from "../Blogs/blogs-images/blog-1.jpg";
+import dummyImage from "../Blogs/blogs-images/Brand-Strategy.webp";
+import dummyImage2 from "../Blogs/blogs-images/blog-2.webp";
+import dummyImage3 from "../Blogs/blogs-images/blog-3.webp";
 
 export const blogMetadata = [
   {
@@ -15,7 +17,7 @@ export const blogMetadata = [
     title: "The Future of Web Design: AI, 3D, and Beyond",
     date: "November 15, 2025",
     readTime: "7 mins reading",
-    image: dummyImage,
+    image: dummyImage2,
     slug: "future-web-design",
   },
   {
@@ -23,7 +25,7 @@ export const blogMetadata = [
     title: "Optimizing for Speed: Why Performance Matters in 2026",
     date: "December 05, 2025",
     readTime: "4 mins reading",
-    image: dummyImage,
+    image: dummyImage3,
     slug: "optimizing-performance",
   },
   {
@@ -39,7 +41,7 @@ export const blogMetadata = [
     title: "UI/UX Trends to Watch Out For in the Coming Year",
     date: "February 20, 2026",
     readTime: "5 mins reading",
-    image: dummyImage,
+    image: dummyImage2,
     slug: "ui-ux-trends",
   },
 ];

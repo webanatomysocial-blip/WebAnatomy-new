@@ -1,121 +1,119 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-import {
-  FaLinkedinIn,
-  FaYoutube,
-  FaInstagram,
-  FaFacebookF,
-  FaGlobe,
-  FaBehance,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF, FaBehance, FaXTwitter } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
 import "../css/footer.css";
-// import footerImg from "../assets/images/footer/footer-img.png"; // Replaced by 3D Scene
+import logo from "../assets/images/main-logo.png";
+import downloadBg from "../assets/images/about-page/f-left.png";
 import Footer3D from "./Footer3D";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Recognition Images
+import img7 from "../assets/images/Recognitions/7.webp";
+import img8 from "../assets/images/Recognitions/8.png";
+import img5 from "../assets/images/Recognitions/5.png";
+import img10 from "../assets/images/Recognitions/10.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
-    // Set initial state hidden to avoid flash before ScrollTrigger starts
-    gsap.set(".footer-bottom-image", { opacity: 0 });
-
+    // Reveal the fixed background only when the footer is in view
     gsap.to(".footer-bottom-image", {
       opacity: 1,
       scrollTrigger: {
         trigger: ".footer-container",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: 1,
-        // markers: true,
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+        toggleActions: "play reverse play reverse",
       },
     });
   }, []);
 
+  const togglePopup = () => setIsPopupOpen(!isPopupOpen);
+
   return (
     <footer className="footer-container">
       <div className="footer-top">
-        {/* Left Side: Navigation Columns */}
+        {/* 1) Left Part: Logo & Download Button */}
+        <div className="footer-left">
+          <Link to="/" className="footer-logo">
+            <img src={logo} alt="WAC Logo" className="white-logo" />
+          </Link>
+          <form className="footer-subscription-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Email Address" required className="sub-small-para-white" />
+            <button type="submit" className="send-btn sub-small-para-white">Send</button>
+          </form>
+        </div>
+
+        {/* 2) Middle Part: Navigation */}
         <div className="footer-nav">
-          {/* Column 1: Company */}
           <div className="footer-column">
-            <h4>Company</h4>
-            <ul>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/industries">Industries</Link>
-              </li>
-              <li>
-                <Link to="/works">Works</Link>
-              </li>
-              <li>
-                <Link to="/careers">Careers</Link>
-              </li>
+            <h4 className="sub-small-head-white">Company</h4>
+            <ul className="sub-para-white">
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/industries">Industries</Link></li>
+              <li><Link to="/works">Works</Link></li>
+              <li><Link to="/careers">Careers</Link></li>
             </ul>
           </div>
-
-          {/* Column 2: Services */}
           <div className="footer-column">
-            <h4>Services</h4>
-            <ul>
-              <li>
-                <Link to="/services/branding">Branding</Link>
-              </li>
-              <li>
-                <Link to="/services/experience">Experience Design</Link>
-              </li>
-              <li>
-                <Link to="/services/technology">Technology</Link>
-              </li>
-              <li>
-                <Link to="/services/marketing">Digital Marketing</Link>
-              </li>
+            <h4 className="sub-small-head-white">Services</h4>
+            <ul className="sub-para-white">
+              <li><Link to="/services/branding">Branding</Link></li>
+              <li><Link to="/services/experience">Experience Design</Link></li>
+              <li><Link to="/services/technology">Technology</Link></li>
+              <li><Link to="/services/marketing">Digital Marketing</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* Right Side: Socials & Contact */}
-        <div className="footer-contact-info">
-          {/* Social Icons */}
+        {/* 3) Right Part: Socials, Form & Recognitions */}
+        <div className="footer-right">
           <div className="social-icons">
-            <a href="#">
-              <FaLinkedinIn />
-            </a>
-            <a href="#">
-              <FaFacebookF />
-            </a>
-            <a href="#">
-              <FaInstagram />
-            </a>
-            <a href="#">
-              <FaBehance />
-            </a>
-            <a href="#">
-              <FaYoutube />
-            </a>
+            <a href="#"><FaLinkedinIn /></a>
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaBehance /></a>
+            <a href="#"><FaYoutube /></a>
           </div>
 
-          {/* Contact Details */}
-          <div className="contact-details">
-            <p>+91 9705030977</p>
-            <p>+91 9705030977</p>
-            <a href="mailto:hello@webanatomy.in" className="contact-email">
-              hello@webanatomy.in
-            </a>
+
+
+          <div className="footer-recognitions">
+            <h4 className="sub-small-head-white">Recognitions</h4>
+            <div className="footer-recognitions-container">
+              <img src={img7} alt="Recognition 7" />
+              <img src={img8} alt="Recognition 8" />
+              <img src={img5} alt="Recognition 5" />
+              <img src={img10} alt="Recognition 10" />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {isPopupOpen && (
+        <div className="modal-overlay" onClick={togglePopup}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={togglePopup}>
+              <IoCloseOutline />
+            </button>
+            <h3 className="head-text-white">Contact Us</h3>
+            <form className="contact-form" onSubmit={(e) => { e.preventDefault(); togglePopup(); }}>
+              <input type="text" placeholder="Your Name" required className="sub-para-text-white" />
+              <input type="email" placeholder="Your Email" required className="sub-para-text-white" />
+              <textarea placeholder="Your Message" required rows="4" className="sub-para-text-white"></textarea>
+              <button type="submit" className="white-bg-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Bottom Section: Giant Text/Image */}
       <div className="footer-bottom-image">

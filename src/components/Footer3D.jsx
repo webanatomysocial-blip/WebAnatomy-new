@@ -33,12 +33,12 @@ const Footer3D = () => {
     const cursor = { x: 0, y: 0 };
     const handleMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
-      cursor.x = ((e.clientX - rect.left) / container.clientWidth - 0.5) * 4;
-      //   cursor.y = -((e.clientY - rect.top) / container.clientHeight - 0.5) * 4;
+      cursor.x = ((e.clientX - rect.left) / container.clientWidth - 0.5) * 20;
+      cursor.y = -((e.clientY - rect.top) / container.clientHeight - 0.5) * 0.7;
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    let torusMesh;
+    let sphereMesh;
     let reqFrame;
 
     // ─── Fonts ─────────────────────────────────────────────────────────
@@ -46,42 +46,74 @@ const Footer3D = () => {
     fontLoader.load(
       "https://raw.githubusercontent.com/danielyl123/person/refs/heads/main/fonts/helvetiker_regular.typeface.json",
       (font) => {
-        const textGeometry = new TextGeometry("Webanatomy", {
-          font,
-          size: 3,
-          depth: 0,
-          curveSegments: 5,
-          bevelEnabled: true,
-          bevelThickness: 0,
-          bevelSize: 0,
-          bevelOffset: 0,
-          bevelSegments: 4,
-        });
-        textGeometry.computeBoundingBox();
-        textGeometry.center();
-
+        const textStr = "WEB ANATOMY";
+        const textGroup = new THREE.Group();
         const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-        textMaterial.wireframe = false;
-        const text = new THREE.Mesh(textGeometry, textMaterial);
-        scene.add(text);
+
+        const fontSize = 3;
+        const letterSpacing = 0.2; // Custom spacing between letters
+        const spaceWidth = 1.5;    // Manual width for space character
+        let xOffset = 0;
+
+        for (let i = 0; i < textStr.length; i++) {
+          const char = textStr[i];
+
+          if (char === " ") {
+            xOffset += spaceWidth + letterSpacing;
+            continue;
+          }
+
+          const charGeometry = new TextGeometry(char, {
+            font,
+            size: fontSize,
+            depth: 0,
+            curveSegments: 5,
+            bevelEnabled: true,
+            bevelThickness: 0,
+            bevelSize: 0,
+            bevelOffset: 0,
+            bevelSegments: 4,
+          });
+
+          const charMesh = new THREE.Mesh(charGeometry, textMaterial);
+          charMesh.position.x = xOffset;
+          textGroup.add(charMesh);
+
+          // Calculate next character's position
+          charGeometry.computeBoundingBox();
+          if (charGeometry.boundingBox) {
+            const charWidth = charGeometry.boundingBox.max.x - charGeometry.boundingBox.min.x;
+            xOffset += charWidth + letterSpacing;
+          } else {
+            xOffset += fontSize * 0.6 + letterSpacing; // Fallback width
+          }
+        }
+
+        // Center the group
+        const box = new THREE.Box3().setFromObject(textGroup);
+        const center = box.getCenter(new THREE.Vector3());
+        textGroup.position.x = -center.x;
+        textGroup.position.y = -center.y;
+
+        scene.add(textGroup);
       },
     );
 
-    // ─── Torus ─────────────────────────────────────────────────────────
-    const torusGeometry = new THREE.TorusGeometry(0.7, 0.4, 100, 60);
-    const torusMaterial = new THREE.MeshPhysicalMaterial();
-    torusMaterial.metalness = 0;
-    torusMaterial.roughness = 0;
-    torusMaterial.iridescence = 1;
-    torusMaterial.iridescenceIOR = 1.5;
-    torusMaterial.iridescenceThicknessRange = [100, 324];
-    torusMaterial.transmission = 1;
-    torusMaterial.ior = 1.2;
-    torusMaterial.thickness = 0.8;
+    // ─── Sphere ─────────────────────────────────────────────────────────
+    const sphereGeometry = new THREE.SphereGeometry(1.2, 64, 64);
+    const sphereMaterial = new THREE.MeshPhysicalMaterial();
+    sphereMaterial.metalness = 0;
+    sphereMaterial.roughness = 0;
+    sphereMaterial.iridescence = 1;
+    sphereMaterial.iridescenceIOR = 1.5;
+    sphereMaterial.iridescenceThicknessRange = [100, 324];
+    sphereMaterial.transmission = 1;
+    sphereMaterial.ior = 1.2;
+    sphereMaterial.thickness = 0.8;
 
-    torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
-    torusMesh.position.z = 1;
-    scene.add(torusMesh);
+    sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphereMesh.position.z = 0.2;
+    scene.add(sphereMesh);
 
     // ─── Lights ─────────────────────────────────────────────────────────
     const ambientLight = new THREE.AmbientLight(0xffffff, 10);
@@ -110,12 +142,12 @@ const Footer3D = () => {
       timer.update();
       const elapsedTime = timer.getElapsed();
 
-      // Smooth torus follow cursor (lerp for ease-in/ease-out feel)
-      if (torusMesh) {
-        torusMesh.position.x += (cursor.x - torusMesh.position.x) * 0.05;
-        torusMesh.position.y += (cursor.y - torusMesh.position.y) * 0.05;
-        torusMesh.rotation.x = elapsedTime * 0.5;
-        torusMesh.rotation.y = elapsedTime * 0.1;
+      // Smooth sphere follow cursor (lerp for ease-in/ease-out feel)
+      if (sphereMesh) {
+        sphereMesh.position.x += (cursor.x - sphereMesh.position.x) * 0.05;
+        sphereMesh.position.y += (cursor.y - sphereMesh.position.y) * 0.05;
+        sphereMesh.rotation.x = elapsedTime * 0.5;
+        sphereMesh.rotation.y = elapsedTime * 0.1;
       }
 
       renderer.render(scene, camera);
@@ -138,8 +170,8 @@ const Footer3D = () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
       renderer.dispose();
-      torusGeometry.dispose();
-      torusMaterial.dispose();
+      sphereGeometry.dispose();
+      sphereMaterial.dispose();
     };
   }, []);
 
