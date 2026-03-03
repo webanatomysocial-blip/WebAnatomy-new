@@ -22,17 +22,19 @@ export default function Home() {
       <AboutOneOnOneSection />
       {/* <ZoomScroll id="zoomScroll" /> */}
       <OurStoryHomePage />
-      <WhatWeDoData />
-      <Testimonials />
-      <GoalsOurPriority />
-      <ClientsImg />
 
+      <Testimonials />
+      <WhatWeDoData />
+      <ClientsImg />
+      <GoalsOurPriority />
+
+      <Cta />
       <BlogSection
         backgroundColor="#fff"
         paddingBottom="100px"
         paddingTop="100px"
       />
-      <Cta />
+
       <Recognitions />
     </>
   );
