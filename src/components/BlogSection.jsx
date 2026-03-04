@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/HomeComponents/BlogSection.css";
 import "../css/Blog.css";
 import { blogMetadata } from "../Blogs/metadata";
+import { BsArrowRight } from "react-icons/bs";
 
 const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
   const [mounted, setMounted] = React.useState(false);
@@ -25,12 +26,20 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
         paddingTop: paddingTop,
       }}
     >
-      <div className="blog-head-container">
-        <h2 className="head-text blog-title">Blogs</h2>
-        <p className="para-text blog-desc">
-          Every innovation that happens here is out of a quest to get better at
-          what we are already doing.
-        </p>
+      <div className="blogs-header" style={{ padding: '0 100px', marginBottom: '50px' }}>
+        <div className="blogs-header-content">
+          <h2 className="head-text blog-title">Blogs</h2>
+          <p className="para-text blog-desc">
+            Every innovation that happens here is out of a quest to get better at
+            what we are already doing.
+          </p>
+        </div>
+        <div className="blogs-header-button">
+          <Link to="/blogs" className="read-more-btn">
+            Read More
+            <BsArrowRight className="arrow-icon" />
+          </Link>
+        </div>
       </div>
 
       <div className="blog-grid-container">

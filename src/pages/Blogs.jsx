@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/blogs.css";
 import "../css/Blog.css";
 import { blogMetadata } from "../Blogs/metadata";
+import { BsArrowRight } from "react-icons/bs";
 
 const Blogs = () => {
   // Sort logic: newest to oldest
@@ -12,13 +13,22 @@ const Blogs = () => {
 
   return (
     <div className="blogs-page-container">
-      <div>
-        <h1 className="head-text">Blogs</h1>
-        <p className="para-text">
-          Every innovation that happens here is out of a quest to get better at{" "}
-          <br />
-          what we are already doing.
-        </p>
+      <div className="blogs-header">
+        <div className="blogs-header-content">
+          <h1 className="head-text">Blogs</h1>
+          <p className="para-text">
+            Every innovation that happens here is out of a quest to get better at{" "}
+            <br />
+            what we are already doing.
+          </p>
+        </div>
+        <div className="blogs-header-button">
+          <a href="/contact" className="read-more-btn">
+            Read More
+            <BsArrowRight className="arrow-icon" />
+          </a>
+        </div>
+
       </div>
       <div className="blogs-grid">
         {sortedBlogs.map((post) => (

@@ -2,11 +2,13 @@
 
 import { BsArrowRight } from "react-icons/bs";
 import "../css/Cta.css";
+import video from "../assets/videos/cta/Cta-02.mp4"
 
 export default function Cta() {
   return (
     <>
       <section className="cta-section">
+        <video src={video} autoPlay loop muted className="cta-video" />
         <div className="cta-container">
           <div className="cta-text">
             <h2 className="head-text-white">

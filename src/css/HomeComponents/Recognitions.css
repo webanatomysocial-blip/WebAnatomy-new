@@ -1,5 +1,5 @@
 .recognitions-section {
-  padding: 100px 60px;
+  padding: 100px 100px;
 }
 
 .partners-section {
@@ -13,7 +13,7 @@
 }
 
 .recognitions-container {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -23,7 +23,8 @@
 }
 
 .recognitions-text-col {
-  flex: 0 0 35%; /* Reduced slightly */
+  flex: 0 0 35%;
+  /* Reduced slightly */
 }
 
 .recognitions-grid-col {
@@ -61,10 +62,12 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .recognitions-text-col {
     width: 100%;
     margin-bottom: 40px;
   }
+
   .recognitions-grid-col {
     width: 100%;
     justify-content: center;

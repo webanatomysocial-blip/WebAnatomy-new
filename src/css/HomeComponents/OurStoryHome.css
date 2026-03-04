@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  padding: 100px 60px 100px 60px;
+  padding: 100px 100px 100px 100px;
   color: white;
   min-height: 100vh;
 }
@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 260px;
+  height: 240px;
   overflow: hidden;
   border: 1px solid black;
 }
@@ -67,12 +67,14 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 10px; /* Space between indicators */
+  gap: 10px;
+  /* Space between indicators */
 }
 
 .indicator-track {
   width: 4px;
-  height: 40px; /* Shorter separate tracks */
+  height: 40px;
+  /* Shorter separate tracks */
   background-color: #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
@@ -94,7 +96,7 @@
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  height: 300px;
+  height: 240px;
 }
 
 .video-section video {
@@ -138,7 +140,8 @@
 .recognitions-carousel {
   background-color: white;
   padding: 30px;
-  border-radius: 5px; /* Optional: giving it a container look like the image */
+  border-radius: 5px;
+  /* Optional: giving it a container look like the image */
   overflow: hidden;
   position: relative;
 }
@@ -154,7 +157,8 @@
 }
 
 .success-stories-card .swiper-slide {
-  display: flex !important; /* Swiper sets display block by default */
+  display: flex !important;
+  /* Swiper sets display block by default */
   align-items: center;
 }
 

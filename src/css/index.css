@@ -38,10 +38,12 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-thumb:hover {
   background: var(--Yellow-color);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: var(--font-primary) !important;
 }
 
 /* fonts start  */
@@ -59,8 +61,7 @@ html::-webkit-scrollbar-thumb:hover {
 /* Medium - 500 */
 @font-face {
   font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Medium.ttf")
-    format("truetype");
+  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -69,8 +70,7 @@ html::-webkit-scrollbar-thumb:hover {
 /* SemiBold - 600 */
 @font-face {
   font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-SemiBold.ttf")
-    format("truetype");
+  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -79,8 +79,7 @@ html::-webkit-scrollbar-thumb:hover {
 /* Bold - 700 */
 @font-face {
   font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Bold.ttf")
-    format("truetype");
+  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -89,8 +88,7 @@ html::-webkit-scrollbar-thumb:hover {
 /* ExtraBold - 800 */
 @font-face {
   font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-ExtraBold.ttf")
-    format("truetype");
+  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -108,6 +106,7 @@ h6 {
   letter-spacing: 0px;
   font-weight: 400;
 }
+
 ul,
 li,
 p,
@@ -125,12 +124,14 @@ button {
   color: var(--black-color);
   font-weight: 300;
 }
+
 .big-head-text-white {
   font-size: 100px;
   font-family: var(--font-primary);
   color: var(--white-color);
   font-weight: 300;
 }
+
 .head-text {
   font-size: 50px;
   font-family: var(--font-primary);
@@ -178,6 +179,7 @@ button {
   color: var(--white-color);
   font-weight: 300;
 }
+
 .sub-para-text {
   font-size: 14px;
   font-family: var(--font-secondary);
@@ -202,6 +204,7 @@ button {
   color: var(--black-color);
   font-weight: 300;
 }
+
 .sub-small-head-white {
   font-size: 16px;
   font-family: var(--font-primary);
@@ -209,6 +212,7 @@ button {
   color: var(--white-color);
   font-weight: 300;
 }
+
 .sub-small-para {
   font-size: 14px;
   font-family: var(--font-secondary);
@@ -216,6 +220,7 @@ button {
   color: var(--black-color);
   font-weight: 300;
 }
+
 .sub-small-para-white {
   font-size: 14px;
   font-family: var(--font-secondary);
@@ -245,7 +250,7 @@ button {
   text-decoration: none;
   font-size: 14px;
   font-weight: 300;
-  border: 1px solid var(--black-color);
+  border: none;
   transition: all 0.3s ease;
   width: fit-content;
   border-radius: 50px;
@@ -256,10 +261,12 @@ button {
   gap: 10px;
   cursor: pointer;
 }
+
 .black-bg-btn:hover {
   background-color: var(--white-color);
   color: var(--black-color);
 }
+
 .icon-btn {
   overflow: hidden;
   display: flex;
@@ -303,7 +310,7 @@ button {
   font-size: 14px;
   font-weight: 300;
   font-family: var(--font-primary);
-  border: 1px solid var(--black-color);
+  border: none;
   transition: all 0.3s ease;
   width: fit-content;
   border-radius: 50px;
@@ -372,7 +379,8 @@ button {
   inset: 0;
   background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
   z-index: -1;
-  border-radius: 50px; /* Match parent */
+  border-radius: 50px;
+  /* Match parent */
   transition: opacity 0.3s ease;
   opacity: 1;
 }
@@ -442,12 +450,10 @@ button {
 
 .read-more-btn:hover::before {
   width: 100%;
-  color: linear-gradient(
-    90deg,
-    #fb7239 0%,
-    #b92d67 50%,
-    #f209d6 100%
-  ) !important;
+  color: linear-gradient(90deg,
+      #fb7239 0%,
+      #b92d67 50%,
+      #f209d6 100%) !important;
 }
 
 .read-more-btn .arrow-icon {
@@ -456,18 +462,17 @@ button {
 
 .read-more-btn:hover .arrow-icon {
   transform: translateX(3px);
-  color: linear-gradient(
-    90deg,
-    #fb7239 0%,
-    #b92d67 50%,
-    #f209d6 100%
-  ) !important;
+  color: linear-gradient(90deg,
+      #fb7239 0%,
+      #b92d67 50%,
+      #f209d6 100%) !important;
 }
 
 /* buttons End */
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0px 0px 250px 0px;

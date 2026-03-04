@@ -1,106 +1,125 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import lady from "../assets/images/Testimonials/lady.png";
+import { Autoplay, Navigation } from "swiper/modules";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import "../css/Testimonials.css";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const testimonials = [
   {
     id: 1,
-    name: "Gaida",
-    role: "Managing partner, Floripa",
-    image: lady,
+    name: "Marcus Chen",
+    role: "CEO, NexaTech Solutions",
     quote:
-      "You can throw barely anything at them, I am sure their creative team will make the best out of it.",
+      "WebAnatomy didn't just build a website; they engineered a digital experience. Their focus on high-performance engineering and sophisticated design transformed our user engagement metrics overnight.",
   },
   {
     id: 2,
-    name: "Ravi Kumar",
-    role: "Founder, Raghav Foundation",
-    image: lady,
+    name: "Sarah Jenkins",
+    role: "Head of Product, Bloom Media",
     quote:
-      "The attention to detail and professional approach exceeded our expectations at every stage.",
+      "The UI/UX expertise the team brought to our project was unmatched. They have an incredible ability to balance complex functionality with elegant, premium aesthetics. Truly a design-led agency.",
   },
   {
     id: 3,
-    name: "Raghu Boddu",
-    role: "Managing Director, ToggleNow",
-    image: lady,
+    name: "Amara Okoro",
+    role: "Director of Brand, Zenith Global",
     quote:
-      "Working with this team has been a transformative experience for our digital presence.",
+      "Working with WebAnatomy on our brand identity design was seamless. They deep-dived into our core values and delivered a visual language that perfectly captures our 'sophisticated' edge.",
   },
 ];
 
 export default function Testimonials() {
+  const swiperRef = useRef(null);
+
   return (
     <main className="hear-from-container">
-      <div className="hear-from-text-con">
-        <h4 className="head-text-white">Hear from our Partners</h4>
-      </div>
+      <div className="testimonials-wrapper">
+        {/* Left Column */}
+        <div className="testimonials-info">
+          {/* <div className="testimonials-badge-wrapper">
+            <span className="testimonials-badge sub-small-para">Testimonials</span>
+          </div> */}
+          <h2 className="testimonials-heading">
+            Client Experiences <br />
+            That Speak for Themselves
+          </h2>
 
-      <div className="hear-from-con-carousel">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={100}
-          slidesPerView={"auto"}
-          centeredSlides={false}
-          loop={true}
-          slidesOffsetBefore={0}
-          breakpoints={{
-            320: {
-              spaceBetween: 40,
-            },
-            768: {
-              spaceBetween: 60,
-            },
-            1024: {
-              spaceBetween: 100,
-            },
-          }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          className="mySwiper"
-        >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="testimonial-card">
-                <div className="testimonial-image-wrapper">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="testimonial-img"
-                    style={{
-                      position: "absolute",
-                      height: "100%",
-                      width: "100%",
-                      inset: "0px",
-                      objectFit: "cover",
-                      color: "transparent",
-                    }}
-                  />
-                </div>
-                <div className="testimonial-content">
-                  <p className="testimonial-text">
-                    <span className="quote-icon">“</span>
-                    {testimonial.quote}
-                  </p>
-                  <div className="testimonial-divider"></div>
-                  <div className="testimonial-author">
-                    <span className="author-name">{testimonial.name}</span>
-                    <span className="author-role">{testimonial.role}</span>
+          <div className="testimonials-left-bottom">
+            <button className="white-bg-btn">Talk to our SMEs<span className="icon-btn">
+              <BsArrowRight className="icon-inside-btn-1" />
+              <BsArrowRight className="icon-inside-btn-2" />
+            </span></button>
+            <div className="ratings-container">
+              <div className="rating-item">
+                <span className="rating-label">Reviewed on <br />Peer Insights</span>
+                <div className="rating-stars">★★★★★</div>
+              </div>
+              <div className="rating-item">
+                <span className="rating-label">Gartner <br />Approved</span>
+                <div className="rating-stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Swiper */}
+        <div className="testimonials-carousel">
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            className="testimonialSwiper"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className="testimonial-card">
+                  <div className="card-top">
+                    <div className="quote-icon">“</div>
+                    <p className="para-text">
+                      {testimonial.quote}
+                    </p>
+                  </div>
+
+                  <div className="testimonial-footer">
+                    <div className="author-info">
+                      <span className="author-name sub-small-head-white">{testimonial.name}</span>
+                      <span className="author-role sub-small-para">{testimonial.role}</span>
+                    </div>
+
+                    <div className="nav-buttons">
+                      <button
+                        className="nav-btn prev-btn"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                        aria-label="Previous testimonial"
+                      >
+                        <BsArrowLeft />
+                      </button>
+                      <button
+                        className="nav-btn next-btn"
+                        onClick={() => swiperRef.current?.slideNext()}
+                        aria-label="Next testimonial"
+                      >
+                        <BsArrowRight />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </main>
   );
