@@ -41,21 +41,6 @@ const images = [
 function Lightbox({ index, onClose, onPrev, onNext }) {
   const src = images[index];
 
-  // Download handler
-  const handleDownload = async () => {
-    try {
-      const res = await fetch(src);
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `webAnatomy-gallery-${index + 1}.webp`;
-      a.click();
-      URL.revokeObjectURL(url);
-    } catch {
-      window.open(src, "_blank");
-    }
-  };
 
   // Share handler
   const handleShare = async () => {
@@ -127,22 +112,7 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
               </svg>
               Share
             </button>
-            <button
-              className="lb-action-btn lb-action-download"
-              onClick={handleDownload}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download
-            </button>
+           
           </div>
         </div>
       </div>

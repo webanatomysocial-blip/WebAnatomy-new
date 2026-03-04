@@ -49,17 +49,26 @@ export default function Testimonials() {
           </h2>
 
           <div className="testimonials-left-bottom">
-            <button className="white-bg-btn">Talk to our SMEs<span className="icon-btn">
-              <BsArrowRight className="icon-inside-btn-1" />
-              <BsArrowRight className="icon-inside-btn-2" />
-            </span></button>
+            <button className="white-bg-btn">
+              Talk to our SMEs
+              <span className="icon-btn">
+                <BsArrowRight className="icon-inside-btn-1" />
+                <BsArrowRight className="icon-inside-btn-2" />
+              </span>
+            </button>
             <div className="ratings-container">
               <div className="rating-item">
-                <span className="rating-label">Reviewed on <br />Peer Insights</span>
+                <span className="rating-label">
+                  Reviewed on <br />
+                  Peer Insights
+                </span>
                 <div className="rating-stars">★★★★★</div>
               </div>
               <div className="rating-item">
-                <span className="rating-label">Gartner <br />Approved</span>
+                <span className="rating-label">
+                  Gartner <br />
+                  Approved
+                </span>
                 <div className="rating-stars">★★★★★</div>
               </div>
             </div>
@@ -87,15 +96,17 @@ export default function Testimonials() {
                 <div className="testimonial-card">
                   <div className="card-top">
                     <div className="quote-icon">“</div>
-                    <p className="para-text">
-                      {testimonial.quote}
-                    </p>
+                    <p className="para-text">{testimonial.quote}</p>
                   </div>
 
                   <div className="testimonial-footer">
                     <div className="author-info">
-                      <span className="author-name sub-small-head-white">{testimonial.name}</span>
-                      <span className="author-role sub-small-para">{testimonial.role}</span>
+                      <span className="author-name sub-small-head">
+                        {testimonial.name}
+                      </span>
+                      <span className="author-role sub-small-para">
+                        {testimonial.role}
+                      </span>
                     </div>
 
                     <div className="nav-buttons">

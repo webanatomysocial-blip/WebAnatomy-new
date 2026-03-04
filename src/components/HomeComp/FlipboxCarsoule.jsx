@@ -41,35 +41,6 @@ const CAROUSEL_DATA = [
     title: "Building vision",
     desc: "Mudra Yoga Studio UAE",
   },
-  {
-    id: 5,
-    img: img1,
-    backimg: img1,
-    title: "Branding eco root",
-    desc: "Crafting a sustainable identity",
-  },
-  {
-    id: 6,
-    img: img2,
-    backimg: img2,
-
-    title: "Building vision",
-    desc: "Mudra Yoga Studio UAE",
-  },
-  {
-    id: 7,
-    img: img3,
-    backimg: img3,
-    title: "Redefining user exp",
-    desc: "Extrika's political insights",
-  },
-  {
-    id: 8,
-    img: img4,
-    backimg: img4,
-    title: "Building vision",
-    desc: "Mudra Yoga Studio UAE",
-  },
 ];
 
 export default function FlipboxCarsoule() {
@@ -93,9 +64,9 @@ export default function FlipboxCarsoule() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=300%",
+          end: "+=800px",
           pin: true,
-          scrub: 0.5,
+          scrub: 1,
           snap: {
             snapTo: "labels",
             duration: { min: 0.1, max: 0.3 },
@@ -118,38 +89,33 @@ export default function FlipboxCarsoule() {
 
       tl.addLabel("flipped");
 
-      // 2. Slide Carousel Step-by-Step
-      // Slide 1: Show Item 5
-      tl.to(trackRef.current, {
-        xPercent: -25,
-        ease: "none",
-        duration: 1,
-      });
-      tl.addLabel("slide1");
+      // tl.to(trackRef.current, {
+      //   xPercent: -25,
+      //   ease: "none",
+      //   duration: 1,
+      // });
+      // tl.addLabel("slide1");
 
-      // Slide 2: Show Item 6
-      tl.to(trackRef.current, {
-        xPercent: -50,
-        ease: "none",
-        duration: 1,
-      });
-      tl.addLabel("slide2");
+      // tl.to(trackRef.current, {
+      //   xPercent: -50,
+      //   ease: "none",
+      //   duration: 1,
+      // });
+      // tl.addLabel("slide2");
 
-      // Slide 3: Show Item 7
-      tl.to(trackRef.current, {
-        xPercent: -75,
-        ease: "none",
-        duration: 1,
-      });
-      tl.addLabel("slide3");
+      // tl.to(trackRef.current, {
+      //   xPercent: -75,
+      //   ease: "none",
+      //   duration: 1,
+      // });
+      // tl.addLabel("slide3");
 
-      // Slide 4: Show Item 8 (End)
-      tl.to(trackRef.current, {
-        xPercent: -100,
-        ease: "none",
-        duration: 1,
-      });
-      tl.addLabel("end");
+      // tl.to(trackRef.current, {
+      //   xPercent: -100,
+      //   ease: "none",
+      //   duration: 1,
+      // });
+      // tl.addLabel("end");
     }, sectionRef);
 
     return () => ctx.revert();

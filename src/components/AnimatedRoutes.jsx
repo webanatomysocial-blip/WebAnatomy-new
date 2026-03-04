@@ -9,6 +9,7 @@ import Blogs from "../pages/Blogs";
 import DynamicBlog from "../components/DynamicBlog";
 import { Helmet } from "react-helmet-async";
 import Careers from "../pages/Careers";
+import Contact from "../pages/Contact";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -46,6 +47,15 @@ function AnimatedRoutes() {
         element={
           <PageTransition>
             <Careers />
+          </PageTransition>
+        }
+      />
+
+      <Route
+        path="/contact"
+        element={
+          <PageTransition>
+            <Contact />
           </PageTransition>
         }
       />
