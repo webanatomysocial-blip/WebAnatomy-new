@@ -10,6 +10,8 @@ import DynamicBlog from "../components/DynamicBlog";
 import { Helmet } from "react-helmet-async";
 import Careers from "../pages/Careers";
 import Contact from "../pages/Contact";
+import Works from "../pages/Works";
+import DynamicWork from "../components/DynamicWork";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -62,11 +64,16 @@ function AnimatedRoutes() {
 
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/blogs/:blogId" element={<DynamicBlog />} />
+      <Route path="/works" element={<Works />} />
+      <Route path="/works/:workId" element={<DynamicWork />} />
     </Routes>
   );
 
-  // Disable page transition animation for dynamic blog posts
-  if (location.pathname.startsWith("/blogs/")) {
+  // Disable page transition animation for dynamic blog/work posts
+  if (
+    location.pathname.startsWith("/blogs/") ||
+    location.pathname.startsWith("/works/")
+  ) {
     return appRoutes;
   }
 

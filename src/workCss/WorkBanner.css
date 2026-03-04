@@ -1,0 +1,25 @@
+.work-banner {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.work-contents-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

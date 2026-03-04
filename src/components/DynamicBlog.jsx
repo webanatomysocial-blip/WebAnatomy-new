@@ -21,17 +21,16 @@ export default function DynamicBlog() {
   const moduleKey = useMemo(() => {
     // If metadata found, look for its ID in filenames
     if (metadata) {
-      // E.g. ../blogs/AmbitionPost.jsx
+      const targetId = String(metadata.id).toLowerCase();
       const key = Object.keys(blogModules).find((k) =>
-        k.includes(`/${metadata.id}.jsx`),
+        k.toLowerCase().includes(`/${targetId}.jsx`),
       );
-      return key;
+      if (key) return key;
     }
     // Fallback: try to match the URL param directly to filename
-    // E.g. /blogs/AmbitionPost -> matches ../blogs/AmbitionPost.jsx
     const directKey = Object.keys(blogModules).find((k) => {
-      const fname = k.split("/").pop().replace(".jsx", "");
-      return fname === blogId;
+      const fname = k.split("/").pop().replace(".jsx", "").toLowerCase();
+      return fname === String(blogId).toLowerCase();
     });
     return directKey;
   }, [metadata, blogId]);
