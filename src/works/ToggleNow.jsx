@@ -3,6 +3,15 @@ import ServicesSecondSec from "../workComponents/ServicesSecondSec";
 import WorkBanner from "../workComponents/WorkBanner";
 import bannerimage from "../WorkImages/piedpipper/banner-image.jpeg";
 import ImageExpand from "../workComponents/imageExpand";
+import Context from "../workComponents/Context";
+import TwoPeople from "../workComponents/togglenowComponents/TwoPeople";
+import JustHeading from "../workComponents/JustHeading";
+import TnowGalleryScroll from "../workComponents/togglenowComponents/TnowGalleryScroll";
+import img1 from "../WorkImages/Tnow/TnowGalleryScrollImages/m7_564ae83100.webp";
+import TnowStickyImages from "../workComponents/togglenowComponents/TnowStickyImages";
+import BothImages from "../workComponents/togglenowComponents/BothImages";
+import LeftReversePhone from "../workComponents/togglenowComponents/LeftReversePhone";
+import RotatePhonesGrid from "../workComponents/togglenowComponents/RotatePhonesGrid";
 
 export default function ToggleNow() {
   const services = [
@@ -16,12 +25,15 @@ export default function ToggleNow() {
     { label: "Focus", value: "Enterprise Scale" },
   ];
 
+  const galleryImages = [img1, img1, img1, img1, img1, img1, img1, img1];
+
   return (
     <div>
       <WorkBanner
-        title="ToggleNow"
-        category="SaaS / Automation"
+        title="ToggleNow - Transforming Project Management"
         src={bannerimage}
+        title2="ToggleNow"
+        category2="SaaS / Automation"
       />
       <ServicesSecondSec
         services={services}
@@ -31,6 +43,37 @@ export default function ToggleNow() {
         liveLink="https://togglenow.com"
       />
       <ImageExpand src={bannerimage} alt="Expandable Image" />
+      <Context
+        subheading="Context"
+        tittle="ToggleNow"
+        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+      />
+
+      <TwoPeople />
+      <JustHeading
+        tittle={
+          ' "The probability that a student will join a university after browsing the college website is high" '
+        }
+      />
+      <TnowGalleryScroll images={galleryImages} />
+      <Context
+        subheading="Context"
+        tittle="ToggleNow"
+        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        paddingBottom="0px"
+      />
+      <TnowStickyImages />
+      <Context
+        subheading="Context"
+        tittle="ToggleNow"
+        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+      />
+      <BothImages />
+      <LeftReversePhone />
+      <RotatePhonesGrid />
     </div>
   );
 }

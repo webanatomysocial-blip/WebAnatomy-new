@@ -3,6 +3,10 @@ import ServicesSecondSec from "../workComponents/ServicesSecondSec";
 import WorkBanner from "../workComponents/WorkBanner";
 import bannerimage from "../WorkImages/piedpipper/banner-image.jpeg";
 import ImageExpand from "../workComponents/imageExpand";
+import Context from "../workComponents/Context";
+import PhoneScreens from "../workComponents/pipeComponents/PhoneScreens";
+import UpDownImages from "../workComponents/pipeComponents/UpDownImages";
+import "../workCss/pipeCss/UpDownImages.css";
 
 export default function PiedPippers() {
   const services = [
@@ -23,9 +27,10 @@ export default function PiedPippers() {
   return (
     <div>
       <WorkBanner
-        title="Pied Pippers"
-        category="Food / Retail"
+        title="Transforming IKEA’s Food E-commerce Experience"
         src={bannerimage}
+        title2="Pied Pippers"
+        category2="Food / Retail"
       />
       <ServicesSecondSec
         services={services}
@@ -35,6 +40,14 @@ export default function PiedPippers() {
         liveLink="https://example.com"
       />
       <ImageExpand src={bannerimage} alt="Expandable Image" />
+      <Context
+        subheading="Context"
+        tittle="Pied Pippers"
+        description="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+        description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+      />
+      <PhoneScreens />
+      <UpDownImages />
     </div>
   );
 }

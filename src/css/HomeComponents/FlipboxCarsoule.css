@@ -22,7 +22,6 @@
   pointer-events: none;
 }
 
-
 /* CAROUSEL VIEWPORT */
 .flipbox-viewport {
   margin: 0px 100px;
@@ -82,6 +81,8 @@
   color: white;
   transform: rotateY(180deg);
   position: relative;
+  z-index: 10000;
+  pointer-events: all;
 }
 
 .card-bg-img {
@@ -119,10 +120,12 @@
 
 .flip-card-inner:hover .dental-title-bg {
   height: 70%;
-  background: linear-gradient(to top,
-      rgb(21 72 88 / 0.85) 70%,
-      rgb(21 72 88 / 0.35) 35%,
-      #fff0 0%);
+  background: linear-gradient(
+    to top,
+    rgb(21 72 88 / 0.85) 70%,
+    rgb(21 72 88 / 0.35) 35%,
+    #fff0 0%
+  );
 }
 
 .dental-title {

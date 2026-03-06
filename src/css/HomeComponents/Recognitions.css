@@ -27,26 +27,54 @@
   /* Reduced slightly */
 }
 
-.recognitions-grid-col {
+.recognitions-marquee-col {
   flex: 0 0 60%;
-  display: grid;
+  overflow: hidden;
+  position: relative;
+  /* Optional fade edges for smooth entrance/exit */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.recognitions-marquee-track {
+  display: flex;
+  width: max-content;
   gap: 40px;
+  animation: scroll-marquee 15s linear infinite;
 }
 
-.partners-section .recognitions-grid-col {
-  grid-template-columns: repeat(3, 1fr);
+.recognitions-marquee-track:hover {
+  animation-play-state: paused;
 }
 
-.awards-section .recognitions-grid-col {
-  grid-template-columns: repeat(4, 1fr);
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 20px));
+  }
 }
 
 .recognition-item {
-  width: 100%;
+  width: 180px; /* Fixed width needed for marquee math */
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .recognition-img {
@@ -68,9 +96,8 @@
     margin-bottom: 40px;
   }
 
-  .recognitions-grid-col {
+  .recognitions-marquee-col {
     width: 100%;
-    justify-content: center;
   }
 }
 

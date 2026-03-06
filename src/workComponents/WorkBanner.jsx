@@ -1,6 +1,12 @@
 import React from "react";
 import "../workCss/WorkBanner.css";
-export default function WorkBanner({ src, title, category }) {
+export default function WorkBanner({
+  src,
+  title,
+  category,
+  title2,
+  category2,
+}) {
   return (
     <>
       <div
@@ -10,9 +16,14 @@ export default function WorkBanner({ src, title, category }) {
         }}
       >
         <div className="work-contents">
-          <h1 className="head-text-white">{title || ""}</h1>
           <div className="work-contents-bottom">
-            <p className="head-text-white">{category || ""}</p>
+            <h1 className="head-text-white">{title || ""}</h1>
+            {/* <p className="head-text-white">{category || ""}</p> */}
+          </div>
+
+          <div className="work-banner-bottom">
+            <p className="sub-head-text-white">{title2 || ""}</p>
+            <p className="sub-para-text-white">{category2 || ""}</p>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function ImageExpand({ src, alt = "Expandable Image" }) {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          end: "bottom center", 
+          end: "center center",
           scrub: 0.4,
         },
       });

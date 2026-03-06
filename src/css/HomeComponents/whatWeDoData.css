@@ -18,19 +18,21 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
-  /* border: 1px solid var(--grey-bg); */
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  height: 280px; /* Constant height */
 }
 
 .what-we-do-image {
   width: 100%;
-  aspect-ratio: 30 / 9;
+  height: 150px; /* Fixed image height */
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .what-we-do-image img {
@@ -39,7 +41,7 @@
   height: 100%;
   transition: all ease 0.5s;
 }
-.what-we-do-image img:hover {
+.what-we-do-box:hover .what-we-do-image img {
   transform: scale(1.1);
 }
 
@@ -47,7 +49,12 @@
   padding: 30px;
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: white;
+  z-index: 1;
 }
 
 .what-we-do-details h3 {
@@ -56,6 +63,25 @@
   color: #111111;
   font-weight: 300;
   margin: 0;
+}
+
+.sub-para-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(20px);
+}
+
+.what-we-do-box:hover .what-we-do-details {
+  transform: translateY(-80px); /* Pull up to reveal description */
+}
+
+.what-we-do-box:hover .sub-para-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {

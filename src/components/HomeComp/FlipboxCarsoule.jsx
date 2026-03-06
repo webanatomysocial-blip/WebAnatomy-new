@@ -5,6 +5,7 @@ import "../../css/HomeComponents/FlipboxCarsoule.css";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 // import "../../css/index.css";
+import { worksMetadata } from "../../works/metadata";
 
 // Placeholder images - using repeats for 8 items
 import img1 from "../../assets/images/Home-images/flipbox/flip-1.png";
@@ -159,25 +160,46 @@ export default function FlipboxCarsoule() {
                       />
                     </div>
 
-                    {/* Back Face: Content & Image */}
                     <div className="flip-card-back">
-                      <img
-                        src={item.backimg}
-                        alt={item.title}
-                        className="card-bg-img"
+                      <Link
+                        to={`/works/${worksMetadata[index % worksMetadata.length]?.slug}`}
+                        key={worksMetadata[index % worksMetadata.length]?.id}
                         style={{
+                          display: "block",
+                          width: "100%",
+                          height: "100%",
                           position: "absolute",
                           top: 0,
                           left: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
+                          zIndex: 20,
                         }}
-                      />
-                      <div className="card-content-overlay">
-                        <h3 className="sub-head-text-white">{item.title}</h3>
-                        <p className="para-text-white">{item.desc}</p>
-                      </div>
+                      >
+                        <img
+                          src={
+                            worksMetadata[index % worksMetadata.length]
+                              ?.image || item.backimg
+                          }
+                          alt={
+                            worksMetadata[index % worksMetadata.length]
+                              ?.title || item.title
+                          }
+                          className="card-bg-img"
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                        <div className="card-content-overlay">
+                          <h3 className="sub-head-text-white">
+                            {worksMetadata[index % worksMetadata.length]
+                              ?.title || item.title}
+                          </h3>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>

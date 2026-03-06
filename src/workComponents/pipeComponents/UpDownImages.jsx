@@ -1,0 +1,78 @@
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import "../../workCss/pipeCss/UpDownImages.css";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const UpDownImages = () => {
+  const containerRef = useRef(null);
+  useGSAP(
+    () => {
+      // gsap.to(".UpDownImages-stick-img", { // Target the img directly
+      gsap.to(".UpDownImages-stick-img", {
+        width: "100%",
+        scrollTrigger: {
+          trigger: ".UpDownImages-stick-img",
+          start: "top top",
+          end: "+=600",
+          scrub: 0.2,
+          markers: false,
+        },
+      });
+      gsap.to(".UpDownImages-inner-img1", {
+        y: -200,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".UpDownImages-stick-container",
+          start: "center top",
+          end: "+=400",
+          scrub: 0.2,
+          markers: false,
+        },
+      });
+
+      gsap.to(".UpDownImages-inner-img2", {
+        y: 200,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".UpDownImages-stick-container",
+          start: "center top",
+          end: "+=400",
+          scrub: 0.2,
+          markers: false,
+        },
+      });
+    },
+    { scope: containerRef },
+  );
+
+  return (
+    <div className="UpDownImages-whole-container" ref={containerRef}>
+      <div className="UpDownImages-stick-img">
+        <img
+          src="https://wa.ctsi.in/wp-content/uploads/2025/04/image-1-scaled.png"
+          alt=""
+        />
+      </div>
+
+      <div className="UpDownImages-stick-container">
+        <div className="UpDownImages-inner-img1">
+          <img
+            src="https://wa.ctsi.in/wp-content/uploads/2025/05/web-Image-02.png"
+            alt=""
+          />
+        </div>
+        <div className="UpDownImages-inner-img2">
+          <img
+            src="https://wa.ctsi.in/wp-content/uploads/2025/05/web-Image-01.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UpDownImages;

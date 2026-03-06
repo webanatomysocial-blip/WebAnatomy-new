@@ -3,7 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 import "../../css/ServicesComponents/ServicesLeftRight.css";
 
 // Importing videos - utilizing placeholders for the others for now
-import expirenceVd from "../../assets/videos/services-page/expirence_10_1d7ae97828.mp4";
+import expirenceVd from "../../assets/videos/services-page/service-1.mp4";
+import brandingVd from "../../assets/videos/services-page/service-2.mp4";
 
 const SERVICES_DATA = [
   {
@@ -26,7 +27,7 @@ const SERVICES_DATA = [
   {
     id: 2,
     title: "Branding",
-    video: expirenceVd,
+    video: brandingVd,
     stickySide: "left",
     services: [
       "Brand Consulting",

@@ -35,14 +35,15 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  width: 335px;
 }
 
 .card-image-wrapper {
   position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 335px;
+  height: 455px;
   overflow: hidden;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 .card-image-wrapper img {
