@@ -5,7 +5,6 @@
   justify-content: start;
   flex-direction: column;
   height: 400vh;
-  padding-top: 100px;
   background-color: var(--white-color);
 }
 

@@ -151,7 +151,7 @@ const Header = () => {
                       <div className="mega-grid-column">
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlinePaintBrush />
+                            {/* <HiOutlinePaintBrush /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
@@ -165,7 +165,7 @@ const Header = () => {
                         </Link>
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlineSparkles />
+                            {/* <HiOutlineSparkles /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">Branding</h4>
@@ -176,7 +176,7 @@ const Header = () => {
                         </Link>
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlineCpuChip />
+                            {/* <HiOutlineCpuChip /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">Technology</h4>
@@ -192,7 +192,7 @@ const Header = () => {
                       <div className="mega-grid-column">
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlineMegaphone />
+                            {/* <HiOutlineMegaphone /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
@@ -205,7 +205,7 @@ const Header = () => {
                         </Link>
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlineLightBulb />
+                            {/* <HiOutlineLightBulb /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
@@ -219,7 +219,7 @@ const Header = () => {
                         </Link>
                         <Link to="/services" className="mega-item">
                           <div className="mega-item-icon">
-                            <HiOutlineRocketLaunch />
+                            {/* <HiOutlineRocketLaunch /> */}
                           </div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">

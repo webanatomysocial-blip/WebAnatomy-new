@@ -2,11 +2,12 @@ import React from "react";
 import ServicesSecondSec from "../workComponents/ServicesSecondSec";
 import WorkBanner from "../workComponents/WorkBanner";
 import bannerimage from "../WorkImages/piedpipper/banner-image.jpeg";
-import ImageExpand from "../workComponents/imageExpand";
+import VideoExpand from "../workComponents/VideoExpand";
 import Context from "../workComponents/Context";
 import PhoneScreens from "../workComponents/pipeComponents/PhoneScreens";
 import UpDownImages from "../workComponents/pipeComponents/UpDownImages";
 import "../workCss/pipeCss/UpDownImages.css";
+import video from "../WorkImages/piedpipper/enlarg.mp4";
 
 export default function PiedPippers() {
   const services = [
@@ -39,7 +40,7 @@ export default function PiedPippers() {
         stats={stats}
         liveLink="https://example.com"
       />
-      <ImageExpand src={bannerimage} alt="Expandable Image" />
+      <VideoExpand src={video} alt="Expandable Image" />
       <Context
         subheading="Context"
         tittle="Pied Pippers"
@@ -47,6 +48,12 @@ export default function PiedPippers() {
         description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
       />
       <PhoneScreens />
+      <Context
+        subheading="Context"
+        tittle="Pied Pippers"
+        description="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+        description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+      />
       <UpDownImages />
     </div>
   );

@@ -10,12 +10,12 @@ export const worksMetadata = [
     slug: "pied-piper",
   },
   {
-    id: "ToggleNow",
-    title: "ToggleNow sap ",
+    id: "threatsenseai",
+    title: "ThreatSenseAI",
     category: "SaaS",
-    description: "ToggleNow is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
+    description: "ThreatSenseAI is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
     image: case1,
-    slug: "toggle-now",
+    slug: "threatsenseai",
   },
   {
     id: 3,

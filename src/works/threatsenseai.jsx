@@ -13,7 +13,7 @@ import BothImages from "../workComponents/togglenowComponents/BothImages";
 import LeftReversePhone from "../workComponents/togglenowComponents/LeftReversePhone";
 import RotatePhonesGrid from "../workComponents/togglenowComponents/RotatePhonesGrid";
 
-export default function ToggleNow() {
+export default function ThreatSenseAI() {
   const services = [
     "SaaS Development",
     "Business Automation",
@@ -30,24 +30,24 @@ export default function ToggleNow() {
   return (
     <div>
       <WorkBanner
-        title="ToggleNow - Transforming Project Management"
+        title="ThreatSenseAI - Transforming Project Management"
         src={bannerimage}
-        title2="ToggleNow"
+        title2="ThreatSenseAI"
         category2="SaaS / Automation"
       />
       <ServicesSecondSec
         services={services}
         title="Streamlining Project Management with a Custom Enterprise SaaS Solution"
-        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
         stats={stats}
-        liveLink="https://togglenow.com"
+        liveLink="https://threatsenseai.com"
       />
       <ImageExpand src={bannerimage} alt="Expandable Image" />
       <Context
         subheading="Context"
-        tittle="ToggleNow"
-        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
-        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        tittle="ThreatSenseAI"
+        description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
 
       <TwoPeople />
@@ -59,17 +59,17 @@ export default function ToggleNow() {
       <TnowGalleryScroll images={galleryImages} />
       <Context
         subheading="Context"
-        tittle="ToggleNow"
-        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
-        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        tittle="ThreatSenseAI"
+        description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
         paddingBottom="0px"
       />
       <TnowStickyImages />
       <Context
         subheading="Context"
-        tittle="ToggleNow"
-        description="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
-        description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        tittle="ThreatSenseAI"
+        description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
       <BothImages />
       <LeftReversePhone />

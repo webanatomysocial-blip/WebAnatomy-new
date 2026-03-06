@@ -29,7 +29,7 @@ const UpDownImages = () => {
           start: "center top",
           end: "+=400",
           scrub: 0.2,
-          markers: false,
+          markers: true,
         },
       });
 

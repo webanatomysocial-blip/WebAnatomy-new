@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "../workCss/VideoExpand.css";
 
-
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +16,7 @@ export default function VideoExpand({ src, poster }) {
       if (!videoRef.current || !containerRef.current) return;
 
       gsap.to(videoRef.current, {
-        width: "100%",
+        width: "100vw",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
