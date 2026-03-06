@@ -3,7 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "../../workCss/pipeCss/UpDownImages.css";
-
+import img1 from "../../WorkImages/piedpipper/last.jpg";
+// import img2 from "../../WorkImages/pipe/2.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const UpDownImages = () => {
@@ -29,7 +30,7 @@ const UpDownImages = () => {
           start: "center top",
           end: "+=400",
           scrub: 0.2,
-          markers: true,
+          markers: false,
         },
       });
 
@@ -51,10 +52,7 @@ const UpDownImages = () => {
   return (
     <div className="UpDownImages-whole-container" ref={containerRef}>
       <div className="UpDownImages-stick-img">
-        <img
-          src="https://wa.ctsi.in/wp-content/uploads/2025/04/image-1-scaled.png"
-          alt=""
-        />
+        <img src={img1} alt="" />
       </div>
 
       <div className="UpDownImages-stick-container">

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF, FaBehance, FaXTwitter } from "react-icons/fa6";
-import { IoCloseOutline } from "react-icons/io5";
+import {
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+  FaFacebookF,
+  FaBehance,
+  FaXTwitter,
+} from "react-icons/fa6";
 import "../css/footer.css";
 import logo from "../assets/images/main-logo.png";
 import downloadBg from "../assets/images/about-page/f-left.png";
@@ -44,47 +50,20 @@ const Footer = () => {
           <Link to="/" className="footer-logo">
             <img src={logo} alt="WAC Logo" className="white-logo" />
           </Link>
-          <form className="footer-subscription-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Email Address" required className="sub-small-para-white" />
-            <button type="submit" className="send-btn sub-small-para-white">Send</button>
+          <form
+            className="footer-subscription-form"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="Email Address"
+              required
+              className="sub-small-para-white"
+            />
+            <button type="submit" className="send-btn sub-small-para-white">
+              Send
+            </button>
           </form>
-        </div>
-
-        {/* 2) Middle Part: Navigation */}
-        <div className="footer-nav">
-          <div className="footer-column">
-            <h4 className="sub-small-head-white">Company</h4>
-            <ul className="sub-para-white">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/industries">Industries</Link></li>
-              <li><Link to="/works">Works</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <h4 className="sub-small-head-white">Services</h4>
-            <ul className="sub-para-white">
-              <li><Link to="/services/branding">Branding</Link></li>
-              <li><Link to="/services/experience">Experience Design</Link></li>
-              <li><Link to="/services/technology">Technology</Link></li>
-              <li><Link to="/services/marketing">Digital Marketing</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* 3) Right Part: Socials, Form & Recognitions */}
-        <div className="footer-right">
-          <div className="social-icons">
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaBehance /></a>
-            <a href="#"><FaYoutube /></a>
-          </div>
-
-
-
           <div className="footer-recognitions">
             <h4 className="sub-small-head-white">Recognitions</h4>
             <div className="footer-recognitions-container">
@@ -95,25 +74,91 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Popup Modal */}
-      {isPopupOpen && (
-        <div className="modal-overlay" onClick={togglePopup}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={togglePopup}>
-              <IoCloseOutline />
-            </button>
-            <h3 className="head-text-white">Contact Us</h3>
-            <form className="contact-form" onSubmit={(e) => { e.preventDefault(); togglePopup(); }}>
-              <input type="text" placeholder="Your Name" required className="sub-para-text-white" />
-              <input type="email" placeholder="Your Email" required className="sub-para-text-white" />
-              <textarea placeholder="Your Message" required rows="4" className="sub-para-text-white"></textarea>
-              <button type="submit" className="white-bg-btn">Submit</button>
-            </form>
+        {/* 2) Middle Part: Navigation */}
+        <div className="footer-nav">
+          <div className="footer-column">
+            <h4 className="sub-small-head-white">Company</h4>
+            <ul className="sub-para-white">
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/industries">Industries</Link>
+              </li>
+              <li>
+                <Link to="/works">Works</Link>
+              </li>
+              <li>
+                <Link to="/careers">Careers</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4 className="sub-small-head-white">Services</h4>
+            <ul className="sub-para-white">
+              <li>
+                <Link to="/services/branding">Branding</Link>
+              </li>
+              <li>
+                <Link to="/services/experience">Experience Design</Link>
+              </li>
+              <li>
+                <Link to="/services/technology">Technology</Link>
+              </li>
+              <li>
+                <Link to="/services/marketing">Digital Marketing</Link>
+              </li>
+            </ul>
           </div>
         </div>
-      )}
+
+        {/* 3) Right Part: Socials, Form & Recognitions */}
+        <div className="footer-right">
+          <div className="social-icons">
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
+            <a href="#">
+              <FaFacebookF />
+            </a>
+            <a href="#">
+              <FaInstagram />
+            </a>
+            <a href="#">
+              <FaBehance />
+            </a>
+            <a href="#">
+              <FaYoutube />
+            </a>
+          </div>
+
+          <div className="footer-locations">
+            <h4 className="sub-small-head-white">Locations</h4>
+            <div className="location-item">
+              <img
+                src="https://flagcdn.com/w40/in.png"
+                alt="India Flag"
+                className="flag-icon"
+              />
+              <p className="sub-para-text-white">Madhapur, Hyderabad, India.</p>
+            </div>
+            <div className="location-item">
+              <img
+                src="https://flagcdn.com/w40/gb.png"
+                alt="UK Flag"
+                className="flag-icon"
+              />
+              <p className="sub-para-text-white">
+                9 Thornton Road, E11 4DH, London, UK.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Bottom Section: Giant Text/Image */}
       <div className="footer-bottom-image">

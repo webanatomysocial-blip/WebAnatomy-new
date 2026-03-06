@@ -4,15 +4,15 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/main-logo.png";
 import { BsArrowRight } from "react-icons/bs";
-import {
-  HiOutlinePaintBrush,
-  HiOutlineSparkles,
-  HiOutlineCpuChip,
-  HiOutlineMegaphone,
-  HiOutlineLightBulb,
-  HiOutlineRocketLaunch,
-  HiOutlineArrowRight,
-} from "react-icons/hi2";
+// import {
+//   HiOutlinePaintBrush,
+//   HiOutlineSparkles,
+//   HiOutlineCpuChip,
+//   HiOutlineMegaphone,
+//   HiOutlineLightBulb,
+//   HiOutlineRocketLaunch,
+//   HiOutlineArrowRight,
+// } from "react-icons/hi2";
 
 const Header = () => {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
@@ -22,10 +22,8 @@ const Header = () => {
   const [isZoomScrollVisible, setIsZoomScrollVisible] = useState(false);
 
   const [isTransparent, setIsTransparent] = useState(() => {
-    const isTransPage =
-      pathname === "/" ||
-      pathname === "/about" ||
-      pathname.startsWith("/works/");
+    const isTransPage = pathname === "/" || pathname === "/about";
+    // pathname.startsWith("/works/");
     const isAtTop = typeof window !== "undefined" ? window.scrollY < 50 : true;
     return isTransPage && isAtTop;
   });

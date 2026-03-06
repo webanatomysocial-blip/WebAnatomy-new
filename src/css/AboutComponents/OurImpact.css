@@ -16,14 +16,14 @@
 .impact-title {
   font-size: 80px;
   margin-bottom: 20px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .impact-subtext {
   max-width: 600px;
   font-size: 18px;
   color: #555;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .impact-cards-container {
@@ -89,13 +89,13 @@
 /* Card Content Styling */
 .card-label {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: auto;
   color: var(--black-color);
 }
 
 .card-number {
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: 20px;
 }
 

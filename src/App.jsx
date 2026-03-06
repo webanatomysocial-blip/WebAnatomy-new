@@ -6,6 +6,9 @@ import SmoothScrolling from "./components/SmoothScrolling";
 import ScrollToTop from "./components/ScrollToTop";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 
+import { WorkPopupProvider } from "./context/WorkPopupContext";
+import WorkPopup from "./workComponents/WorkPopup";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,12 +22,15 @@ function App() {
 
   return (
     <Router>
-      <SmoothScrolling>
-        <ScrollToTop />
-        {!isLoading && <Header />}
-        <AnimatedRoutes />
-        {!isLoading && <Footer />}
-      </SmoothScrolling>
+      <WorkPopupProvider>
+        <SmoothScrolling>
+          <ScrollToTop />
+          {!isLoading && <Header />}
+          <AnimatedRoutes />
+          {!isLoading && <Footer />}
+          <WorkPopup />
+        </SmoothScrolling>
+      </WorkPopupProvider>
     </Router>
   );
 }

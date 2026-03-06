@@ -102,7 +102,7 @@
 .zs-tab-label {
   font-family: var(--font-primary);
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5); /* Contrast vs Image overlay */

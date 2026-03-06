@@ -5,12 +5,13 @@
   --black-color: black;
   --primary-color: var(--black-color);
   --Yellow-color: #ffdd00;
-  --blue: #0033bf;
+  --mix: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%)
+    --blue: #0033bf;
   --grey: #e7e7e7;
   --grey-bg: #9b9b9b;
   --progress-active-bg: rgb(116, 116, 116);
-  --font-primary: "TASAOrbiter", sans-serif;
-  --font-secondary: "TASAOrbiter", sans-serif;
+  --font-primary: "Graphik", sans-serif;
+  --font-secondary: "Graphik", sans-serif;
   --transition-slow: 1.2s cubic-bezier(0.65, 0, 0.35, 1);
   --transition-medium: 0.5s ease-in-out;
   --transition-fast: 0.3s ease;
@@ -48,53 +49,178 @@ html::-webkit-scrollbar-thumb:hover {
 
 /* fonts start  */
 
+/* Thin - 100 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Thin-Trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Thin Italic - 100 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-ThinItalic-Trial.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Extralight - 200 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Extralight-Trial.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Extralight Italic - 200 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-ExtralightItalic-Trial.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light - 300 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Light-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light Italic - 300 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-LightItalic-Trial.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Regular - 400 */
 @font-face {
-  font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Regular.ttf");
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Regular-Trial.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  line-height: 0px;
+}
+
+/* Regular Italic - 400 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-RegularItalic-Trial.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* Medium - 500 */
 @font-face {
-  font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Medium.ttf")
-    format("truetype");
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Medium-Trial.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-/* SemiBold - 600 */
+/* Medium Italic - 500 */
 @font-face {
-  font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-SemiBold.ttf")
-    format("truetype");
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-MediumItalic-Trial.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semibold - 600 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Semibold-Trial.otf")
+    format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
+/* Semibold Italic - 600 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-SemiboldItalic-Trial.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Bold - 700 */
 @font-face {
-  font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-Bold.ttf")
-    format("truetype");
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Bold-Trial.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-/* ExtraBold - 800 */
+/* Bold Italic - 700 */
 @font-face {
-  font-family: "TASAOrbiter";
-  src: url("../Fonts/TASA_Orbiter/static/TASAOrbiter-ExtraBold.ttf")
-    format("truetype");
-  font-weight: 800;
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-BoldItalic-Trial.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Black - 900 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Black-Trial.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
+  font-display: swap;
+}
+
+/* Black Italic - 900 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-BlackItalic-Trial.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Super - 950 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-Super-Trial.otf") format("opentype");
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Super Italic - 950 */
+@font-face {
+  font-family: "Graphik";
+  src: url("../Fonts/Graphik Family/Graphik-SuperItalic-Trial.otf")
+    format("opentype");
+  font-weight: 950;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -108,7 +234,7 @@ h6 {
   padding: 0;
   line-height: 1.4em;
   letter-spacing: 0px;
-  font-weight: 400;
+  font-weight: 200 !important;
 }
 
 ul,
@@ -119,28 +245,30 @@ span,
 button {
   transition: all 0.3s ease-in-out !important;
   line-height: 1.4em;
+  letter-spacing: 1px;
   font-family: var(--font-primary);
+  font-weight: 200 !important;
 }
 
 .big-head-text {
   font-size: 100px;
   font-family: var(--font-primary);
   color: var(--black-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .big-head-text-white {
   font-size: 100px;
   font-family: var(--font-primary);
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .head-text {
   font-size: 50px;
   font-family: var(--font-primary);
   color: var(--black-color);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.2em !important;
 }
 
@@ -148,7 +276,7 @@ button {
   font-size: 50px;
   font-family: var(--font-primary);
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.2em !important;
 }
 
@@ -157,7 +285,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--progress-active-bg);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .para-text-white {
@@ -165,7 +293,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-head-text {
@@ -173,7 +301,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-head-text-white {
@@ -181,7 +309,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-para-text {
@@ -190,7 +318,7 @@ button {
   line-height: 1.4em;
   color: var(--progress-active-bg);
   padding-bottom: 20px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-para-text-white {
@@ -198,7 +326,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-small-head {
@@ -206,7 +334,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-small-head-white {
@@ -214,7 +342,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-small-para {
@@ -222,7 +350,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .sub-small-para-white {
@@ -230,7 +358,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .gradient-text {
@@ -239,7 +367,7 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 300;
+  font-weight: 200;
   padding: 10px 0px;
 }
 
@@ -253,7 +381,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 200;
   border: none;
   transition: all 0.3s ease;
   width: fit-content;
@@ -312,7 +440,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 200;
   font-family: var(--font-primary);
   border: none;
   transition: all 0.3s ease;
@@ -361,7 +489,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 200;
   border: none;
   transition: all 0.3s ease-in-out;
   width: fit-content;
@@ -430,7 +558,7 @@ button {
   padding: 10px 0;
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 14px;
   transition: var(--transition-medium);
   font-family: var(--font-secondary);

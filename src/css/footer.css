@@ -19,6 +19,7 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  justify-items: anchor-center;
   z-index: 2;
 }
 
@@ -101,7 +102,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .social-icons {
@@ -117,6 +118,38 @@
 
 .social-icons a:hover {
   transform: translateY(-3px);
+}
+
+.footer-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.footer-locations h4 {
+  margin-bottom: 5px;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.flag-icon {
+  width: 25px;
+  height: auto;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.location-item p {
+  font-size: 14px;
+  color: var(--white-color);
+  line-height: 1.4;
+  margin: 0;
+  transition: none !important;
 }
 
 /* Redesigned Subscription Form */
@@ -162,7 +195,7 @@
 .footer-recognitions {
   display: flex;
   gap: 25px;
-  align-items: end;
+  align-items: start;
   flex-direction: column;
 }
 

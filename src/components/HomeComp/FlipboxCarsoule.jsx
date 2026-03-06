@@ -42,11 +42,18 @@ const CAROUSEL_DATA = [
     title: "Building vision",
     desc: "Mudra Yoga Studio UAE",
   },
+  {
+    id: 5,
+    img: img4,
+  },
 ];
+
+import { useWorkPopup } from "../../context/WorkPopupContext";
 
 export default function FlipboxCarsoule() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
+  const { openWorkPopup } = useWorkPopup();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +72,7 @@ export default function FlipboxCarsoule() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=800px",
+          end: "+=1500px", // Increased distance to prevent "stuck" feeling
           pin: true,
           scrub: 1,
           snap: {
@@ -80,47 +87,36 @@ export default function FlipboxCarsoule() {
       // Label: Start
       tl.addLabel("start");
 
-      // 1. Flip Animation for first 4 cards
+      // 1. Flip Animation for first 4/5 cards
       tl.to(initialCards, {
         rotateY: 180,
-        duration: 1, // Faster flip
-        stagger: 0.1,
+        duration: 2,
+        stagger: 0.2,
         ease: "power2.inOut",
       });
 
       tl.addLabel("flipped");
 
-      // tl.to(trackRef.current, {
-      //   xPercent: -25,
-      //   ease: "none",
-      //   duration: 1,
-      // });
-      // tl.addLabel("slide1");
+      // 2. Slide to reveal 5th card (since we have 5 items and 4 visible)
+      // Each card is 25% wide, so sliding -25% reveals the 5th card
+      tl.to(trackRef.current, {
+        xPercent: -25,
+        ease: "power2.inOut",
+        duration: 2,
+      });
 
-      // tl.to(trackRef.current, {
-      //   xPercent: -50,
-      //   ease: "none",
-      //   duration: 1,
-      // });
-      // tl.addLabel("slide2");
-
-      // tl.to(trackRef.current, {
-      //   xPercent: -75,
-      //   ease: "none",
-      //   duration: 1,
-      // });
-      // tl.addLabel("slide3");
-
-      // tl.to(trackRef.current, {
-      //   xPercent: -100,
-      //   ease: "none",
-      //   duration: 1,
-      // });
-      // tl.addLabel("end");
+      tl.addLabel("end");
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
+
+  const handleCardClick = (e, work) => {
+    if (work?.hasPopup) {
+      e.preventDefault();
+      openWorkPopup(work);
+    }
+  };
 
   return (
     <div className="wa-flipbox-wrapper">
@@ -138,6 +134,7 @@ export default function FlipboxCarsoule() {
         <div className="flipbox-viewport">
           <div className="flipbox-track" ref={trackRef}>
             {CAROUSEL_DATA.map((item, index) => {
+              const currentWork = worksMetadata[index % worksMetadata.length];
               return (
                 <div className="flip-card" key={index}>
                   <div
@@ -162,8 +159,9 @@ export default function FlipboxCarsoule() {
 
                     <div className="flip-card-back">
                       <Link
-                        to={`/works/${worksMetadata[index % worksMetadata.length]?.slug}`}
-                        key={worksMetadata[index % worksMetadata.length]?.id}
+                        to={`/works/${currentWork?.slug}`}
+                        key={currentWork?.id}
+                        onClick={(e) => handleCardClick(e, currentWork)}
                         style={{
                           display: "block",
                           width: "100%",
@@ -175,14 +173,8 @@ export default function FlipboxCarsoule() {
                         }}
                       >
                         <img
-                          src={
-                            worksMetadata[index % worksMetadata.length]
-                              ?.image || item.backimg
-                          }
-                          alt={
-                            worksMetadata[index % worksMetadata.length]
-                              ?.title || item.title
-                          }
+                          src={currentWork?.image || item.backimg}
+                          alt={currentWork?.title || item.title}
                           className="card-bg-img"
                           style={{
                             position: "absolute",
@@ -195,8 +187,7 @@ export default function FlipboxCarsoule() {
                         />
                         <div className="card-content-overlay">
                           <h3 className="sub-head-text-white">
-                            {worksMetadata[index % worksMetadata.length]
-                              ?.title || item.title}
+                            {currentWork?.title || item.title}
                           </h3>
                         </div>
                       </Link>

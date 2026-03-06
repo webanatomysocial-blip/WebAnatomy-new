@@ -16,7 +16,7 @@ export default function VideoExpand({ src, poster }) {
       if (!videoRef.current || !containerRef.current) return;
 
       gsap.to(videoRef.current, {
-        width: "100vw",
+        width: "100%",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",

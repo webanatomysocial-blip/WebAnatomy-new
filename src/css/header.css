@@ -64,7 +64,7 @@
 }
 
 .logo img {
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
 }
@@ -91,7 +91,7 @@
   text-decoration: none;
   color: var(--black-color);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   transition: color 0.3s ease;
   padding: 10px 0;
 }
@@ -152,13 +152,34 @@
   gap: 20px;
   text-decoration: none;
   color: var(--white-color);
-  transition: opacity 0.3s ease;
   padding: 15px;
   border-radius: 12px;
+  transition: all 0.3s ease-in-out;
 }
 
 .mega-item:hover {
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mega-item .sub-small-head-white {
+  background: linear-gradient(
+    90deg,
+    #fb7239 0%,
+    #b92d67 25%,
+    #f209d6 50%,
+    #fff 50%,
+    #fff 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.mega-item:hover .sub-small-head-white {
+  background-position: 0% 0;
 }
 
 .mega-item-icon {
@@ -212,7 +233,7 @@
   padding: 6px 16px;
   border-radius: 50px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 .mega-featured-arrow {
@@ -223,7 +244,7 @@
 .mega-featured-box h3 {
   font-size: 28px;
   line-height: 1.2;
-  font-weight: 500;
+  font-weight: 200;
   margin: 0;
 }
 
@@ -236,7 +257,7 @@
 
 .mega-featured-stats span {
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 200;
 }
 
 .mega-featured-stats p {
@@ -272,7 +293,7 @@
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 200;
   border: 1px solid var(--black-color);
   transition: all 0.3s ease;
   width: fit-content;

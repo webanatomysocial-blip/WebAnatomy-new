@@ -42,7 +42,7 @@
 .workflow-title {
   font-size: 60px;
   margin-bottom: 20px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .workflow-desc {
@@ -178,7 +178,7 @@
 .workflow-card-heading {
   font-size: 24px;
   margin-bottom: 10px;
-  font-weight: 300;
+  font-weight: 200;
   z-index: 2 !important;
 }
 
@@ -197,7 +197,7 @@
 .workflow-bg-number {
   z-index: 0;
   font-size: 180px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1;
   font-family: var(--font-primary);
   position: absolute;
