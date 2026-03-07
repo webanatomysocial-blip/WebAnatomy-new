@@ -31,11 +31,12 @@ const Footer = () => {
     gsap.to(".footer-bottom-image", {
       opacity: 1,
       scrollTrigger: {
-        trigger: ".footer-container",
-        start: "top bottom",
+        trigger: "body",
+        start: "90% 90%",
         end: "bottom bottom",
         scrub: true,
         toggleActions: "play reverse play reverse",
+        // markers: true,
       },
     });
   }, []);

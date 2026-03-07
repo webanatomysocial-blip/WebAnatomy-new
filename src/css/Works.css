@@ -8,19 +8,17 @@
   gap: 50px;
 }
 
-.works-header {
+.works-page-header {
+  height: 60vh;
+  background: url(../assets/images/services-page/service_main_bnr_2_063261dcf0.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  align-items: end;
+  justify-content: start;
+  padding: 100px 100px;
 }
-
-.works-header-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

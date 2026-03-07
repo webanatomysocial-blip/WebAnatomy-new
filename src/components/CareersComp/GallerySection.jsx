@@ -40,7 +40,34 @@ const images = [
 
 function Lightbox({ index, onClose, onPrev, onNext }) {
   const src = images[index];
+  const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const AUTO_PLAY_TIME = 3000; // 3 seconds
 
+  // Auto-play logic
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = 10; // update every 10ms for smooth progress
+    const step = (interval / AUTO_PLAY_TIME) * 100;
+
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          onNext();
+          return 0;
+        }
+        return prev + step;
+      });
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [index, onNext, isPaused]);
+
+  // Reset progress when index changes
+  useEffect(() => {
+    setProgress(0);
+  }, [index]);
 
   // Share handler
   const handleShare = async () => {
@@ -60,9 +87,28 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
     }
   };
 
+  // Calculate prev and next indices
+  const prevIndex = (index - 1 + images.length) % images.length;
+  const nextIndex = (index + 1) % images.length;
+
   return (
     <div className="lb-overlay" onClick={onClose}>
       <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
+        {/* Progress Pagination */}
+        <div className="lb-progress-container">
+          {images.map((_, i) => (
+            <div key={i} className="lb-progress-segment">
+              <div
+                className="lb-progress-fill"
+                style={{
+                  width:
+                    i === index ? `${progress}%` : i < index ? "100%" : "0%",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
         {/* Close */}
         <button
           className="lb-btn lb-close"
@@ -72,24 +118,32 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
           ✕
         </button>
 
-        {/* Prev */}
-        <button
-          className="lb-btn lb-prev"
-          onClick={onPrev}
-          aria-label="Previous"
-        >
-          ‹
-        </button>
+        <div className="lb-carousel-container">
+          {/* Side Prev */}
+          <div className="lb-side-wrap lb-side-prev" onClick={onPrev}>
+            <img
+              src={images[prevIndex]}
+              alt="Previous"
+              className="lb-side-img"
+            />
+          </div>
 
-        {/* Image */}
-        <div className="lb-img-wrap">
-          <img src={src} alt={`Gallery ${index + 1}`} className="lb-img" />
+          {/* Main Image */}
+          <div
+            className="lb-img-wrap"
+            onMouseDown={() => setIsPaused(true)}
+            onMouseUp={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+          >
+            <img src={src} alt={`Gallery ${index + 1}`} className="lb-img" />
+          </div>
+
+          {/* Side Next */}
+          <div className="lb-side-wrap lb-side-next" onClick={onNext}>
+            <img src={images[nextIndex]} alt="Next" className="lb-side-img" />
+          </div>
         </div>
-
-        {/* Next */}
-        <button className="lb-btn lb-next" onClick={onNext} aria-label="Next">
-          ›
-        </button>
 
         {/* Action bar */}
         <div className="lb-actions">
@@ -112,7 +166,6 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
               </svg>
               Share
             </button>
-           
           </div>
         </div>
       </div>

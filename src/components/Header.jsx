@@ -22,8 +22,11 @@ const Header = () => {
   const [isZoomScrollVisible, setIsZoomScrollVisible] = useState(false);
 
   const [isTransparent, setIsTransparent] = useState(() => {
-    const isTransPage = pathname === "/" || pathname === "/about";
-    // pathname.startsWith("/works/");
+    const isTransPage =
+      pathname === "/" ||
+      pathname === "/about" ||
+      pathname === "/works" ||
+      pathname.startsWith("/works/");
     const isAtTop = typeof window !== "undefined" ? window.scrollY < 50 : true;
     return isTransPage && isAtTop;
   });
@@ -69,7 +72,11 @@ const Header = () => {
   // Logic for Transparent Header (Home/About Page + Top of Page)
   useEffect(() => {
     const handleTransparency = () => {
-      const isTransparentPage = pathname === "/" || pathname === "/services";
+      const isTransparentPage =
+        pathname === "/" ||
+        pathname === "/services" ||
+        pathname === "/works" ||
+        pathname.startsWith("/works/");
       const isAtTop = window.scrollY < 50;
 
       setIsTransparent(isTransparentPage && isAtTop);
