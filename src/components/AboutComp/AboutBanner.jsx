@@ -113,12 +113,10 @@ const AboutBanner = () => {
         </Link>
       </div>
 
-      <img
-        src={scrollDown}
-        alt="scrollDown"
-        className="scroll-down-img-about-page"
-        ref={scrollDownRef}
-      />
+      <div className="scroll-down-img-about-page para-text" ref={scrollDownRef}>
+        Scroll Down
+        <img src={scrollDown} alt="scrollDown" />
+      </div>
     </section>
   );
 };

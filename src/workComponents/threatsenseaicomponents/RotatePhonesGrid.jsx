@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "../../workCss/threatsenseaicss/RotatePhonesGrid.css";
-import phoneImg from "../../WorkImages/threatsenseai/phone-img.png";
-import handPhoneImg from "../../WorkImages/threatsenseai/grid.webp";
+// import phoneImg from "../../WorkImages/threatsenseai/phone-img.png";
+// import handPhoneImg from "../../WorkImages/threatsenseai/grid.webp";
 import landscapeImg from "../../WorkImages/threatsenseai/beautiful-scenery.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +56,7 @@ export default function RotatePhonesGrid() {
 
   return (
     <section className="rotate-phones-grid-wrapper" ref={containerRef}>
-      <div className="rotate-phones-grid-top">
+      {/* <div className="rotate-phones-grid-top">
         <div className="rotate-phones-grid-top-left rotatephonesection">
           <img className="rotateimg1" src={phoneImg} alt="phone1" />
           <img className="rotateimg2" src={phoneImg} alt="phone2" />
@@ -65,7 +65,7 @@ export default function RotatePhonesGrid() {
         <div className="rotate-phones-grid-top-right">
           <img src={handPhoneImg} alt="hand holding phone" />
         </div>
-      </div>
+      </div> */}
       <div className="rotate-phones-grid-bottom">
         <img
           src={landscapeImg}

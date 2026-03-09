@@ -46,6 +46,18 @@ const CAROUSEL_DATA = [
     id: 5,
     img: img4,
   },
+  {
+    id: 6,
+    img: img4,
+  },
+  {
+    id: 7,
+    img: img4,
+  },
+  {
+    id: 8,
+    img: img4,
+  },
 ];
 
 import { useWorkPopup } from "../../context/WorkPopupContext";
@@ -53,6 +65,7 @@ import { useWorkPopup } from "../../context/WorkPopupContext";
 export default function FlipboxCarsoule() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
+  const viewportRef = useRef(null);
   const { openWorkPopup } = useWorkPopup();
 
   useEffect(() => {
@@ -97,13 +110,39 @@ export default function FlipboxCarsoule() {
 
       tl.addLabel("flipped");
 
+      // Smoothly expand the clip-path AFTER flipping is done
+      tl.to(
+        viewportRef.current,
+        {
+          clipPath: "inset(-20% -100% -20% -100%)",
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "flipped",
+      );
+
       // 2. Slide to reveal 5th card (since we have 5 items and 4 visible)
       // Each card is 25% wide, so sliding -25% reveals the 5th card
       tl.to(trackRef.current, {
         xPercent: -25,
-        ease: "power2.inOut",
-        duration: 2,
-      });
+        ease: "none",
+        duration: 1,
+      })
+        .to(trackRef.current, {
+          xPercent: -50,
+          ease: "none",
+          duration: 1,
+        })
+        .to(trackRef.current, {
+          xPercent: -75,
+          ease: "none",
+          duration: 1,
+        })
+        .to(trackRef.current, {
+          xPercent: -100,
+          ease: "none",
+          duration: 1,
+        });
 
       tl.addLabel("end");
     }, sectionRef);
@@ -131,7 +170,7 @@ export default function FlipboxCarsoule() {
           </a>
         </div>
 
-        <div className="flipbox-viewport">
+        <div className="flipbox-viewport" ref={viewportRef}>
           <div className="flipbox-track" ref={trackRef}>
             {CAROUSEL_DATA.map((item, index) => {
               const currentWork = worksMetadata[index % worksMetadata.length];

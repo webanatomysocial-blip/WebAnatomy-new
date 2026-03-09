@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/main-logo.png";
 import { BsArrowRight } from "react-icons/bs";
+import { progress } from "framer-motion";
 // import {
 //   HiOutlinePaintBrush,
 //   HiOutlineSparkles,
@@ -243,7 +244,12 @@ const Header = () => {
                   <div className="mega-right-section">
                     <div className="mega-featured-box">
                       <div className="mega-featured-header">
-                        <span className="mega-badge">Customer Story</span>
+                        <span
+                          className="gradient-bg-btn"
+                          style={{ cursor: progress }}
+                        >
+                          Customer Story
+                        </span>
                         <BsArrowRight className="mega-featured-arrow" />
                       </div>
                       <h3 className="sub-head-text">

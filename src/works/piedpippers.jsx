@@ -6,6 +6,7 @@ import VideoExpand from "../workComponents/VideoExpand";
 import Context from "../workComponents/Context";
 import PhoneScreens from "../workComponents/pipeComponents/PhoneScreens";
 import UpDownImages from "../workComponents/pipeComponents/UpDownImages";
+import UpDownSticky from "../workComponents/pipeComponents/UpDownSticky";
 import "../workCss/pipeCss/UpDownImages.css";
 import video from "../WorkImages/piedpipper/enlarg.mp4";
 
@@ -55,6 +56,13 @@ export default function PiedPippers() {
         description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
       />
       <UpDownImages />
+      <Context
+        subheading="Context"
+        tittle="Pied Pippers"
+        description="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+        description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
+      />
+      <UpDownSticky />
     </div>
   );
 }

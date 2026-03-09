@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../css/HomeComponents/About-OneOnOne-section.css";
 import bgimg from "../../assets/images/Home-images/oneonone/bg.png";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { BsArrowRight } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,7 @@ export default function AboutOneOnOneSection() {
       if (!items || items.length === 0) return;
 
       // 1. Set initial states
-      // Item 0: Visible, in place
+      // Item 0: Visible, in place  
       gsap.set(items[0], { yPercent: 0, opacity: 1 });
 
       // Other items: Below, hidden
@@ -109,7 +109,7 @@ export default function AboutOneOnOneSection() {
                   /* Better to stick to text or use a simple unicode arrow if imports aren't handy, but lets try to import standard icon if possible, or just text arrow for now to avoid breaking imports */
                   /* Actually, icons are good. I will add import for BsArrowRight */}
                   <span className="head-text-white">
-                    <HiArrowNarrowRight />
+                    <BsArrowRight size={20} />
                   </span>
                 </div>
                 <p className="para-text-white">
@@ -129,7 +129,7 @@ export default function AboutOneOnOneSection() {
                 <div className="service-card-title-row">
                   <h3 className="head-text-white">Engineering</h3>
                   <span className="head-text-white">
-                    <HiArrowNarrowRight />
+                    <BsArrowRight size={20} />
                   </span>
                 </div>
                 <p className="para-text-white">
@@ -149,7 +149,7 @@ export default function AboutOneOnOneSection() {
                 <div className="service-card-title-row">
                   <h3 className="head-text-white">Marketing</h3>
                   <span className="head-text-white">
-                    <HiArrowNarrowRight />
+                    <BsArrowRight size={20} />
                   </span>
                 </div>
                 <p className="para-text-white">

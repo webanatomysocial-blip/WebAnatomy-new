@@ -15,32 +15,9 @@ const UpDownImages = () => {
       gsap.to(".UpDownImages-stick-img", {
         width: "100%",
         scrollTrigger: {
-          trigger: ".UpDownImages-stick-img",
+          trigger: containerRef.current,
           start: "top top",
-          end: "+=600",
-          scrub: 0.2,
-          markers: false,
-        },
-      });
-      gsap.to(".UpDownImages-inner-img1", {
-        y: -200,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".UpDownImages-stick-container",
-          start: "center top",
-          end: "+=400",
-          scrub: 0.2,
-          markers: false,
-        },
-      });
-
-      gsap.to(".UpDownImages-inner-img2", {
-        y: 200,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".UpDownImages-stick-container",
-          start: "center top",
-          end: "+=400",
+          end: "bottom top",
           scrub: 0.2,
           markers: false,
         },
@@ -50,24 +27,13 @@ const UpDownImages = () => {
   );
 
   return (
-    <div className="UpDownImages-whole-container" ref={containerRef}>
+    <div
+      className="UpDownImages-whole-container"
+      ref={containerRef}
+      style={{ height: "150vh" }}
+    >
       <div className="UpDownImages-stick-img">
         <img src={img1} alt="" />
-      </div>
-
-      <div className="UpDownImages-stick-container">
-        <div className="UpDownImages-inner-img1">
-          <img
-            src="https://wa.ctsi.in/wp-content/uploads/2025/05/web-Image-02.png"
-            alt=""
-          />
-        </div>
-        <div className="UpDownImages-inner-img2">
-          <img
-            src="https://wa.ctsi.in/wp-content/uploads/2025/05/web-Image-01.png"
-            alt=""
-          />
-        </div>
       </div>
     </div>
   );

@@ -67,7 +67,6 @@
 
 .sme-btn {
   background-color: var(--progress-active-bg);
-  ;
   color: white !important;
   padding: 18px 35px;
   border-radius: 50px;
@@ -80,7 +79,6 @@
 
 .sme-btn:hover {
   background-color: var(--progress-active-bg);
-  ;
   transform: translateY(-2px);
 }
 
@@ -131,12 +129,16 @@
 }
 
 .quote-icon {
-  font-size: 6rem;
-  color: var(--black-color);
-  line-height: 0.8;
+  font-size: 100px;
+  background: linear-gradient(90deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
   font-family: Georgia, serif;
-  margin-left: -10px;
-  margin-bottom: 20px;
+  margin-left: -5px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .testimonial-text {
@@ -189,7 +191,6 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--progress-active-bg);
-  ;
   font-size: 1.3rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }

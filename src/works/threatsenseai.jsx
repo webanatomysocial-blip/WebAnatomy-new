@@ -60,8 +60,9 @@ export default function ThreatSenseAI() {
         description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
         description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
+      <BothImages />
 
-      <TwoPeople />
+      {/* <TwoPeople /> */}
       <JustHeading
         tittle={
           ' "The probability that a student will join a university after browsing the college website is high" '
@@ -83,7 +84,14 @@ export default function ThreatSenseAI() {
         description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
       <BothImages />
-      <LeftReversePhone />
+      <Context
+        subheading="Context"
+        tittle="ThreatSenseAI"
+        description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
+        paddingBottom="0px"
+      />
+      {/* <LeftReversePhone /> */}
       <RotatePhonesGrid />
     </div>
   );

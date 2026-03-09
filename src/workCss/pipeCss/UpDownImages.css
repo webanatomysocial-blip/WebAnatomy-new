@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  height: 400vh;
   background-color: var(--white-color);
 }
 
@@ -15,7 +14,7 @@
   top: 0px;
   left: 0;
   z-index: 0;
-  margin-bottom: 100vh;
+  margin-bottom: 0px;
   overflow: hidden;
 }
 
@@ -27,13 +26,13 @@
 }
 
 .UpDownImages-stick-container {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   background-color: var(--white-color);
   z-index: 1;
-  position: sticky;
+  /* position: sticky;
   top: 0px;
-  left: 0;
+  left: 0; */
   display: flex;
   flex-direction: row;
   overflow: hidden;

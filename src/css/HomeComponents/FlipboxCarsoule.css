@@ -25,7 +25,8 @@
 /* CAROUSEL VIEWPORT */
 .flipbox-viewport {
   margin: 0px 100px;
-  /* overflow: hidden; */
+  overflow: visible;
+  clip-path: inset(-20% 0% -20% 0%);
 }
 
 .flipbox-track {

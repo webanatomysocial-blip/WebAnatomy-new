@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import video from "../../assets/videos/Home-page/Home-02.mp4";
+
 const successStoriesData = [
   { number: "80+", title: "Success Stories", desc: "Success Stories Success" },
   { number: "17+", title: "Global Clients", desc: "Trusted by top brands" },
@@ -81,13 +83,7 @@ export default function OurStoryHomePage() {
 
           {/* Video Section */}
           <div className="video-section">
-            <video
-              src="/assets/videos/work-page/banner.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            ></video>
+            <video src={video} autoPlay loop muted playsInline></video>
           </div>
         </div>
 

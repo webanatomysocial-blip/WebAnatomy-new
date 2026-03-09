@@ -38,12 +38,12 @@ export const worksMetadata = [
     slug: "health-connect",
   },
   {
-    id: 5,
-    title: "EduPulse: Learning Management System",
-    category: "Education",
+    id: "TheSase",
+    title: "TheSase - Transforming Project Management" ,
+    category: "TheSase",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     image: case1,
-    slug: "edu-pulse",
+    slug: "thesase",
   },
   {
     id: 6,
@@ -52,5 +52,24 @@ export const worksMetadata = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     image: case1,
     slug: "travel-swift",
-  }
+  },
+{
+    id: 7,
+    title: "TravelSwift: Booking Agency App",
+    category: "Travel",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image: case1,
+    slug: "travel-swift",
+  },
+  {
+    id: 8,
+    title: "TravelSwift: Booking Agency App",
+    category: "Travel",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image: case1,
+    slug: "travel-swift",
+  },
+
+
+
 ];
