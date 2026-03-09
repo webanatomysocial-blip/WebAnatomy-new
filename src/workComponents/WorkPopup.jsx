@@ -98,7 +98,7 @@ const WorkPopup = () => {
                       To find out more about our work or any of our other
                       brands, get in touch. Mail us on{" "}
                       <a href="mailto:info@webandcrafts.com">
-                        info@webandcrafts.com
+                        info@webanatomy.com
                       </a>{" "}
                       or call <a href="tel:+914802733522">+91 480 2733 522</a>
                     </p>
