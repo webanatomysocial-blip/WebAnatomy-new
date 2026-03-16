@@ -30,7 +30,7 @@ const UpDownSticky = () => {
           start: "top top",
           end: "bottom top",
           scrub: 0.2,
-          pin: true,
+
           markers: false,
         },
       });
@@ -42,7 +42,7 @@ const UpDownSticky = () => {
     <div
       className="UpDownImages-whole-container"
       ref={containerRef}
-      style={{ height: "150vh" }}
+      style={{ height: "200vh" }}
     >
       <div className="UpDownImages-stick-container">
         <div className="UpDownImages-inner-img1">

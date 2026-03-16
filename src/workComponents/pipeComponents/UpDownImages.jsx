@@ -17,9 +17,9 @@ const UpDownImages = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "bottom top",
+          end: "center center",
           scrub: 0.2,
-          markers: false,
+          // markers: true,
         },
       });
     },
@@ -27,15 +27,15 @@ const UpDownImages = () => {
   );
 
   return (
-    <div
+    <sec
       className="UpDownImages-whole-container"
       ref={containerRef}
-      style={{ height: "150vh" }}
+      style={{ height: "200vh" }}
     >
       <div className="UpDownImages-stick-img">
         <img src={img1} alt="" />
       </div>
-    </div>
+    </sec>
   );
 };
 

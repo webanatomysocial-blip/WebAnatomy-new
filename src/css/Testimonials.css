@@ -196,8 +196,7 @@
 }
 
 .nav-btn:hover {
-  background: var(--progress-active-bg);
-  color: var(--white-color);
+  color: var(--black-color);
   transform: scale(1.05);
 }
 

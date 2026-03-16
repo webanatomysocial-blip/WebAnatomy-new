@@ -12,14 +12,13 @@
 }
 
 .footer-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  justify-items: anchor-center;
   z-index: 2;
 }
 
@@ -194,19 +193,25 @@
 
 .footer-recognitions {
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: start;
   flex-direction: column;
 }
 
-.footer-recognitions img {
-  height: 60px;
-  width: auto;
-  margin: 0px 10px;
+.footer-recognitions-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
-.footer-recognitions img:hover {
-  opacity: 1;
+.footer-recognitions img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
 }
 
 /* Modal Styles Refined */
@@ -312,9 +317,10 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .footer-top {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 60px;
     text-align: center;
+    align-items: center;
   }
 
   .footer-left,
