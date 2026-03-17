@@ -1,0 +1,1 @@
+import{c,j as o}from"./index-45e7JTkZ.js";function m(r){const t=c.c(3),{src:e,alt:i}=r;let s;return t[0]!==i||t[1]!==e?(s=o.jsx("div",{className:"FullWidthImage-work-section",children:o.jsx("img",{src:e,alt:i})}),t[0]=i,t[1]=e,t[2]=s):s=t[2],s}export{m as F};
