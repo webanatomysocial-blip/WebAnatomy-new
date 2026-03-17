@@ -7,6 +7,7 @@ import FullWidthImage from "../workComponents/FullWidthImage";
 import JustHeading from "../workComponents/JustHeading";
 import TwoImagesScroll from "../workComponents/ToggleNowComponent/TwoImagesScroll";
 import ImageFadeCome from "../workComponents/ToggleNowComponent/ImageFadeCome";
+import WorkCta from "../workComponents/WorkCta";
 
 export default function ToggleNow() {
   const services = [
@@ -55,6 +56,7 @@ export default function ToggleNow() {
         description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
       <ImageFadeCome />
+      <WorkCta />
     </>
   );
 }

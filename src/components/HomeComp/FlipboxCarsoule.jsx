@@ -157,6 +157,8 @@ export default function FlipboxCarsoule() {
     }
   };
 
+  const filteredWorks = worksMetadata.filter((work) => !work.hasPopup);
+
   return (
     <div className="wa-flipbox-wrapper">
       <section ref={sectionRef} className="wa-flipbox-carsoule-section">
@@ -172,8 +174,9 @@ export default function FlipboxCarsoule() {
 
         <div className="flipbox-viewport" ref={viewportRef}>
           <div className="flipbox-track" ref={trackRef}>
-            {CAROUSEL_DATA.map((item, index) => {
-              const currentWork = worksMetadata[index % worksMetadata.length];
+            {filteredWorks.map((currentWork, index) => {
+              // Use index to get matching carousel style/bg from CAROUSEL_DATA
+              const item = CAROUSEL_DATA[index % CAROUSEL_DATA.length];
               return (
                 <div className="flip-card" key={index}>
                   <div
@@ -183,7 +186,7 @@ export default function FlipboxCarsoule() {
                     <div className="flip-card-front">
                       <img
                         src={item.img}
-                        alt={item.title}
+                        alt={currentWork?.title || item.title}
                         className="card-bg-img"
                         style={{
                           position: "absolute",
@@ -198,6 +201,7 @@ export default function FlipboxCarsoule() {
 
                     <div className="flip-card-back">
                       <Link
+                        target="_blank"
                         to={`/works/${currentWork?.slug}`}
                         key={currentWork?.id}
                         onClick={(e) => handleCardClick(e, currentWork)}

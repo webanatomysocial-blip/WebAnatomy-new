@@ -86,6 +86,8 @@
 
 .HorizontalBanner-scroll-sticky-content-right-bottom .sub-para-text {
   margin: 0;
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 768px) {

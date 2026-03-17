@@ -7,6 +7,7 @@ import JustHeading from "../workComponents/JustHeading";
 import UpImageAnimation from "../workComponents/theSaseComponent/UpImageAnimation";
 import IconScrollAnimation from "../workComponents/theSaseComponent/IconScrollAnimation";
 import FourPhonesAnimation from "../workComponents/theSaseComponent/FourPhonesAnimation";
+import WorkCta from "../workComponents/WorkCta";
 
 // banner images
 import bannerimage from "../WorkImages/piedpipper/banner-image.jpeg";
@@ -65,6 +66,7 @@ export default function TheSase() {
         description2="ToggleNow reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
       <FourPhonesAnimation />
+      <WorkCta />
     </>
   );
 }

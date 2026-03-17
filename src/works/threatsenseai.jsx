@@ -11,7 +11,7 @@ import ThreatsenseaiGalleryScroll from "../workComponents/threatsenseaicomponent
 import ThreatsenseaiStickyImages from "../workComponents/threatsenseaicomponents/threatsenseaiStickyImages";
 import BothImages from "../workComponents/threatsenseaicomponents/BothImages";
 import LeftReversePhone from "../workComponents/threatsenseaicomponents/LeftReversePhone";
-import RotatePhonesGrid from "../workComponents/threatsenseaicomponents/RotatePhonesGrid";
+import WorkCta from "../workComponents/WorkCta";
 
 import scrollwidth from "../WorkImages/threatsenseai/second.jpeg";
 
@@ -92,7 +92,7 @@ export default function ThreatSenseAI() {
         paddingBottom="0px"
       />
       {/* <LeftReversePhone /> */}
-      <RotatePhonesGrid />
+      <WorkCta />
     </div>
   );
 }

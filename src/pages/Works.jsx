@@ -69,6 +69,7 @@ const Works = () => {
         <div className="works-grid">
           {worksMetadata.map((project) => (
             <Link
+              target="_blank"
               to={`/works/${project.slug}`}
               key={project.id}
               className="case-study-card"

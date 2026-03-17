@@ -5,6 +5,7 @@
   justify-content: start;
   flex-direction: column;
   background-color: var(--white-color);
+  padding-bottom: 100px;
 }
 
 .UpDownImages-stick-img {

@@ -9,6 +9,7 @@ import UpDownImages from "../workComponents/pipeComponents/UpDownImages";
 import UpDownSticky from "../workComponents/pipeComponents/UpDownSticky";
 import "../workCss/pipeCss/UpDownImages.css";
 import video from "../WorkImages/piedpipper/enlarg.mp4";
+import WorkCta from "../workComponents/WorkCta";
 
 export default function PiedPippers() {
   const services = [
@@ -63,6 +64,7 @@ export default function PiedPippers() {
         description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
       />
       <UpDownSticky />
+      <WorkCta />
     </div>
   );
 }

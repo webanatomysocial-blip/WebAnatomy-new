@@ -73,7 +73,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "Graphik";
   src: url("../Fonts/Graphik Family/Graphik-Extralight-Trial.otf")
     format("opentype");
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -83,7 +83,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: "Graphik";
   src: url("../Fonts/Graphik Family/Graphik-ExtralightItalic-Trial.otf")
     format("opentype");
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
@@ -234,7 +234,7 @@ h6 {
   padding: 0;
   line-height: 1.4em;
   letter-spacing: 0px;
-  font-weight: 200 !important;
+  font-weight: 300 !important;
 }
 
 ul,
@@ -247,28 +247,28 @@ button {
   line-height: 1.4em;
   letter-spacing: 1px;
   font-family: var(--font-primary);
-  font-weight: 200 !important;
+  font-weight: 300 !important;
 }
 
 .big-head-text {
   font-size: 100px;
   font-family: var(--font-primary);
   color: var(--black-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .big-head-text-white {
   font-size: 100px;
   font-family: var(--font-primary);
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .head-text {
   font-size: 50px;
   font-family: var(--font-primary);
   color: var(--black-color);
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.2em !important;
 }
 
@@ -276,7 +276,7 @@ button {
   font-size: 50px;
   font-family: var(--font-primary);
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.2em !important;
 }
 
@@ -285,7 +285,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--progress-active-bg);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .para-text-white {
@@ -293,7 +293,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .sub-head-text {
@@ -301,7 +301,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .sub-head-text-white {
@@ -309,7 +309,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-para-text {
@@ -318,7 +318,7 @@ button {
   line-height: 1.4em;
   color: var(--progress-active-bg);
   padding-bottom: 20px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-para-text-white {
@@ -326,7 +326,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-small-head {
@@ -334,7 +334,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-small-head-white {
@@ -342,7 +342,7 @@ button {
   font-family: var(--font-primary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-small-para {
@@ -350,7 +350,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--black-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .sub-small-para-white {
@@ -358,7 +358,7 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.4em;
   color: var(--white-color);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .gradient-text {
@@ -367,7 +367,7 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 200;
+  font-weight: 300;
   padding: 10px 0px;
 }
 
@@ -381,7 +381,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 300;
   border: none;
   transition: all 0.3s ease;
   width: fit-content;
@@ -440,7 +440,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 300;
   font-family: var(--font-primary);
   border: none;
   transition: all 0.3s ease;
@@ -489,7 +489,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 300;
   border: none;
   transition: all 0.3s ease-in-out;
   width: fit-content;
@@ -558,7 +558,7 @@ button {
   padding: 10px 0;
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 14px;
   transition: var(--transition-medium);
   font-family: var(--font-secondary);

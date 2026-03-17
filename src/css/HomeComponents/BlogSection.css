@@ -49,7 +49,7 @@
 
 .blog-title {
   font-size: 3rem;
-  font-weight: 200;
+  font-weight: 300;
   margin-bottom: 15px;
   color: #111;
 }
@@ -70,7 +70,6 @@
   margin: 0 auto;
 }
 
-
 @media (max-width: 1024px) {
   .blog-grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -86,8 +85,6 @@
 }
 
 /* Common Text Styles */
-
-
 
 @media (max-width: 768px) {
   .blog-section {

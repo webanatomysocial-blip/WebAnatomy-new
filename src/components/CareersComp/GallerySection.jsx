@@ -19,7 +19,8 @@ import img14 from "../../assets/images/Careers-page/gallerySection/WhatsApp-Imag
 import img15 from "../../assets/images/Careers-page/gallerySection/WhatsApp-Image-2025-09-05-at-6.48.08-PM.webp";
 import img16 from "../../assets/images/Careers-page/gallerySection/WhatsApp-Image-2025-09-05-at-6.48.09-PM.webp";
 
-const images = [
+// All images for the grid lightbox
+const allImages = [
   img1,
   img2,
   img3,
@@ -38,19 +39,34 @@ const images = [
   img16,
 ];
 
-function Lightbox({ index, onClose, onPrev, onNext }) {
-  const src = images[index];
+// Stories: each category has its own set of images
+const STORIES = [
+  { label: "Our Team", cover: img1, images: [img1, img2, img3] },
+  { label: "Our Place", cover: img4, images: [img4, img5, img6] },
+  { label: "Workspace", cover: img7, images: [img7, img8, img9] },
+  { label: "Events", cover: img10, images: [img10, img11, img12] },
+  { label: "Sports", cover: img13, images: [img13, img14] },
+  { label: "Moments", cover: img15, images: [img15, img16] },
+];
+
+// ─── Lightbox: works with any subset of images ───────────────────────────────
+function Lightbox({
+  imageSet,
+  localIndex,
+  categoryLabel,
+  onClose,
+  onPrev,
+  onNext,
+}) {
+  const src = imageSet[localIndex];
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const AUTO_PLAY_TIME = 3000; // 3 seconds
+  const AUTO_PLAY_TIME = 3000;
 
-  // Auto-play logic
   useEffect(() => {
     if (isPaused) return;
-
-    const interval = 10; // update every 10ms for smooth progress
+    const interval = 10;
     const step = (interval / AUTO_PLAY_TIME) * 100;
-
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -60,22 +76,19 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
         return prev + step;
       });
     }, interval);
-
     return () => clearInterval(timer);
-  }, [index, onNext, isPaused]);
+  }, [localIndex, onNext, isPaused]);
 
-  // Reset progress when index changes
   useEffect(() => {
     setProgress(0);
-  }, [index]);
+  }, [localIndex]);
 
-  // Share handler
   const handleShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
           title: "Life at Web Anatomy",
-          text: "Check out this photo from Web Anatomy!",
+          text: "Check out this photo!",
           url: window.location.href,
         });
       } catch {
@@ -83,52 +96,58 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
       }
     } else {
       await navigator.clipboard.writeText(window.location.href);
-      alert("Link copied to clipboard!");
+      alert("Link copied!");
     }
   };
 
-  // Calculate prev and next indices
-  const prevIndex = (index - 1 + images.length) % images.length;
-  const nextIndex = (index + 1) % images.length;
+  const prevLocalIndex = (localIndex - 1 + imageSet.length) % imageSet.length;
+  const nextLocalIndex = (localIndex + 1) % imageSet.length;
 
   return (
     <div className="lb-overlay" onClick={onClose}>
       <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
-        {/* Progress Pagination */}
-        <div className="lb-progress-container">
-          {images.map((_, i) => (
-            <div key={i} className="lb-progress-segment">
-              <div
-                className="lb-progress-fill"
-                style={{
-                  width:
-                    i === index ? `${progress}%` : i < index ? "100%" : "0%",
-                }}
-              />
+        {/* ── Top bar: progress + category label + close ── */}
+        <div className="lb-top-bar">
+          {categoryLabel && (
+            <div className="lb-category-info">
+              <span className="lb-category-dot" />
+              <span className="lb-category-name">{categoryLabel}</span>
             </div>
-          ))}
+          )}
+          <div className="lb-progress-container">
+            {imageSet.map((_, i) => (
+              <div key={i} className="lb-progress-segment">
+                <div
+                  className="lb-progress-fill"
+                  style={{
+                    width:
+                      i === localIndex
+                        ? `${progress}%`
+                        : i < localIndex
+                          ? "100%"
+                          : "0%",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+          <button
+            className="lb-btn lb-close"
+            onClick={onClose}
+            aria-label="Close"
+          >
+            ✕
+          </button>
         </div>
 
-        {/* Close */}
-        <button
-          className="lb-btn lb-close"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          ✕
-        </button>
-
         <div className="lb-carousel-container">
-          {/* Side Prev */}
           <div className="lb-side-wrap lb-side-prev" onClick={onPrev}>
             <img
-              src={images[prevIndex]}
+              src={imageSet[prevLocalIndex]}
               alt="Previous"
               className="lb-side-img"
             />
           </div>
-
-          {/* Main Image */}
           <div
             className="lb-img-wrap"
             onMouseDown={() => setIsPaused(true)}
@@ -136,19 +155,25 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
             onTouchStart={() => setIsPaused(true)}
             onTouchEnd={() => setIsPaused(false)}
           >
-            <img src={src} alt={`Gallery ${index + 1}`} className="lb-img" />
+            <img
+              key={`${categoryLabel}-${localIndex}`}
+              src={src}
+              alt={`${localIndex + 1}`}
+              className="lb-img lb-img-animate"
+            />
           </div>
-
-          {/* Side Next */}
           <div className="lb-side-wrap lb-side-next" onClick={onNext}>
-            <img src={images[nextIndex]} alt="Next" className="lb-side-img" />
+            <img
+              src={imageSet[nextLocalIndex]}
+              alt="Next"
+              className="lb-side-img"
+            />
           </div>
         </div>
 
-        {/* Action bar */}
         <div className="lb-actions">
           <span className="lb-counter">
-            {index + 1} / {images.length}
+            {localIndex + 1} / {imageSet.length}
           </span>
           <div className="lb-action-btns">
             <button className="lb-action-btn" onClick={handleShare}>
@@ -173,39 +198,94 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
   );
 }
 
+// ─── Main component ───────────────────────────────────────────────────────────
 export default function GallerySection() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  // Grid lightbox (uses allImages)
+  const [gridIndex, setGridIndex] = useState(null);
 
-  const openLightbox = (i) => setActiveIndex(i);
-  const closeLightbox = () => setActiveIndex(null);
+  // Story lightbox state: which story category + which image within it
+  const [storyState, setStoryState] = useState(null); // { storyIdx, localIdx }
 
-  const goPrev = useCallback(() => {
-    setActiveIndex((i) => (i - 1 + images.length) % images.length);
+  // ── Grid lightbox handlers ──
+  const openGrid = (i) => setGridIndex(i);
+  const closeGrid = () => setGridIndex(null);
+  const gridPrev = useCallback(
+    () => setGridIndex((i) => (i - 1 + allImages.length) % allImages.length),
+    [],
+  );
+  const gridNext = useCallback(
+    () => setGridIndex((i) => (i + 1) % allImages.length),
+    [],
+  );
+
+  // ── Story lightbox handlers ──
+  const openStory = (storyIdx) => setStoryState({ storyIdx, localIdx: 0 });
+  const closeStory = () => setStoryState(null);
+
+  const storyNext = useCallback(() => {
+    setStoryState((prev) => {
+      if (!prev) return null;
+      const story = STORIES[prev.storyIdx];
+      if (prev.localIdx + 1 < story.images.length) {
+        // Next image in same category
+        return { ...prev, localIdx: prev.localIdx + 1 };
+      }
+      // Last image: move to next category or close
+      const nextStoryIdx = prev.storyIdx + 1;
+      if (nextStoryIdx < STORIES.length) {
+        return { storyIdx: nextStoryIdx, localIdx: 0 };
+      }
+      return null; // all categories done — close
+    });
   }, []);
 
-  const goNext = useCallback(() => {
-    setActiveIndex((i) => (i + 1) % images.length);
+  const storyPrev = useCallback(() => {
+    setStoryState((prev) => {
+      if (!prev) return null;
+      if (prev.localIdx - 1 >= 0) {
+        return { ...prev, localIdx: prev.localIdx - 1 };
+      }
+      // First image: go back to previous category (last image of it)
+      const prevStoryIdx = prev.storyIdx - 1;
+      if (prevStoryIdx >= 0) {
+        const prevStory = STORIES[prevStoryIdx];
+        return {
+          storyIdx: prevStoryIdx,
+          localIdx: prevStory.images.length - 1,
+        };
+      }
+      return prev; // already at the very start
+    });
   }, []);
 
-  // Keyboard navigation
+  // ── Keyboard navigation ──
   useEffect(() => {
-    if (activeIndex === null) return;
+    const isOpen = gridIndex !== null || storyState !== null;
+    if (!isOpen) return;
     const handler = (e) => {
-      if (e.key === "ArrowLeft") goPrev();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "Escape") closeLightbox();
+      if (gridIndex !== null) {
+        if (e.key === "ArrowLeft") gridPrev();
+        if (e.key === "ArrowRight") gridNext();
+        if (e.key === "Escape") closeGrid();
+      } else {
+        if (e.key === "ArrowLeft") storyPrev();
+        if (e.key === "ArrowRight") storyNext();
+        if (e.key === "Escape") closeStory();
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [activeIndex, goPrev, goNext]);
+  }, [gridIndex, storyState, gridPrev, gridNext, storyPrev, storyNext]);
 
-  // Lock body scroll when lightbox open
   useEffect(() => {
-    document.body.style.overflow = activeIndex !== null ? "hidden" : "";
+    const isOpen = gridIndex !== null || storyState !== null;
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [activeIndex]);
+  }, [gridIndex, storyState]);
+
+  const activeStory = storyState ? STORIES[storyState.storyIdx] : null;
 
   return (
     <>
@@ -218,15 +298,37 @@ export default function GallerySection() {
           </p>
         </div>
 
+        {/* ── Stories Strip ── */}
+        <div className="gallery-stories-strip">
+          {STORIES.map((story, i) => (
+            <button
+              key={i}
+              className="gallery-story-btn"
+              onClick={() => openStory(i)}
+              aria-label={story.label}
+            >
+              <div className="gallery-story-ring">
+                <img
+                  src={story.cover}
+                  alt={story.label}
+                  className="gallery-story-img"
+                />
+              </div>
+              <span className="gallery-story-label">{story.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* ── Grid ── */}
         <div className="gallery-bento-grid">
-          {images.map((src, i) => (
+          {allImages.map((src, i) => (
             <div
               className="gallery-item"
               key={i}
-              onClick={() => openLightbox(i)}
+              onClick={() => openGrid(i)}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && openLightbox(i)}
+              onKeyDown={(e) => e.key === "Enter" && openGrid(i)}
             >
               <img src={src} alt={`Gallery ${i + 1}`} />
               <div className="gallery-item-overlay">
@@ -247,12 +349,27 @@ export default function GallerySection() {
         </div>
       </section>
 
-      {activeIndex !== null && (
+      {/* Grid lightbox — uses allImages */}
+      {gridIndex !== null && (
         <Lightbox
-          index={activeIndex}
-          onClose={closeLightbox}
-          onPrev={goPrev}
-          onNext={goNext}
+          imageSet={allImages}
+          localIndex={gridIndex}
+          categoryLabel="All Photos"
+          onClose={closeGrid}
+          onPrev={gridPrev}
+          onNext={gridNext}
+        />
+      )}
+
+      {/* Story lightbox — uses only that category's images */}
+      {storyState !== null && activeStory && (
+        <Lightbox
+          imageSet={activeStory.images}
+          localIndex={storyState.localIdx}
+          categoryLabel={activeStory.label}
+          onClose={closeStory}
+          onPrev={storyPrev}
+          onNext={storyNext}
         />
       )}
     </>
