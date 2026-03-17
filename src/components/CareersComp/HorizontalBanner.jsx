@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "../../css/CareersComponents/HorizontalBanner.css";
-import bannerImg from "../../assets/images/Careers-page/scroll-section/alz.png";
+import bannerImg from "../../assets/images/Careers-page/scroll-section/four.png";
 import bannerImg1 from "../../assets/images/Careers-page/scroll-section/one.png";
 import bannerImg2 from "../../assets/images/Careers-page/scroll-section/two.png";
 import bannerImg3 from "../../assets/images/Careers-page/scroll-section/three.png";
-// import bannerImg from "../../assets/images/Careers-page/scroll-section/four.png";
+import bannerImg4 from "../../assets/images/Careers-page/scroll-section/five.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DiPerl } from "react-icons/di";
@@ -45,7 +45,7 @@ export default function HorizontalBanner() {
       id: 5,
       title: "We’re Hiring",
       desc: "We’re looking for passionate individuals who want to make a difference. Join our team and be a part of something special.",
-      img: bannerImg,
+      img: bannerImg4,
     },
   ];
 
