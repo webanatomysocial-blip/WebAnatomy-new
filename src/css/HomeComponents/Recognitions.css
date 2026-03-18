@@ -89,6 +89,7 @@
   .recognitions-container {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0px;
   }
 
   .recognitions-text-col {

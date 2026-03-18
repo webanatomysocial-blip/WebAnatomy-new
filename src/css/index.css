@@ -319,6 +319,9 @@ button {
   color: var(--progress-active-bg);
   padding-bottom: 20px;
   font-weight: 300;
+  opacity: 1;
+  margin: 0;
+  transform: none;
 }
 
 .sub-para-text-white {
@@ -613,4 +616,29 @@ body {
   margin: 0;
   padding: 0px 0px 250px 0px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 0 !important;
+  }
+.head-text-white {
+  font-size: 30px;
+  font-family: var(--font-primary);
+  color: var(--white-color);
+  font-weight: 300;
+  line-height: 1.2em !important;
+}
+.para-text-white{
+  font-size: 16px;
+}
+ .head-text{
+    font-size: 30px;
+  }
+  .read-more-btn{
+    gap:5px;
+  }
+  .para-text{
+    font-size: 16px;
+  }
 }

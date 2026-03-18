@@ -41,4 +41,7 @@
   .blogs-page-container {
     padding: 60px 20px;
   }
+  .blogs-header{
+    align-items: start;
+  }
 }

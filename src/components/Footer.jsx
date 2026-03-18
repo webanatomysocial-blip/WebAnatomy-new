@@ -27,18 +27,24 @@ const Footer = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
-    // Reveal the fixed background only when the footer is in view
-    gsap.to(".footer-bottom-image", {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: "body",
-        start: "90% 90%",
-        end: "bottom bottom",
-        scrub: true,
-        toggleActions: "play reverse play reverse",
-        // markers: true,
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1025px)", () => {
+      // Reveal the fixed background only when the footer is in view
+      gsap.to(".footer-bottom-image", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "body",
+          start: "90% 90%",
+          end: "bottom bottom",
+          scrub: true,
+          toggleActions: "play reverse play reverse",
+          // markers: true,
+        },
+      });
     });
+
+    return () => mm.revert();
   }, []);
 
   const togglePopup = () => setIsPopupOpen(!isPopupOpen);

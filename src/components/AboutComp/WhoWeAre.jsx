@@ -25,7 +25,7 @@ const WhoWeAre = () => {
           </h1>
           <p className="para-text sub-text">
             We don't chase trends.
-            <br />
+            <br className="desktop-br" />
             We build frameworks.
           </p>
           <Link to="/contact" className="black-bg-btn who-contact-btn">

@@ -26,16 +26,24 @@ const AboutBanner = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    }, (context) => {
+      const { isMobile } = context.conditions;
       const images = imageContainerRef.current.querySelectorAll("img");
 
+      // ANIMATION
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
+          end: isMobile ? "+=150%" : "+=200%",
           pin: true,
-          scrub: 1,
+          scrub: isMobile ? 0.5 : 1, // Smoother scrub for mobile
+          anticipatePin: 1,
         },
       });
 
@@ -44,7 +52,7 @@ const AboutBanner = () => {
         rotateX: 90,
         opacity: 0,
         stagger: {
-          amount: 1,
+          amount: isMobile ? 0.8 : 1,
         },
         ease: "power4.inOut",
       })
@@ -61,9 +69,10 @@ const AboutBanner = () => {
           scrollDownRef.current,
           {
             opacity: 0,
-            ease: "power4.out",
+            duration: 0.3,
+            ease: "power2.out",
           },
-          "+=0.6",
+          isMobile ? "0.1" : "+=0.6", // Hide much earlier on mobile
         )
         .to(
           headContainerRef.current,
@@ -74,7 +83,7 @@ const AboutBanner = () => {
         );
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (
@@ -101,8 +110,8 @@ const AboutBanner = () => {
       <div ref={headContainerRef} className="about-page-banner-head-container">
         <p className="sub-head-text">About Us</p>
         <h1 className="head-text">
-          A design-led, engineering-driven <br /> studio building sophisticated{" "}
-          <br /> digital products.
+          A design-led, engineering-driven <br className="desktop-br" /> studio building sophisticated{" "}
+          <br className="desktop-br" /> digital products.
         </h1>
         <Link to="/contact" className="black-bg-btn">
           Contact Us

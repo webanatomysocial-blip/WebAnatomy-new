@@ -116,9 +116,11 @@
     flex-direction: column;
   }
 
-  .mv-left-side {
-    min-height: 500px;
-  }
+.mv-left-side {
+        min-height: 500px;
+        padding: 40px;
+        justify-content: center;
+    }
 
   .mv-right-side {
     min-height: auto;

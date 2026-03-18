@@ -4,20 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/main-logo.png";
 import { BsArrowRight } from "react-icons/bs";
-import { progress } from "framer-motion";
-// import {
-//   HiOutlinePaintBrush,
-//   HiOutlineSparkles,
-//   HiOutlineCpuChip,
-//   HiOutlineMegaphone,
-//   HiOutlineLightBulb,
-//   HiOutlineRocketLaunch,
-//   HiOutlineArrowRight,
-// } from "react-icons/hi2";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
 
   const [isZoomScrollVisible, setIsZoomScrollVisible] = useState(false);
@@ -33,6 +26,83 @@ const Header = () => {
   });
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const closeMenuTimeoutRef = useRef(null);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        closeMenu();
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Close menu on route change
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
+
+  // Lock scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.setProperty("overflow", "hidden", "important");
+    } else {
+      document.body.style.setProperty("overflow", "");
+    }
+    return () => {
+      document.body.style.setProperty("overflow", "");
+    };
+  }, [isMenuOpen]);
+
+  // Framer Motion Variants
+  const menuVariants = {
+    closed: {
+      y: "-100%",
+      transition: {
+        duration: 0.5,
+        ease: [0.77, 0, 0.175, 1],
+      },
+    },
+    open: {
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.77, 0, 0.175, 1],
+      },
+    },
+  };
+
+  const containerVariants = {
+    open: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+    closed: {
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    closed: {
+      opacity: 0,
+      y: 20,
+      transition: { duration: 0.3, ease: "easeIn" },
+    },
+  };
 
   const handleServicesMouseEnter = () => {
     if (closeMenuTimeoutRef.current) {
@@ -127,16 +197,17 @@ const Header = () => {
 
   return (
     <header
-      className={`header-container ${isScrolledDown ? "hidden" : ""} ${
+      className={`header-container ${isScrolledDown && !isMenuOpen ? "hidden" : ""} ${
         shouldShowTransparent ? "header-transparent" : ""
-      }`}
+      } ${isMenuOpen ? "menu-open" : ""}`}
     >
       <div className="header-wrapper">
         <Link to="/" className="logo">
           <img src={logo} alt="WAC Logo" />
         </Link>
-        <nav>
+        <nav className="desktop-nav">
           <ul className="nav-menu">
+            {/* ... rest of the nav-menu items ... */}
             <li
               className="nav-item"
               onMouseEnter={handleServicesMouseEnter}
@@ -150,15 +221,14 @@ const Header = () => {
                 onMouseEnter={handleServicesMouseEnter}
                 onMouseLeave={handleServicesMouseLeave}
               >
+                {/* ... mega-menu content ... */}
                 <div className="mega-menu-content">
                   <div className="mega-left-section">
                     <div className="mega-items-grid">
                       {/* Column 1 */}
                       <div className="mega-grid-column">
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlinePaintBrush /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
                               Experience Design
@@ -170,9 +240,7 @@ const Header = () => {
                           </div>
                         </Link>
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlineSparkles /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">Branding</h4>
                             <p className="sub-small-para-white">
@@ -181,9 +249,7 @@ const Header = () => {
                           </div>
                         </Link>
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlineCpuChip /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">Technology</h4>
                             <p className="sub-small-para-white">
@@ -197,9 +263,7 @@ const Header = () => {
                       {/* Column 2 */}
                       <div className="mega-grid-column">
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlineMegaphone /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
                               Digital Marketing
@@ -210,9 +274,7 @@ const Header = () => {
                           </div>
                         </Link>
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlineLightBulb /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
                               Strategy & Consulting
@@ -224,9 +286,7 @@ const Header = () => {
                           </div>
                         </Link>
                         <Link to="/services" className="mega-item">
-                          <div className="mega-item-icon">
-                            {/* <HiOutlineRocketLaunch /> */}
-                          </div>
+                          <div className="mega-item-icon"></div>
                           <div className="mega-item-text">
                             <h4 className="sub-small-head-white">
                               Product Innovation
@@ -246,7 +306,7 @@ const Header = () => {
                       <div className="mega-featured-header">
                         <span
                           className="gradient-bg-btn"
-                          style={{ cursor: progress }}
+                          style={{ cursor: "pointer" }}
                         >
                           Customer Story
                         </span>
@@ -264,16 +324,6 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            {/* <li className="nav-item">
-              <Link to="/solutions" className="nav-link">
-                Solutions
-              </Link>
-            </li> */}
-            {/* <li className="nav-item">
-              <Link to="/industries" className="nav-link">
-                Industries
-              </Link>
-            </li> */}
             <li className="nav-item">
               <Link to="/works" className="nav-link">
                 Works
@@ -292,15 +342,65 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+
       <div className="header-actions">
-        <Link to="/contact" className="contact-btn">
+        <Link to="/contact" className="contact-btn desktop-only">
           Contact Us
           <span className="icon-btn">
             <BsArrowRight className="icon-inside-btn-1" />
             <BsArrowRight className="icon-inside-btn-2" />
           </span>
         </Link>
+        <div className="menu-toggle" onClick={toggleMenu}>
+          {isMenuOpen ? <RxCross2 /> : <RxHamburgerMenu />}
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="mobile-menu-overlay"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+          >
+            <div className="mobile-menu-content">
+              <motion.ul
+                className="mobile-nav-menu"
+                variants={containerVariants}
+              >
+                {[
+                  { to: "/services", label: "Services" },
+                  { to: "/works", label: "Works" },
+                  { to: "/about", label: "About" },
+                  { to: "/careers", label: "Careers" },
+                ].map((item) => (
+                  <motion.li key={item.to} variants={itemVariants}>
+                    <Link to={item.to} onClick={closeMenu}>
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                ))}
+                <motion.li className="mobile-contact-li" variants={itemVariants}>
+                  <Link
+                    to="/contact"
+                    className="contact-btn"
+                    onClick={closeMenu}
+                  >
+                    Contact Us
+                    <span className="icon-btn">
+                      <BsArrowRight className="icon-inside-btn-1" />
+                      <BsArrowRight className="icon-inside-btn-2" />
+                    </span>
+                  </Link>
+                </motion.li>
+              </motion.ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

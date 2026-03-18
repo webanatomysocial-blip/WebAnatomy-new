@@ -53,7 +53,8 @@
 
 .workflow-steps-inner {
   position: relative;
-  width: 140vw; /* As requested */
+  width: 140vw;
+  /* As requested */
   margin: 0;
   min-height: 500px;
 }
@@ -73,6 +74,7 @@
   top: 30px;
   z-index: 10;
 }
+
 .process-side-bg.right {
   right: -100px;
   width: 200px;
@@ -109,12 +111,14 @@
   opacity: 1;
   visibility: visible;
 }
+
 .workflow-card-text {
   font-size: 14px !important;
   z-index: 2 !important;
   line-height: 1.5;
   color: #666;
 }
+
 .process-step-top {
   align-self: flex-start;
   margin-top: 0;
@@ -129,7 +133,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 140vw; /* Match container width */
+  width: 140vw;
+  /* Match container width */
   height: 100%;
   z-index: 1;
   pointer-events: none;
@@ -148,7 +153,8 @@
 #line-mask path {
   fill: none;
   stroke: white;
-  stroke-width: 4; /* Slightly thicker than the line to ensure full coverage */
+  stroke-width: 4;
+  /* Slightly thicker than the line to ensure full coverage */
 }
 
 .workflow-icon-hold {
@@ -194,6 +200,7 @@
   -webkit-backdrop-filter: blur(10px) saturate(180%);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .workflow-bg-number {
   z-index: 0;
   font-size: 180px;
@@ -203,12 +210,10 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(227, 227, 227, 1) 0%,
-    rgba(245, 245, 245, 0.29) 82%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(227, 227, 227, 1) 0%,
+      rgba(245, 245, 245, 0.29) 82%,
+      rgba(255, 255, 255, 0.2) 100%);
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -217,21 +222,52 @@
 }
 
 @media (max-width: 1024px) {
-  .workflow-steps-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .about-workflow-section {
+    height: auto;
+    padding: 60px 0;
   }
 
-  .process-lines-svg {
-    display: none;
+  .workflow-header {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .workflow-title {
+    font-size: 32px;
+  }
+
+  .workflow-steps-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    min-height: auto;
+  }
+
+  .process-lines-svg,
+  .process-side-bg {
+    display: none !important;
   }
 
   .workflow-step-card {
-    align-self: stretch !important;
-    height: auto;
-  }
-  .step-top,
-  .step-bottom {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     margin: 0;
+    padding: 30px 20px;
+    background: white;
+    border: 1px solid #eee;
+  }
+
+  .workflow-bg-number {
+    font-size: 100px;
+    bottom: -10px;
+    right: 10px;
   }
 }

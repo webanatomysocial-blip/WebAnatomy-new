@@ -112,7 +112,7 @@
   justify-content: center;
   gap: 30px;
   background-color: #000;
-  padding: 40px;
+  padding: 40px !important;
   border-radius: 5px;
 }
 
@@ -195,5 +195,18 @@
 @media (max-width: 768px) {
   .our-story-home {
     padding: 60px 20px;
+  }
+ 
+  .story-number{
+    font-size: 40px;
+  }
+  .success-stories-card{
+    height: 200px;
+  }
+  .video-section{
+    height: 200px;
+  }
+  .our-story-right{
+    padding: 20px !important;
   }
 }

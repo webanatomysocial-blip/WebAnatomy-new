@@ -84,7 +84,7 @@ And our mission is to imagine the possibilities.`;
                   </span>
                 );
               })}
-              {lineIndex < lines.length - 1 && <br />}
+              {lineIndex < lines.length - 1 && <br className="desktop-br" />}
             </div>
           );
         })}

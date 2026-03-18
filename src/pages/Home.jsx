@@ -16,8 +16,8 @@ import Recognitions from "../components/HomeComp/Recognitions";
 export default function Home() {
   return (
     <>
-      <HomeBanner />
-      <HomeTextFade />
+      {/* <HomeBanner /> */}
+      {/* <HomeTextFade /> */}
       <FlipboxCarsoule />
       <AboutOneOnOneSection />
       {/* <ZoomScroll id="zoomScroll" /> */}
