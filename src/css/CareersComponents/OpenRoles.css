@@ -61,6 +61,7 @@
   margin: 0;
   max-width: 560px;
   opacity: 0.75;
+  color: #000 !important;
 }
 
 .open-roles-btn {

@@ -62,15 +62,15 @@ import img53 from "../assets/images/Clients-logos/53.png";
 import img54 from "../assets/images/Clients-logos/54.png";
 import img55 from "../assets/images/Clients-logos/55.png";
 const clientLogos = [
-  img1,
+  // img1,
   img2,
   img3,
   img4,
   img5,
   img6,
   img7,
-  img8,
-  img9,
+  // img8,
+  // img9,
   img10,
   img11,
   img12,
@@ -97,7 +97,7 @@ const clientLogos = [
   img33,
   img34,
   img35,
-  img36,
+  // img36,
   img37,
   img38,
   img39,

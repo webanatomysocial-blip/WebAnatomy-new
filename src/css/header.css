@@ -162,14 +162,7 @@
 }
 
 .mega-item .sub-small-head-white {
-  background: linear-gradient(
-    90deg,
-    #fb7239 0%,
-    #b92d67 25%,
-    #f209d6 50%,
-    #fff 50%,
-    #fff 100%
-  );
+  background: white;
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -180,6 +173,7 @@
 
 .mega-item:hover .sub-small-head-white {
   background-position: 0% 0;
+  background-color: #fb7239;
 }
 
 .mega-item-icon {

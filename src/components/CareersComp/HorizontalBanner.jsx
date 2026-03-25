@@ -7,13 +7,6 @@ import bannerImg3 from "../../assets/images/Careers-page/scroll-section/three.pn
 import bannerImg4 from "../../assets/images/Careers-page/scroll-section/five.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  BsBriefcaseFill,
-  BsPeopleFill,
-  BsGraphUpArrow,
-  BsLightbulbFill,
-  BsStarFill,
-} from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,35 +18,35 @@ export default function HorizontalBanner() {
   const careere_data = [
     {
       id: 1,
-      icon: <BsBriefcaseFill size={50} />,
+
       title: "Build Your Career",
       desc: "Join a team of innovators and creators who are passionate about building world-class digital products.",
       img: bannerImg,
     },
     {
       id: 2,
-      icon: <BsPeopleFill size={50} />,
+
       title: "Collaborative Culture",
       desc: "We foster an inclusive, collaborative environment where every voice is heard and every idea is valued.",
       img: bannerImg2,
     },
     {
       id: 3,
-      icon: <BsGraphUpArrow size={50} />,
+
       title: "Grow With Us",
       desc: "We invest in your growth with mentorship, learning budgets, and opportunities to level up your skills.",
       img: bannerImg1,
     },
     {
       id: 4,
-      icon: <BsLightbulbFill size={50} />,
+
       title: "Innovate Every Day",
       desc: "Work on challenging problems that push you to think creatively and deliver meaningful impact.",
       img: bannerImg3,
     },
     {
       id: 5,
-      icon: <BsStarFill size={50} />,
+
       title: "Be The Best",
       desc: "We're looking for exceptional talent who want to leave a mark and shape the future of digital experiences.",
       img: bannerImg4,
@@ -154,7 +147,6 @@ export default function HorizontalBanner() {
                   <img src={item.img} alt="" />
                 </div>
                 <div className="HorizontalBanner-scroll-sticky-content-right-bottom">
-                  {item.icon}
                   <h1 className="sub-head-text">{item.title}</h1>
                   <p className="sub-para-text">{item.desc}</p>
                 </div>

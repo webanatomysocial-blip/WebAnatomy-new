@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 import one from "../../assets/images/GoalsOurPriority/one.png";
 import three from "../../assets/images/GoalsOurPriority/three.png";
 
-import car1 from "../../assets/images/GoalsOurPriority/car1.png";
+import img1 from "../../assets/images/Careers-page/gallerySection/2025-08-10-1.webp";
+import img2 from "../../assets/images/Careers-page/gallerySection/2025-08-10-2.webp";
+import img3 from "../../assets/images/Careers-page/gallerySection/2025-08-10-3.webp";
+import img4 from "../../assets/images/Careers-page/gallerySection/2025-08-10-4.webp";
+import img5 from "../../assets/images/Careers-page/gallerySection/2025-08-10.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,22 +19,19 @@ import { BsArrowRight } from "react-icons/bs";
 export default function GoalsOurPriority() {
   const carimg = [
     {
-      img: car1,
+      img: img1,
     },
     {
-      img: car1,
+      img: img2,
     },
     {
-      img: car1,
+      img: img3,
     },
     {
-      img: car1,
+      img: img4,
     },
     {
-      img: car1,
-    },
-    {
-      img: car1,
+      img: img5,
     },
   ];
   return (

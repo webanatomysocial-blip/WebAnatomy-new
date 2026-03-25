@@ -4,7 +4,7 @@ import "../../css/ServicesComponents/ServicesLeftRight.css";
 
 // Importing videos - utilizing placeholders for the others for now
 import expirenceVd from "../../assets/videos/services-page/service-1.mp4";
-import brandingVd from "../../assets/videos/services-page/service-2.mp4";
+import technologyVd from "../../assets/videos/services-page/Branding-WA.mp4";
 
 const SERVICES_DATA = [
   {
@@ -27,7 +27,7 @@ const SERVICES_DATA = [
   {
     id: 2,
     title: "Branding",
-    video: brandingVd,
+    video: technologyVd,
     stickySide: "left",
     services: [
       "Brand Consulting",

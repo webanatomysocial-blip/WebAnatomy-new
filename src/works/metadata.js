@@ -2,6 +2,9 @@ import case1 from "../assets/images/Case-Studies-images/case-1.webp";
 import case2 from "../works/Work-images/Theat.png";
 import case3 from "../works/Work-images/togglenow.png";
 import case4 from "../works/Work-images/Pied.png";
+import sase from "../works/Work-images/Sase.png";
+import finase from "../works/Work-images/finase-cover.png";
+import Zenith from "../works/Work-images/Zenith.png";
 
 export const worksMetadata = [
   {
@@ -42,33 +45,26 @@ export const worksMetadata = [
     title: "TheSase - Transforming Project Management" ,
     category: "TheSase",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: case1,
+    image: sase,
     slug: "thesase",
   },
   {
     id: 6,
-    title: "TravelSwift: Booking Agency App",
-    category: "Travel",
+    title: "Finase",
+    category: "Finase",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: case1,
-    slug: "travel-swift",
+    image: finase,
+    slug: "finase",
   },
 {
     id: 7,
-    title: "TravelSwift: Booking Agency App",
-    category: "Travel",
+    title: "Zenith",
+    category: "Zenith",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: case1,
-    slug: "travel-swift",
+    image: Zenith,
+    slug: "zenith",
   },
-  {
-    id: 8,
-    title: "TravelSwift: Booking Agency App",
-    category: "Travel",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: case1,
-    slug: "travel-swift",
-  },
+  
 
 
 

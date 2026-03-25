@@ -49,14 +49,15 @@ export default function PiedPippers() {
         description="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
         description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
       />
-      <PhoneScreens />
+      <UpDownImages />
       <Context
         subheading="Context"
         tittle="Pied Pippers"
         description="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
         description2="Pied Pippers collaborated with our team to develop a high-end webpage for children's essentials. We crafted an exquisite experience that meets global standards."
       />
-      <UpDownImages />
+
+      <PhoneScreens />
       <Context
         subheading="Context"
         tittle="Pied Pippers"

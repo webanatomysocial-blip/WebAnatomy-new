@@ -15,11 +15,11 @@
   display: flex;
   gap: 28px;
   align-items: flex-start;
-  overflow-x: auto;
   padding: 0 4px 32px;
   scrollbar-width: none;
   -ms-overflow-style: none;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .gallery-stories-strip::-webkit-scrollbar {
@@ -42,8 +42,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, #fb7239 0%, #b92d67 50%, #f209d6 100%);
+  padding: 1.5px;
+  background: white;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -167,8 +167,14 @@
 }
 
 @keyframes lb-fade-in {
-  from { opacity: 0; backdrop-filter: blur(0px); }
-  to   { opacity: 1; backdrop-filter: blur(8px); }
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
 }
 
 .lb-modal {
@@ -214,7 +220,7 @@
   color: #fff;
   letter-spacing: 0.5px;
   white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .lb-progress-container {

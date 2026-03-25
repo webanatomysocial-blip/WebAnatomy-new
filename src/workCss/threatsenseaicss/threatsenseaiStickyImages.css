@@ -1,6 +1,6 @@
 .threatsenseai-phone-section {
   width: 100%;
-  background-color: black;
+  background-color: var(--white-color);
 }
 
 .threatsenseai-phone-container {
@@ -18,7 +18,7 @@
   height: 100%;
   width: 100%;
   z-index: 10;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .threatsenseai-front-img {

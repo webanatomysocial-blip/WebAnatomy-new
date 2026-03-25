@@ -9,6 +9,7 @@ import JustHeading from "../workComponents/JustHeading";
 import ThreatsenseaiGalleryScroll from "../workComponents/threatsenseaicomponents/threatsenseaiGalleryScroll";
 
 import ThreatsenseaiStickyImages from "../workComponents/threatsenseaicomponents/threatsenseaiStickyImages";
+import ThreatSenseAIIconScroll from "../workComponents/threatsenseaicomponents/ThreatSenseAIIconScroll";
 import BothImages from "../workComponents/threatsenseaicomponents/BothImages";
 import LeftReversePhone from "../workComponents/threatsenseaicomponents/LeftReversePhone";
 import WorkCta from "../workComponents/WorkCta";
@@ -23,6 +24,14 @@ import img3 from "../WorkImages/threatsenseai/scroll-gallery/3.png";
 import img4 from "../WorkImages/threatsenseai/scroll-gallery/4.png";
 import img5 from "../WorkImages/threatsenseai/scroll-gallery/5.png";
 import img6 from "../WorkImages/threatsenseai/scroll-gallery/6.png";
+
+// both images
+
+import both1 from "../WorkImages/threatsenseai/both-left.jpeg";
+import both2 from "../WorkImages/threatsenseai/both-right.jpeg";
+
+// cta image
+import ctaimage from "../WorkImages/threatsenseai/cta.jpeg";
 
 export default function ThreatSenseAI() {
   const services = [
@@ -53,15 +62,16 @@ export default function ThreatSenseAI() {
         stats={stats}
         liveLink="https://threatsenseai.com"
       />
-      <ImageExpand src={scrollwidth} alt="Expandable Image" />
+      <ThreatSenseAIIconScroll />
+
       <Context
         subheading="Context"
         tittle="ThreatSenseAI"
         description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
         description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
-      <BothImages />
 
+      <ImageExpand src={scrollwidth} alt="Expandable Image" />
       {/* <TwoPeople /> */}
       <JustHeading
         tittle={
@@ -77,13 +87,14 @@ export default function ThreatSenseAI() {
         paddingBottom="0px"
       />
       <ThreatsenseaiStickyImages />
+
       <Context
         subheading="Context"
         tittle="ThreatSenseAI"
         description="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
         description2="ThreatSenseAI reached out to build an all-in-one automation tool for growing teams. We delivered a robust, scalable platform focused on efficiency and ease of use."
       />
-      <BothImages />
+      <BothImages src1={both1} src2={both2} />
       <Context
         subheading="Context"
         tittle="ThreatSenseAI"
@@ -92,7 +103,10 @@ export default function ThreatSenseAI() {
         paddingBottom="0px"
       />
       {/* <LeftReversePhone /> */}
-      <WorkCta />
+      <WorkCta
+        text="On a COVID morning, with barely enough groceries to whip up a meal, every Mrs. Helpless was completely clueless looking at the hungry, wailing babies, and this scenario was increasing in numbers."
+        src={ctaimage}
+      />
     </div>
   );
 }

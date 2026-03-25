@@ -31,8 +31,8 @@ const Footer = () => {
     gsap.to(".footer-bottom-image", {
       opacity: 1,
       scrollTrigger: {
-        trigger: "body",
-        start: "90% 90%",
+        trigger: ".footer-container",
+        start: "top 90%",
         end: "bottom bottom",
         scrub: true,
         toggleActions: "play reverse play reverse",

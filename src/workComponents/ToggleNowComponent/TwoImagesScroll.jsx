@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import img from "../../WorkImages/ToggleNow/testing-dummy.webp";
+import img from "../../WorkImages/ToggleNow/TNow.png";
+import img2 from "../../WorkImages/ToggleNow/TNow-02.png";
 import "../../workCss/ToggleNowCss/TwoImagesScroll.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function TwoImagesScroll() {
   const containerRef = useRef(null);
+  const img1Ref = useRef(null);
+  const img2Ref = useRef(null);
 
   useGSAP(
     () => {
@@ -21,14 +24,13 @@ export default function TwoImagesScroll() {
         },
       });
 
-      tl.to(".TwoImagesScroll-work-section img:nth-child(1)", {
+      tl.to(img1Ref.current, {
         y: "50px",
         ease: "none",
       }).to(
-        ".TwoImagesScroll-work-section img:nth-child(2)",
+        img2Ref.current,
         {
           y: "-50px",
-
           ease: "none",
         },
         "<",
@@ -39,8 +41,8 @@ export default function TwoImagesScroll() {
 
   return (
     <section className="TwoImagesScroll-work-section" ref={containerRef}>
-      <img src={img} alt="" />
-      <img src={img} alt="" />
+      <img src={img} alt="" ref={img1Ref} />
+      <img src={img} alt="" ref={img2Ref} />
     </section>
   );
 }

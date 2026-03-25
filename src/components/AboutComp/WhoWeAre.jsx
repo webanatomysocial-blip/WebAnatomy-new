@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import img1 from "../../assets/images/about-page/f-left.png";
 
-
 const WhoWeAre = () => {
   return (
     <section className="WhoWeAre">
-      <h2 className="sub-small-head">Who we Are</h2>
+      {/* <h2 className="sub-small-head">Who we Are</h2> */}
       <div className="firstContainer">
         <div className="who-we-are-col-1">
-          
           <div className="small-image-wrapper">
             {/* <img src={img1} alt="Team collaboration" className="small-image" /> */}
           </div>
@@ -28,8 +26,8 @@ const WhoWeAre = () => {
             <br />
             We build frameworks.
           </p>
-          <Link to="/contact" className="black-bg-btn who-contact-btn">
-            Contact Us
+          <Link to="#" className="black-bg-btn who-contact-btn">
+            Leadership
             <span className="icon-btn">
               <BsArrowRight className="icon-inside-btn-1" />
               <BsArrowRight className="icon-inside-btn-2" />

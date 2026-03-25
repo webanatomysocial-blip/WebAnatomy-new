@@ -54,10 +54,6 @@ const CAROUSEL_DATA = [
     id: 7,
     img: img4,
   },
-  {
-    id: 8,
-    img: img4,
-  },
 ];
 
 import { useWorkPopup } from "../../context/WorkPopupContext";
@@ -127,22 +123,21 @@ export default function FlipboxCarsoule() {
         xPercent: -25,
         ease: "none",
         duration: 1,
-      })
-        .to(trackRef.current, {
-          xPercent: -50,
-          ease: "none",
-          duration: 1,
-        })
-        .to(trackRef.current, {
-          xPercent: -75,
-          ease: "none",
-          duration: 1,
-        })
-        .to(trackRef.current, {
-          xPercent: -100,
-          ease: "none",
-          duration: 1,
-        });
+      }).to(trackRef.current, {
+        xPercent: -50,
+        ease: "none",
+        duration: 1,
+      });
+      // .to(trackRef.current, {
+      //   xPercent: -75,
+      //   ease: "none",
+      //   duration: 1,
+      // });
+      // .to(trackRef.current, {
+      //   xPercent: -100,
+      //   ease: "none",
+      //   duration: 1,
+      // });
 
       tl.addLabel("end");
     }, sectionRef);

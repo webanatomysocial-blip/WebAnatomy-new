@@ -3,8 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "../../workCss/threatsenseaicss/threatsenseaiStickyImages.css";
-// import img1 from "../../WorkImages/threatsenseai/ipad.webp";
-// import img2 from "../../WorkImages/threatsenseai/phone-img.png";
+import mainvideo from "../../workVideos/threatsenseai/main.mp4";
+import frontvideo from "../../workVideos/threatsenseai/bigmiddle.mp4";
+import leftvideo from "../../workVideos/threatsenseai/left.mp4";
+import rightvideo from "../../workVideos/threatsenseai/right.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,13 +28,14 @@ export default function ThreatsenseaiStickyImages() {
 
       animationTimeline1
         .to(".threatsenseai-main-img", {
-          scale: 0.127,
+          scale: 0.27,
           height: "120%",
-          y: -100,
+          y: -167,
+          x: 5,
           duration: 1,
           onUpdate: function () {
             const currentScale = gsap.getProperty(this.targets()[0], "scaleX");
-            if (currentScale <= 0.14 && currentScale >= 0.125) {
+            if (currentScale <= 0.28) {
               gsap.set(this.targets()[0], { opacity: 0 });
             } else {
               gsap.set(this.targets()[0], { opacity: 1 });
@@ -64,23 +67,35 @@ export default function ThreatsenseaiStickyImages() {
   return (
     <section className="threatsenseai-phone-section" ref={containerRef}>
       <div className="threatsenseai-phone-container">
-        <img
+        <video
+          autoPlay
+          muted
+          loop
           className="threatsenseai-main-img"
-          src="https://wa.ctsi.in/wp-content/uploads/2025/05/Mask_Group_234337_min_5bfd9e14f3.webp"
+          src={frontvideo}
           alt=""
         />
-        <img
-          src="https://wa.ctsi.in/wp-content/uploads/2025/05/assets_frame_2_4f556b41ac.webp"
+        <video
+          autoPlay
+          muted
+          loop
+          src={mainvideo}
           alt=""
           className="threatsenseai-front-img"
         />
-        <img
-          src="https://wa.ctsi.in/wp-content/uploads/2025/05/assets_frame_1_d216b77f06.webp"
+        <video
+          autoPlay
+          muted
+          loop
+          src={leftvideo}
           alt=""
           className="threatsenseai-left-img"
         />
-        <img
-          src="https://wa.ctsi.in/wp-content/uploads/2025/05/assets_frame_1_d216b77f06.webp"
+        <video
+          autoPlay
+          muted
+          loop
+          src={rightvideo}
           alt=""
           className="threatsenseai-right-img"
         />
