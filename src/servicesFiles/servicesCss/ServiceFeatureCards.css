@@ -1,0 +1,69 @@
+/* src/servicesFiles/servicesCss/ServiceFeatureCards.css */
+.service-feature-container {
+  padding: 100px;
+  width: 100%;
+  background-color: var(--white-color);
+}
+
+.service-feature-swiper {
+  width: 100%;
+  padding-bottom: 50px !important; /* Space for pagination */
+}
+
+.service-feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background-color: #fcecec; /* Light background for icon circle */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  color: #fb7239; /* Using one of the gradient colors */
+}
+
+.service-feature-card .sub-small-head {
+  margin-bottom: 15px;
+}
+
+.service-feature-card .sub-small-para {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Swiper Pagination Styles */
+.service-feature-swiper .swiper-pagination-bullet {
+  background: #fb7239;
+  opacity: 0.3;
+}
+
+.service-feature-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 25px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .service-feature-container {
+    padding: 60px 20px;
+  }
+}

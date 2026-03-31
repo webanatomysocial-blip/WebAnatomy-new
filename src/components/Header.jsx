@@ -27,7 +27,8 @@ const Header = () => {
       pathname === "/" ||
       pathname === "/about" ||
       pathname === "/works" ||
-      pathname.startsWith("/works/");
+      pathname.startsWith("/works/") ||
+      pathname.startsWith("/services/");
     const isAtTop = typeof window !== "undefined" ? window.scrollY < 50 : true;
     return isTransPage && isAtTop;
   });
@@ -77,7 +78,8 @@ const Header = () => {
         pathname === "/" ||
         pathname === "/services" ||
         pathname === "/works" ||
-        pathname.startsWith("/works/");
+        pathname.startsWith("/works/") ||
+        pathname.startsWith("/services/");
       const isAtTop = window.scrollY < 50;
 
       setIsTransparent(isTransparentPage && isAtTop);

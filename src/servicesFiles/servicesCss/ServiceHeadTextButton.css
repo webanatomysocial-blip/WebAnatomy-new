@@ -1,0 +1,8 @@
+.ServiceHeadTextButton-container {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f7effb;
+  padding-right: 500px;
+}

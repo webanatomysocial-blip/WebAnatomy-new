@@ -12,6 +12,7 @@ import Careers from "../pages/Careers";
 import Contact from "../pages/Contact";
 import Works from "../pages/Works";
 import DynamicWork from "../components/DynamicWork";
+import UIUXDesign from "../servicesFiles/servicesPages/UI-UX-Design";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -66,6 +67,10 @@ function AnimatedRoutes() {
       <Route path="/blogs/:blogId" element={<DynamicBlog />} />
       <Route path="/works" element={<Works />} />
       <Route path="/works/:workId" element={<DynamicWork />} />
+
+      {/* services pages start  */}
+      <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
+      {/* services pages End */}
     </Routes>
   );
 
