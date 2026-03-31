@@ -7,6 +7,8 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { MdOutlineDevices } from "react-icons/md";
 import ServicesHover from "../servicesComponents/ServicesHover";
 import BlogSection from "../../components/BlogSection";
+import CaseStudiesSwiper from "../servicesComponents/CaseStudiesSwiper";
+
 
 export default function UIUXDesign() {
   const services = [
@@ -67,6 +69,8 @@ export default function UIUXDesign() {
       <ServiceFeatureCards services={services} />
       <ServicesHover />
       <BlogSection  />
+      <CaseStudiesSwiper category="UI/UX" />
+
 
     </>
   );

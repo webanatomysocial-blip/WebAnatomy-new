@@ -8,64 +8,68 @@ import Zenith from "../works/Work-images/Zenith.png";
 
 export const worksMetadata = [
   {
-    id: "piedpippers",
-    title: "The Pied Piper: A Children's Club",
-    category: "The Pied Piper",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: case4,
-    slug: "pied-piper",
-  },
-  {
-    id: "threatsenseai",
-    title: "ThreatSenseAI",
-    category: "ThreatSenseAI",
-    description: "ThreatSenseAI is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
-    image: case2,
-    slug: "threatsenseai",
-  },
-  {
     id: "ToggleNow",
     title: "ToggleNow - Transforming Project Management",
-    category: "ToggleNow",
+    category: "UI/UX",
     description: "ToggleNow is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
     image: case3,
     slug: "togglenow",
   },
   {
+    id: "threatsenseai",
+    title: "ThreatSenseAI",
+    category: "Branding",
+    description: "ThreatSenseAI is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
+    image: case2,
+    slug: "threatsenseai",
+  },
+  {
+    id: "TheSase",
+    title: "TheSase - Transforming Project Management",
+    category: "UI/UX",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image: sase,
+    slug: "thesase",
+  },
+  {
+    id: "piedpippers",
+    title: "The Pied Piper: A Children's Club",
+    category: "Branding",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    image: case4,
+    slug: "pied-piper",
+  },
+  {
     id: 4,
     title: "HealthConnect: Telemedicine Platform",
-    category: "Healthcare",
+    category: "UI/UX",
     hasPopup: true,
     description: "Joyalukkas is a renowned jewelry brand known for its exquisite designs and craftsmanship. We helped them expand their reach through a modern e-commerce platform.",
     image: case1,
     slug: "health-connect",
   },
   {
-    id: "TheSase",
-    title: "TheSase - Transforming Project Management" ,
-    category: "TheSase",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    image: sase,
-    slug: "thesase",
-  },
-  {
     id: 6,
     title: "Finase",
-    category: "Finase",
+    category: "UI/UX",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     image: finase,
     slug: "finase",
   },
-{
+  {
     id: 7,
     title: "Zenith",
-    category: "Zenith",
+    category: "UI/UX",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     image: Zenith,
     slug: "zenith",
   },
-  
-
-
-
+  {
+    id: 8,
+    title: "Eco Root Sustainable Identity",
+    category: "UI/UX",
+    description: "Branding eco root, crafting a sustainable identity.",
+    image: case1,
+    slug: "eco-root",
+  }
 ];
