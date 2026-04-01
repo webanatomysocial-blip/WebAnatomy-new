@@ -1,0 +1,59 @@
+/* src/css/MobileCssHome/HomeTextFadeMobile.css */
+
+.Text-Section-Mobile {
+  background-color: black;
+  min-height: 300vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.text-container-mobile {
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  position: sticky;
+  top: 250px;
+  left: 0;
+}
+
+/* Paragraph wrapper — lets text flow naturally */
+.mobile-fade-text {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  /* Ensure words wrap naturally, not mid-character */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Each word is nowrap so it NEVER breaks mid-word */
+.word-mobile {
+  display: inline;
+  white-space: nowrap;
+}
+
+.char-span-mobile {
+  display: inline;
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: 300;
+  color: #555;
+  /* Prevent sub-pixel shake on mobile */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.gradient-char-mobile {
+  background: linear-gradient(90deg, #fb7239 30%, #b92d67 70%, #f209d6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* No background-attachment: fixed — causes repaint jank on mobile */
+  color: #555;
+}
+
+.char-span-mobile.visi-mobile {
+  visibility: hidden;
+}
+

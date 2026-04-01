@@ -60,3 +60,24 @@
   background-color: #f7effb;
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .about-page-banner-head-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  transform: translateY(50px);
+  gap: 20px;
+  padding: 60px 20px;
+  background-color: #f7effb;
+  opacity: 0;
+}
+
+  
+}

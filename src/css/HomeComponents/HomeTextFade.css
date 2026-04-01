@@ -47,3 +47,21 @@
   display: inline-block;
   width: 0.8em;
 }
+
+@media (max-width: 768px) {
+  .Text-Section {
+    padding: 60px 20px;
+  }
+  
+  .text-container {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .desktop-br {
+    display: none;
+  }
+  .char-span {
+    font-size: 24px;
+  }
+}

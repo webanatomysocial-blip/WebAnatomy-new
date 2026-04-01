@@ -3,8 +3,10 @@ import { BsArrowRight } from "react-icons/bs";
 import "../../css/ServicesComponents/ServicesLeftRight.css";
 
 // Importing videos - utilizing placeholders for the others for now
-import expirenceVd from "../../assets/videos/services-page/service-1.mp4";
-import technologyVd from "../../assets/videos/services-page/Branding-WA.mp4";
+import expirenceVd from "../../assets/videos/services-page/Experience-Design.mp4";
+import technologyVd from "../../assets/videos/services-page/Teachnology - Website.mp4";
+import Branding   from "../../assets/videos/services-page/Branding - Website.mp4";
+import DigitalMarketing from "../../assets/videos/services-page/Digital-Marketing.mp4";
 
 const SERVICES_DATA = [
   {
@@ -27,7 +29,7 @@ const SERVICES_DATA = [
   {
     id: 2,
     title: "Branding",
-    video: technologyVd,
+    video: Branding,
     stickySide: "left",
     services: [
       "Brand Consulting",
@@ -45,7 +47,7 @@ const SERVICES_DATA = [
   {
     id: 3,
     title: "Technology",
-    video: expirenceVd,
+    video: technologyVd,
     stickySide: "right",
     services: [
       "AI & Machine Learning",
@@ -63,7 +65,7 @@ const SERVICES_DATA = [
   {
     id: 4,
     title: "Digital Marketing",
-    video: expirenceVd,
+    video: DigitalMarketing,
     stickySide: "left",
     services: [
       "Search Engine Optimisation",

@@ -1,7 +1,9 @@
 import React from "react";
 import HomeBanner from "../components/HomeComp/HomeBanner";
 import HomeTextFade from "../components/HomeComp/HomeTextFade";
+import HomeTextFadeMobile from "../components/mobileHome/HomeTextFadeMobile";
 import FlipboxCarsoule from "../components/HomeComp/FlipboxCarsoule";
+import FlipboxSwipeMobile from "../components/mobileHome/FlipboxSwipeMobile";
 import AboutOneOnOneSection from "../components/HomeComp/About-OneOnOne-section";
 import OurStoryHomePage from "../components/HomeComp/Our-story-home-page";
 import BlogSection from "../components/BlogSection";
@@ -16,9 +18,11 @@ import Recognitions from "../components/HomeComp/Recognitions";
 export default function Home() {
   return (
     <>
-      <HomeBanner />
-      <HomeTextFade />
-      <FlipboxCarsoule />
+      {/* <HomeBanner /> */}
+      <div className="only-windows"><HomeTextFade /></div>
+      <div className="only-mobile"><HomeTextFadeMobile /></div>
+      <div className="only-windows"><FlipboxCarsoule /></div>
+      <div className="only-mobile"><FlipboxSwipeMobile /></div>
       <AboutOneOnOneSection />
       {/* <ZoomScroll id="zoomScroll" /> */}
       <OurStoryHomePage />

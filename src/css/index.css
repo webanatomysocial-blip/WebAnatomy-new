@@ -250,7 +250,7 @@ button {
   line-height: 1.4em;
   letter-spacing: 1px;
   font-family: var(--font-primary);
-  font-weight: 400 !important;
+  font-weight: 300 !important;
     margin: 0;
   opacity: 1;
   transform: none;
@@ -659,7 +659,31 @@ body {
   padding: 0px 0px 250px 0px;
   position: relative;
 }
+
+/* ── Visibility helpers ─────────────────────────────────────────── */
+/* Show only on desktop (>768px), hidden on mobile */
+.only-windows {
+  display: block;
+}
+
+/* Show only on mobile (≤768px), hidden on desktop */
+.only-mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .only-windows {
+    display: none !important;
+  }
+
+  .only-mobile {
+    display: block !important;
+  }
+}
+/* ─────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
   body {
     padding-bottom: 0 !important;
   }

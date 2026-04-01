@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../css/HomeComponents/FlipboxCarsoule.css";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
-// import "../../css/index.css";
 import { worksMetadata } from "../../works/metadata";
 
 // Placeholder images - using repeats for 8 items
@@ -127,12 +126,12 @@ export default function FlipboxCarsoule() {
         xPercent: -50,
         ease: "none",
         duration: 1,
+      })
+      .to(trackRef.current, {
+        xPercent: -75,
+        ease: "none",
+        duration: 1,
       });
-      // .to(trackRef.current, {
-      //   xPercent: -75,
-      //   ease: "none",
-      //   duration: 1,
-      // });
       // .to(trackRef.current, {
       //   xPercent: -100,
       //   ease: "none",

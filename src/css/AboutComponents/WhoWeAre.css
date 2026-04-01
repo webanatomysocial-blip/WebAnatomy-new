@@ -77,3 +77,45 @@
   object-fit: cover;
   border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+  .WhoWeAre {
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  .firstContainer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 0;
+  }
+
+  .who-we-are-col-1 {
+    min-height: auto;
+    order: 2; /* Move small image below text if needed, or keep order 1 */
+    display: none; /* Often small decoration images are hidden on mobile to save space, but I'll keep it visible if the user wants "compatible" */
+  }
+
+  .col-2 {
+    order: 1;
+  }
+
+  .sub-text.para-text {
+    padding-top: 20px;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .who-we-are-col-3 {
+    order: 3;
+    height: 300px;
+  }
+
+  .large-image {
+    height: 100%;
+  }
+
+  .desktop-br {
+    display: none;
+  }
+}
