@@ -1,8 +1,9 @@
 /* src/css/HomeComponents/BlogSection.css */
 
 .blog-section {
-  padding: 100px 0;
-  background-color: var(--white-color);
+  padding-top: var(--blog-pt, 100px);
+  padding-bottom: var(--blog-pb, 100px);
+  background-color: var(--blog-bg, var(--white-color));
   overflow: hidden;
   position: relative;
 }
@@ -88,7 +89,9 @@
 
 @media (max-width: 768px) {
   .blog-section {
-    padding: 60px 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: transparent !important;
   }
 
   .blog-head-container {

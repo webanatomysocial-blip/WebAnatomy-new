@@ -89,11 +89,15 @@
   .recognitions-container {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
+  
   }
 
   .recognitions-text-col {
     width: 100%;
-    margin-bottom: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   .recognitions-marquee-col {

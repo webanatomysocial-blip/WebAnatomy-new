@@ -343,4 +343,8 @@
     gap: 40px;
     align-items: center;
   }
+
+  .footer-bottom-image {
+    display: none !important;
+  }
 }

@@ -21,9 +21,9 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
     <section
       className="blog-section"
       style={{
-        backgroundColor: backgroundColor,
-        paddingBottom: paddingBottom,
-        paddingTop: paddingTop,
+        "--blog-bg": backgroundColor,
+        "--blog-pb": paddingBottom,
+        "--blog-pt": paddingTop,
       }}
     >
       <div className="blogs-header" style={{ padding: '0 100px', marginBottom: '50px' }}>

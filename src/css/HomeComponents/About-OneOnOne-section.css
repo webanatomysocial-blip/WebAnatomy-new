@@ -88,3 +88,58 @@
   align-items: center;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+
+  .wa-about-one-on-one-section {
+    min-height: 100vh; /* 🔥 ensures background has space */
+    position: relative;
+  }
+
+  .wa-about-one-on-one-total-sticky-container {
+    flex-direction: column;
+    height: auto;
+    gap: 80px;
+    position: relative;
+  }
+
+  .wa-about-one-on-one-left-outer-container {
+    width: 100%;
+    padding: 60px 20px 0;
+    position: relative;
+    z-index: 2; /* 🔥 keep above image */
+  }
+
+  .wa-about-one-on-one-right-outer-container {
+    width: 100%;
+    padding: 0 20px 60px;
+    position: relative;
+    z-index: 2; /* 🔥 keep above image */
+  }
+
+  /* 🔥 FIXED BACKGROUND IMAGE */
+  .wa-about-one-on-one-bg-img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+
+  .wa-about-one-on-one-right-inner-transparent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+
+  .wa-about-one-on-one-right-inner-transparent-container-first-inner-container {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    height: auto;
+  }
+}
