@@ -169,6 +169,7 @@
 @media (max-width: 1024px) {
   .contact-page {
     flex-direction: column;
+    padding-top: 100px;
   }
   .contact-left,
   .contact-right {

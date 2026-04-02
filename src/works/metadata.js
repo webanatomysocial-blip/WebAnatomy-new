@@ -17,7 +17,7 @@ export const worksMetadata = [
   },
   {
     id: "threatsenseai",
-    title: "ThreatSenseAI",
+    title: "ThreatSenseAI - Transforming Project Management",
     category: "Branding",
     description: "ThreatSenseAI is a comprehensive SaaS platform designed to streamline project management, team collaboration, and business automation.",
     image: case2,
@@ -58,7 +58,7 @@ export const worksMetadata = [
   },
   {
     id: 7,
-    title: "Zenith",
+    title: "Zenith - Transforming Project Management",
     category: "UI/UX",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     image: Zenith,
@@ -66,10 +66,10 @@ export const worksMetadata = [
   },
   {
     id: 8,
-    title: "Eco Root Sustainable Identity",
+    title: "Cognitude - Transforming Project Management",
     category: "UI/UX",
     description: "Branding eco root, crafting a sustainable identity.",
     image: case1,
-    slug: "eco-root",
+    slug: "cognitude",
   }
 ];

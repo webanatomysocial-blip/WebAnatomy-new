@@ -20,6 +20,8 @@
   -ms-overflow-style: none;
   margin-bottom: 20px;
   justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-stories-strip::-webkit-scrollbar {
@@ -107,12 +109,23 @@
 
 @media (max-width: 768px) {
   .gallery-section {
-    padding: 60px 20px 80px;
+    padding: 60px 0 80px; /* remove horizontal padding for full bleed stories strip */
+  }
+
+  .gallery-section-header {
+    padding: 0 20px;
+  }
+
+  .gallery-stories-strip {
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .gallery-bento-grid {
     column-count: 2;
     column-gap: 8px;
+    padding: 0 20px; /* put padding back on grid */
   }
 
   .gallery-item {
@@ -423,12 +436,12 @@
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .lb-prev {
-    left: -44px;
+    left: 10px;
   }
   .lb-next {
-    right: -44px;
+    right: 10px;
   }
   .lb-btn {
     width: 38px;

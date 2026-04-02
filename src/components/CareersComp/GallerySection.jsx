@@ -61,7 +61,31 @@ function Lightbox({
   const src = imageSet[localIndex];
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const AUTO_PLAY_TIME = 3000;
+
+  const minSwipeDistance = 40;
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) onNext();
+    if (isRightSwipe) onPrev();
+  };
 
   useEffect(() => {
     if (isPaused) return;
@@ -141,6 +165,12 @@ function Lightbox({
         </div>
 
         <div className="lb-carousel-container">
+          <button className="lb-btn lb-prev" onClick={onPrev} aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
           <div className="lb-side-wrap lb-side-prev" onClick={onPrev}>
             <img
               src={imageSet[prevLocalIndex]}
@@ -152,8 +182,9 @@ function Lightbox({
             className="lb-img-wrap"
             onMouseDown={() => setIsPaused(true)}
             onMouseUp={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <img
               key={`${categoryLabel}-${localIndex}`}
@@ -169,6 +200,12 @@ function Lightbox({
               className="lb-side-img"
             />
           </div>
+
+          <button className="lb-btn lb-next" onClick={onNext} aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
 
         <div className="lb-actions">

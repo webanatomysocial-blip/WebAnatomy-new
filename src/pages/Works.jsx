@@ -81,8 +81,10 @@ const Works = () => {
                 <img src={project.image} alt={project.title} />
               </div>
               <div className="card-info">
-                <h3 className="card-category">{project.category}</h3>
-                <p className="card-description">{project.description}</p>
+                <h3 className="card-category">{project.title}</h3>
+                <p className="card-description">
+                  {project.description.slice(0, 100) + "..."}
+                </p>
               </div>
             </Link>
           ))}
