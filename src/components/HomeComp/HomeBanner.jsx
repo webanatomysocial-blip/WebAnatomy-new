@@ -113,7 +113,7 @@ export default function HomeBanner() {
         </div>
         <div className="home-banner-top">
           <h1 className="big-head-text-white">
-            Engineering <br /> Digital Sophistication
+            Engineeringss <br /> Digital Sophistication
           </h1>
           <p className="para-text-white">
             Design-led, engineering-driven digital agency building
