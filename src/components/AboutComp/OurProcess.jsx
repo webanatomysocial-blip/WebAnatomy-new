@@ -60,191 +60,185 @@ const OurProcess = () => {
   ];
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Ensure first card is visible and at its starting position (vw centers)
-      // C1: 5vw, C2: 25vw, C3: 45vw, C4: 65vw, C5: 85vw, C6: 105vw, C7: 125vw
-      gsap.set(stepCardsRefs.current[0], {
-        autoAlpha: 1,
-        left: "5vw",
-        top: "0%",
-      });
+    const mm = gsap.matchMedia();
 
-      const workflowTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: workflowSectionRef.current,
-          start: "10% 20%",
-          end: "bottom bottom",
-          scrub: 1,
-          markers: false,
-          pin: workflowInnerRef.current,
-          pinSpacing: false,
-        },
-      });
+    mm.add(
+      {
+        isDesktop: "(min-width: 1025px)",
+        isMobile: "(max-width: 1024px)",
+      },
+      (context) => {
+        const { isDesktop, isMobile } = context.conditions;
 
-      // SVG Mask Logic - Initial State (Hide entire line)
-      const pathLength = pathRef.current.getTotalLength();
-      gsap.set(pathRef.current, {
-        strokeDasharray: pathLength,
-        strokeDashoffset: pathLength,
-      });
+        if (isDesktop) {
+          // --- DESKTOP ZIGZAG ANIMATION ---
+          gsap.set(stepCardsRefs.current[0], {
+            autoAlpha: 1,
+            left: "5vw",
+            top: "0%",
+          });
 
-      // Step 1 – Card 2 comes from Card 1 (5vw, 0%) and moves to (25vw, 60%)
-      gsap.set(stepCardsRefs.current[1], { left: "5vw", top: "0%" });
-      workflowTimeline.to(stepCardsRefs.current[1], {
-        left: "25vw",
-        top: "60%",
-        autoAlpha: 1,
-        duration: 1,
-      });
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-5vw", duration: 1 },
-        "<",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        { strokeDashoffset: pathLength * 0.85, duration: 1 },
-        "<",
-      );
+          const workflowTimeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: workflowSectionRef.current,
+              start: "10% 20%",
+              end: "bottom bottom",
+              scrub: 1,
+              pin: workflowInnerRef.current,
+              pinSpacing: false,
+            },
+          });
 
-      // Step 2 – Card 3 comes from Card 2 position and moves to (45vw, 0%)
-      gsap.set(
-        [
-          stepCardsRefs.current[2],
-          stepCardsRefs.current[3],
-          stepCardsRefs.current[4],
-          stepCardsRefs.current[5],
-          stepCardsRefs.current[6],
-        ],
-        { left: "25vw", top: "60%" },
-      );
-      workflowTimeline.to(stepCardsRefs.current[2], {
-        left: "45vw",
-        top: "0%",
-        autoAlpha: 1,
-        duration: 1,
-      });
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-12vw", duration: 1 },
-        "<",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        { strokeDashoffset: pathLength * 0.7, duration: 1 },
-        "<",
-      );
+          const pathLength = pathRef.current.getTotalLength();
+          gsap.set(pathRef.current, {
+            strokeDasharray: pathLength,
+            strokeDashoffset: pathLength,
+          });
 
-      // Step 3 – Card 4 comes from Card 3 position and moves to (65vw, 60%)
-      gsap.set(
-        [
-          stepCardsRefs.current[3],
-          stepCardsRefs.current[4],
-          stepCardsRefs.current[5],
-          stepCardsRefs.current[6],
-        ],
-        { left: "45vw", top: "0%" },
-      );
-      workflowTimeline.to(stepCardsRefs.current[3], {
-        left: "65vw",
-        top: "60%",
-        autoAlpha: 1,
-        duration: 1,
-      });
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-20vw", duration: 1 },
-        "<",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        { strokeDashoffset: pathLength * 0.55, duration: 1 },
-        "<",
-      );
+          // Step 1
+          gsap.set(stepCardsRefs.current[1], { left: "5vw", top: "0%" });
+          workflowTimeline
+            .to(stepCardsRefs.current[1], {
+              left: "25vw",
+              top: "60%",
+              autoAlpha: 1,
+              duration: 1,
+            })
+            .to(workflowInnerRef.current, { x: "-5vw", duration: 1 }, "<")
+            .to(
+              pathRef.current,
+              { strokeDashoffset: pathLength * 0.85, duration: 1 },
+              "<",
+            );
 
-      // Step 4 – Card 5 comes from Card 4 position and moves to (85vw, 0%)
-      gsap.set(
-        [
-          stepCardsRefs.current[4],
-          stepCardsRefs.current[5],
-          stepCardsRefs.current[6],
-        ],
-        { left: "65vw", top: "60%" },
-      );
-      workflowTimeline.to(stepCardsRefs.current[4], {
-        left: "85vw",
-        top: "0%",
-        autoAlpha: 1,
-        duration: 1,
-      });
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-28vw", duration: 1 },
-        "<",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        {
-          strokeDashoffset: pathLength * 0.4,
-          duration: 1,
-          ease: "power1.inOut",
-        },
-        "<",
-      );
+          // Step 2
+          gsap.set(stepCardsRefs.current.slice(2), {
+            left: "25vw",
+            top: "60%",
+          });
+          workflowTimeline
+            .to(stepCardsRefs.current[2], {
+              left: "45vw",
+              top: "0%",
+              autoAlpha: 1,
+              duration: 1,
+            })
+            .to(workflowInnerRef.current, { x: "-12vw", duration: 1 }, "<")
+            .to(
+              pathRef.current,
+              { strokeDashoffset: pathLength * 0.7, duration: 1 },
+              "<",
+            );
 
-      // Step 5 – Card 6 comes from Card 5 position and moves to (105vw, 60%)
-      // Start shifting container
-      gsap.set([stepCardsRefs.current[5], stepCardsRefs.current[6]], {
-        left: "85vw",
-        top: "0%",
-      });
-      workflowTimeline.to(
-        stepCardsRefs.current[5],
-        {
-          left: "105vw",
-          top: "60%",
-          autoAlpha: 1,
-          duration: 1,
-        },
-        "move-6",
-      );
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-36vw", duration: 1 },
-        "move-6",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        { strokeDashoffset: pathLength * 0.2, duration: 1 },
-        "move-6",
-      );
+          // Step 3
+          gsap.set(stepCardsRefs.current.slice(3), { left: "45vw", top: "0%" });
+          workflowTimeline
+            .to(stepCardsRefs.current[3], {
+              left: "65vw",
+              top: "60%",
+              autoAlpha: 1,
+              duration: 1,
+            })
+            .to(workflowInnerRef.current, { x: "-20vw", duration: 1 }, "<")
+            .to(
+              pathRef.current,
+              { strokeDashoffset: pathLength * 0.55, duration: 1 },
+              "<",
+            );
 
-      // Step 6 – Card 7 comes from Card 6 position and moves to (125vw, 0%)
-      // Shift container more
-      gsap.set(stepCardsRefs.current[6], { left: "105vw", top: "60%" });
-      workflowTimeline.to(
-        stepCardsRefs.current[6],
-        {
-          left: "125vw",
-          top: "0%",
-          autoAlpha: 1,
-          duration: 1,
-        },
-        "move-7",
-      );
-      workflowTimeline.to(
-        workflowInnerRef.current,
-        { x: "-45vw", duration: 1 },
-        "move-7",
-      );
-      workflowTimeline.to(
-        pathRef.current,
-        { strokeDashoffset: 0, duration: 1 },
-        "move-7",
-      );
-    }, workflowSectionRef);
+          // Step 4
+          gsap.set(stepCardsRefs.current.slice(4), {
+            left: "65vw",
+            top: "60%",
+          });
+          workflowTimeline
+            .to(stepCardsRefs.current[4], {
+              left: "85vw",
+              top: "0%",
+              autoAlpha: 1,
+              duration: 1,
+            })
+            .to(workflowInnerRef.current, { x: "-28vw", duration: 1 }, "<")
+            .to(
+              pathRef.current,
+              {
+                strokeDashoffset: pathLength * 0.4,
+                duration: 1,
+                ease: "power1.inOut",
+              },
+              "<",
+            );
 
-    return () => ctx.revert();
+          // Step 5
+          gsap.set(stepCardsRefs.current.slice(5), { left: "85vw", top: "0%" });
+          workflowTimeline
+            .to(
+              stepCardsRefs.current[5],
+              {
+                left: "105vw",
+                top: "60%",
+                autoAlpha: 1,
+                duration: 1,
+              },
+              "move-6",
+            )
+            .to(workflowInnerRef.current, { x: "-36vw", duration: 1 }, "move-6")
+            .to(
+              pathRef.current,
+              { strokeDashoffset: pathLength * 0.2, duration: 1 },
+              "move-6",
+            );
+
+          // Step 6
+          gsap.set(stepCardsRefs.current[6], { left: "105vw", top: "60%" });
+          workflowTimeline
+            .to(
+              stepCardsRefs.current[6],
+              {
+                left: "125vw",
+                top: "0%",
+                autoAlpha: 1,
+                duration: 1,
+              },
+              "move-7",
+            )
+            .to(workflowInnerRef.current, { x: "-45vw", duration: 1 }, "move-7")
+            .to(
+              pathRef.current,
+              { strokeDashoffset: 0, duration: 1 },
+              "move-7",
+            );
+        }
+
+        if (isMobile) {
+          // --- MOBILE VERTICAL REVEAL ---
+          stepCardsRefs.current.forEach((card, index) => {
+            gsap.set(card, {
+              autoAlpha: 1, // Visibility handled by opacity in GSAP
+              opacity: 0,
+              y: 50,
+              left: "auto",
+              top: "auto",
+              position: "relative",
+            });
+
+            gsap.to(card, {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
+            });
+          });
+        }
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   return (

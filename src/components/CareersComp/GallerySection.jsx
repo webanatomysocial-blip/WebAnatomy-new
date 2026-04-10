@@ -103,6 +103,31 @@ function Lightbox({
   const prevLocalIndex = (localIndex - 1 + imageSet.length) % imageSet.length;
   const nextLocalIndex = (localIndex + 1) % imageSet.length;
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStartMove = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const onTouchMoveMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndMove = () => {
+    setIsPaused(false);
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) onNext();
+    if (isRightSwipe) onPrev();
+  };
+
   return (
     <div className="lb-overlay" onClick={onClose}>
       <div className="lb-modal" onClick={(e) => e.stopPropagation()}>
@@ -152,8 +177,9 @@ function Lightbox({
             className="lb-img-wrap"
             onMouseDown={() => setIsPaused(true)}
             onMouseUp={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
+            onTouchStart={onTouchStartMove}
+            onTouchMove={onTouchMoveMove}
+            onTouchEnd={onTouchEndMove}
           >
             <img
               key={`${categoryLabel}-${localIndex}`}

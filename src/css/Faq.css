@@ -61,6 +61,10 @@
     padding: 60px 20px;
   }
 
+  .faq-list {
+    padding: 0;
+  }
+
   .faq-description {
     margin-bottom: 40px;
   }

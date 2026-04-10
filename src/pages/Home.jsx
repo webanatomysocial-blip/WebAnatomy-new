@@ -14,15 +14,30 @@ import GoalsOurPriority from "../components/HomeComp/Goals-Our-Priority";
 import ClientsImg from "../components/Clients-img";
 import Recognitions from "../components/HomeComp/Recognitions";
 // import ZoomScroll from "../components/HomeComp/ZoomScroll";
+import HomeBannerMobile from "../components/mobileHome/HomeBannerMobile";
 
 export default function Home() {
   return (
     <>
-      {/* <HomeBanner /> */}
-      <div className="only-windows"><HomeTextFade /></div>
-      <div className="only-mobile"><HomeTextFadeMobile /></div>
-      <div className="only-windows"><FlipboxCarsoule /></div>
-      <div className="only-mobile"><FlipboxSwipeMobile /></div>
+      <div className="only-windows">
+        <HomeBanner />
+      </div>
+      <div className="only-mobile">
+        <HomeBannerMobile />
+      </div>
+
+      <div className="only-windows">
+        <HomeTextFade />
+      </div>
+      <div className="only-mobile">
+        <HomeTextFadeMobile />
+      </div>
+      <div className="only-windows">
+        <FlipboxCarsoule />
+      </div>
+      <div className="only-mobile">
+        <FlipboxSwipeMobile />
+      </div>
       <AboutOneOnOneSection />
       {/* <ZoomScroll id="zoomScroll" /> */}
       <OurStoryHomePage />

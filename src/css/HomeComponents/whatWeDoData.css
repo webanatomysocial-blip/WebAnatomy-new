@@ -98,7 +98,30 @@
   .what-we-do-container {
     padding: 60px 20px;
   }
+
+  /* Disable hover animation — show all content by default on mobile */
   .what-we-do-box {
     border-radius: 20px;
+    height: auto; /* Let height grow to fit content */
+  }
+
+  .what-we-do-details {
+    transform: none !important;
+    gap: 20px;
+  }
+
+  .what-we-do-box:hover .what-we-do-details {
+    transform: none !important;
+  }
+
+  .sub-para-text {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 10px;
+  }
+
+  .what-we-do-box:hover .sub-para-text {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
 }

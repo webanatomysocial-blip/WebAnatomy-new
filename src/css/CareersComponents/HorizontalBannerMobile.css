@@ -1,0 +1,84 @@
+.HorizontalBannerMobile-section {
+  width: 100%;
+  padding: 120px 20px 60px 20px;
+  background-color: var(--white-color);
+  overflow: hidden;
+}
+
+.HorizontalBannerMobile-header {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.HorizontalBannerMobile-header .head-text {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.HorizontalBannerMobile-header .para-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.careers-mobile-swiper .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+}
+
+.careers-mobile-card {
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.careers-mobile-card-top {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.careers-mobile-card-top img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.careers-mobile-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.careers-mobile-card-bottom .sub-head-text {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.careers-mobile-card-bottom .sub-para-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Swiper Pagination dots styling */
+.careers-mobile-swiper .swiper-pagination-bullet {
+  background: #000;
+  opacity: 0.2;
+}
+
+.careers-mobile-swiper .swiper-pagination-bullet-active {
+  background: #000;
+  opacity: 1;
+}

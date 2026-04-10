@@ -19,39 +19,43 @@ const HomeBannerMobile = () => {
 
   return (
     <section className="mobile-home-banner">
-      {/* Play Video Button - Top Right */}
-      <div className="mobile-video-btn-container">
+      {/* Background Overlay to ensure readability */}
+      <div className="mobile-banner-overlay"></div>
+
+      {/* Top Right Container for Video Button and Services */}
+      <div className="mobile-top-right-content">
         <button className="play-reel-btn" onClick={toggleModal}>
-          <svg
-            className="play-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 6L17 12L7 18V6Z"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-            />
-          </svg>
-          ( Show Reel )
+          <div className="play-icon-circle">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M7 6L17 12L7 18V6Z" fill="currentColor" />
+            </svg>
+          </div>
+          <span>( Show Reel )</span>
         </button>
-          <p className="para-text-white mobile-absolute-text">
-          UI/UX Design • Web Development • Brand Identity • Ongoing Support
+
+        <p className="mobile-services-list">
+          UI/UX Design
+          <br />
+          Web Development
+          <br />
+          Brand Identity Design
+          <br />
+          Ongoing support
         </p>
       </div>
 
-      {/* Main Content - Bottom Left */}
-      <div className="mobile-banner-content">
-       
-        <h1 className="mobile-banner-head">
-          Engineering <br /> Digital Sophistication
+      {/* Main Bottom Left Content */}
+      <div className="mobile-banner-main-content">
+        <h1 className="mobile-banner-title">
+          Engineeringss <br /> Digital Sophistication
         </h1>
-        <p className="mobile-banner-para">
-          Design-led, engineering-driven digital agency building high‑performance
-          digital products and experiences.
+        <p className="mobile-banner-description">
+          Design-led, engineering-driven digital agency building
+          high-performance digital products and experiences.
         </p>
       </div>
 
@@ -62,7 +66,7 @@ const HomeBannerMobile = () => {
       >
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <button className="close-modal-btn" onClick={toggleModal}>
-            ×
+            &times;
           </button>
           {isModalOpen && (
             <video
@@ -70,11 +74,11 @@ const HomeBannerMobile = () => {
               autoPlay
               loop
               controls
+              playsInline
               className="modal-video"
             />
           )}
         </div>
-       
       </div>
     </section>
   );

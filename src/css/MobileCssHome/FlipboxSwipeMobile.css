@@ -14,17 +14,17 @@
   margin-bottom: 28px;
 }
 
-/* Swiper container */
-.mobile-casestudies-swiper {
-  width: 100%;
-  padding: 0 24px 40px 24px !important;
+.mobile-casestudies-swiper .swiper-slide {
+  height: auto !important;
+  display: flex !important;
 }
 
 /* Each slide card */
 .mobile-case-card {
   border-radius: 12px;
   overflow: hidden;
-  height: 55vh;   /* responsive height based on viewport width */
+  height: 100%;
+  min-height: 50vh;   /* Use min-height to maintain a consistent baseline but allow growth */
   position: relative;
   background: #111;
   display: block;

@@ -28,10 +28,10 @@ export default function AboutOneOnOneSection() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=2000", // 🔥 smoother scroll distance
-            scrub: 1.5,    // 🔥 smoother feel
+            end: "+=1000", // 🔥 smoother scroll distance
+            scrub: 1, // 🔥 smoother feel
             pin: true,
-            anticipatePin: 1, // 🔥 removes jump
+            // anticipatePin: 1,
           },
         });
 
@@ -54,7 +54,7 @@ export default function AboutOneOnOneSection() {
                   duration: 1.2,
                   ease: "power3.inOut",
                 },
-                "<"
+                "<",
               );
           }
         });
@@ -117,7 +117,6 @@ export default function AboutOneOnOneSection() {
           {/* RIGHT */}
           <div className="wa-about-one-on-one-right-outer-container">
             <div className="wa-about-one-on-one-right-inner-transparent-container">
-              
               {/* ITEM 1 */}
               <div
                 ref={addToRefs}
@@ -168,7 +167,6 @@ export default function AboutOneOnOneSection() {
                   Data-driven marketing strategies.
                 </p>
               </div>
-
             </div>
           </div>
         </div>

@@ -89,9 +89,8 @@
 
 @media (max-width: 768px) {
   .blog-section {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    background-color: transparent !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
   }
 
   .blog-head-container {
