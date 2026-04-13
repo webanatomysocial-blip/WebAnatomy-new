@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../css/MobileCssHome/HomeBannerMobile.css";
+import bannerPoster from "../../assets/images/Home-images/banner-images/home-banner.jpg";
 
 const HomeBannerMobile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,18 +25,28 @@ const HomeBannerMobile = () => {
 
       {/* Top Right Container for Video Button and Services */}
       <div className="mobile-top-right-content">
-        <button className="play-reel-btn" onClick={toggleModal}>
-          <div className="play-icon-circle">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M7 6L17 12L7 18V6Z" fill="currentColor" />
-            </svg>
+        <div className="mobile-video-preview-wrapper" onClick={toggleModal}>
+          <video
+            src="/assets/videos/banner-video/Web-anatomy-showreel.mp4"
+            muted
+            loop
+            playsInline
+            autoPlay
+            poster={bannerPoster}
+            className="mobile-preview-video"
+          />
+          <div className="preview-overlay-content">
+            <div className="preview-play-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7 6L17 12L7 18V6Z" fill="black" />
+              </svg>
+            </div>
           </div>
-          <span>( Show Reel )</span>
-        </button>
+        </div>
 
         <p className="mobile-services-list">
           UI/UX Design

@@ -13,7 +13,6 @@ import Cta from "../components/Cta";
 import GoalsOurPriority from "../components/HomeComp/Goals-Our-Priority";
 import ClientsImg from "../components/Clients-img";
 import Recognitions from "../components/HomeComp/Recognitions";
-// import ZoomScroll from "../components/HomeComp/ZoomScroll";
 import HomeBannerMobile from "../components/mobileHome/HomeBannerMobile";
 
 export default function Home() {

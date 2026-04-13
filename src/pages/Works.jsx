@@ -81,7 +81,7 @@ const Works = () => {
                 <img src={project.image} alt={project.title} />
               </div>
               <div className="works-card-info">
-                <h3 className="works-card-category">{project.category}</h3>
+                <h3 className="works-card-category">{project.title}</h3>
                 <p className="works-card-description">{project.description}</p>
               </div>
             </Link>

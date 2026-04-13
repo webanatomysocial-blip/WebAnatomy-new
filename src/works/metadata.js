@@ -2,7 +2,7 @@ import case1 from "../assets/images/Case-Studies-images/case-1.webp";
 import case2 from "../works/Work-images/Theat.png";
 import case3 from "../works/Work-images/togglenow.png";
 import case4 from "../works/Work-images/Pied.png";
-import sase from "../works/Work-images/Sase.png";
+import sase from "../works/Work-images/sase.png";
 import finase from "../works/Work-images/finase-cover.png";
 import Zenith from "../works/Work-images/Zenith.png";
 
