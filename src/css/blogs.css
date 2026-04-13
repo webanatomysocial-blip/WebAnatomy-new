@@ -10,7 +10,7 @@
   gap: 50px;
 }
 
-.blogs-header {
+.page-blogs-header {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.blogs-header-content {
+.page-blogs-header-content {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -27,7 +27,7 @@
   gap: 20px;
 }
 
-.blogs-header-button {
+.page-blogs-header-button {
   display: flex;
   width: 30%;
   flex-direction: column;

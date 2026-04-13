@@ -13,16 +13,20 @@ const CaseStudiesSwiper = ({ category }) => {
   const nextRef = useRef(null);
 
   return (
-    <section className="case-studies-section">
-      <div className="case-studies-header">
+    <section className="swiper-section-wrap">
+      <div className="swiper-header-wrap">
         <h2 className="head-text">Our {category} Design Case Studies</h2>
-        <div className="case-studies-nav">
-          <button ref={prevRef} className="nav-btn prev-btn"><BsArrowLeft /></button>
-          <button ref={nextRef} className="nav-btn next-btn"><BsArrowRight /></button>
+        <div className="swiper-nav-wrap">
+          <button ref={prevRef} className="nav-btn prev-btn">
+            <BsArrowLeft />
+          </button>
+          <button ref={nextRef} className="nav-btn next-btn">
+            <BsArrowRight />
+          </button>
         </div>
       </div>
-      
-      <div className="case-studies-slider-container">
+
+      <div className="swiper-slider-wrap">
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -48,29 +52,41 @@ const CaseStudiesSwiper = ({ category }) => {
           {worksMetadata
             .filter((work) => !work.hasPopup && work.category === category)
             .map((work, index) => {
-            const CardContent = (
-              <>
-                <img src={work.image} alt={work.title} className="case-study-image" draggable="false" />
-                <div className="case-study-overlay">
-                  <h3 className="case-study-title">{work.title}</h3>
-                </div>
-              </>
-            );
-
-            return (
-              <SwiperSlide key={index}>
-                {work.hasPopup ? (
-                  <div className="case-study-card" style={{ cursor: "pointer" }}>
-                    {CardContent}
+              const CardContent = (
+                <>
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="swiper-card-image"
+                    draggable="false"
+                  />
+                  <div className="swiper-card-overlay">
+                    <h3 className="swiper-card-title">{work.title}</h3>
                   </div>
-                ) : (
-                  <Link to={`/works/${work.slug}`} className="case-study-card" style={{ cursor: "pointer" }}>
-                    {CardContent}
-                  </Link>
-                )}
-              </SwiperSlide>
-            );
-          })}
+                </>
+              );
+
+              return (
+                <SwiperSlide key={index}>
+                  {work.hasPopup ? (
+                    <div
+                      className="swiper-card-item"
+                      style={{ cursor: "pointer" }}
+                    >
+                      {CardContent}
+                    </div>
+                  ) : (
+                    <Link
+                      to={`/works/${work.slug}`}
+                      className="swiper-card-item"
+                      style={{ cursor: "pointer" }}
+                    >
+                      {CardContent}
+                    </Link>
+                  )}
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </div>
     </section>

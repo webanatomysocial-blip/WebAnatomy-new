@@ -1,23 +1,23 @@
 /* src/servicesFiles/servicesCss/CaseStudiesSwiper.css */
-.case-studies-section {
+.swiper-section-wrap {
   padding: 0px 100px 100px 100px;
   background-color: var(--white-color, #fff);
   position: relative;
 }
 
-.case-studies-header {
+.swiper-header-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
 }
 
-.case-studies-nav {
+.swiper-nav-wrap {
   display: flex;
   gap: 20px;
 }
 
-.case-studies-nav .nav-btn {
+.swiper-nav-wrap .nav-btn {
   background: none;
   border: none;
   font-size: 35px;
@@ -30,29 +30,29 @@
   padding: 0;
 }
 
-.case-studies-nav .nav-btn.swiper-button-disabled {
+.swiper-nav-wrap .nav-btn.swiper-button-disabled {
   opacity: 0.2;
 }
 
-.case-studies-slider-container {
+.swiper-slider-wrap {
   width: 100%;
 }
 
-.case-study-card {
+.swiper-card-item {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
 }
 
-.case-study-image {
+.swiper-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.case-study-overlay {
+.swiper-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -69,7 +69,7 @@
   box-sizing: border-box;
 }
 
-.case-study-title {
+.swiper-card-title {
   color: #fff;
   font-size: 20px;
   line-height: 1.4;
@@ -78,15 +78,15 @@
 }
 
 @media (max-width: 768px) {
-  .case-studies-section {
+  .swiper-section-wrap {
     padding: 20px 20px 50px 20px;
   }
-  .case-studies-header {
+  .swiper-header-wrap {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
   }
-  .case-studies-section .head-text {
+  .swiper-section-wrap .head-text {
     font-size: 30px;
   }
 }

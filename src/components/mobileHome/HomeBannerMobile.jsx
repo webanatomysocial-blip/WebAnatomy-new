@@ -64,7 +64,10 @@ const HomeBannerMobile = () => {
         className={`video-modal-overlay ${isModalOpen ? "open" : ""}`}
         onClick={toggleModal}
       >
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="banner-modal-content"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button className="close-modal-btn" onClick={toggleModal}>
             &times;
           </button>

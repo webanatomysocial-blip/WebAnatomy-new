@@ -72,17 +72,17 @@ const Works = () => {
               target="_blank"
               to={`/works/${project.slug}`}
               key={project.id}
-              className="case-study-card"
+              className="works-card-item"
               onClick={(e) => handleWorkClick(e, project)}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="card-image-wrapper">
+              <div className="works-card-image-wrapper">
                 <img src={project.image} alt={project.title} />
               </div>
-              <div className="card-info">
-                <h3 className="card-category">{project.category}</h3>
-                <p className="card-description">{project.description}</p>
+              <div className="works-card-info">
+                <h3 className="works-card-category">{project.category}</h3>
+                <p className="works-card-description">{project.description}</p>
               </div>
             </Link>
           ))}

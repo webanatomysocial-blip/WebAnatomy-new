@@ -26,15 +26,15 @@ const BlogSection = ({ backgroundColor, paddingBottom, paddingTop }) => {
         "--blog-pt": paddingTop,
       }}
     >
-      <div className="blogs-header" style={{ padding: '0 100px', marginBottom: '50px' }}>
-        <div className="blogs-header-content">
+      <div className="home-blogs-header" style={{ padding: '0 100px', marginBottom: '50px' }}>
+        <div className="home-blogs-header-content">
           <h2 className="head-text blog-title">Blogs</h2>
           <p className="para-text blog-desc">
             Every innovation that happens here is out of a quest to get better at
             what we are already doing.
           </p>
         </div>
-        <div className="blogs-header-button">
+        <div className="home-blogs-header-button">
           <Link to="/blogs" className="read-more-btn">
             Read More
             <BsArrowRight className="arrow-icon" />
