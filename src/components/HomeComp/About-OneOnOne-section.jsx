@@ -45,7 +45,6 @@ export default function AboutOneOnOneSection() {
               duration: 1.2,
               ease: "power3.inOut",
             })
-              .to({}, { duration: 0.2 }) // 🔥 small pause (premium feel)
               .to(
                 nextItem,
                 {
@@ -55,7 +54,8 @@ export default function AboutOneOnOneSection() {
                   ease: "power3.inOut",
                 },
                 "<",
-              );
+              )
+              .to({}, { duration: 0.2 }); // small pause while text is readable
           }
         });
       }, sectionRef);
