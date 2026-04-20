@@ -16,3 +16,9 @@
   object-fit: cover;
   will-change: width;
 }
+
+@media (max-width: 768px) {
+  .resizable-image {
+    height: 60vh;
+  }
+}

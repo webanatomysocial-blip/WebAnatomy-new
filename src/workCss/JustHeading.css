@@ -6,3 +6,9 @@
   background-color: var(--white-color);
   padding: 100px 350px;
 }
+
+@media (max-width: 768px) {
+  .JustHeading-section {
+    padding: 60px 20px;
+  }
+}

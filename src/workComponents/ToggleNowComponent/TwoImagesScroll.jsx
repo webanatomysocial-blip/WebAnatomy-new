@@ -15,26 +15,30 @@ export default function TwoImagesScroll() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
+      let mm = gsap.matchMedia();
 
-      tl.to(img1Ref.current, {
-        y: "50px",
-        ease: "none",
-      }).to(
-        img2Ref.current,
-        {
-          y: "-50px",
+      mm.add("(min-width: 769px)", () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        });
+
+        tl.to(img1Ref.current, {
+          y: "50px",
           ease: "none",
-        },
-        "<",
-      );
+        }).to(
+          img2Ref.current,
+          {
+            y: "-50px",
+            ease: "none",
+          },
+          "<",
+        );
+      });
     },
     { scope: containerRef },
   );
@@ -42,7 +46,7 @@ export default function TwoImagesScroll() {
   return (
     <section className="TwoImagesScroll-work-section" ref={containerRef}>
       <img src={img} alt="" ref={img1Ref} />
-      <img src={img} alt="" ref={img2Ref} />
+      <img src={img2} alt="" ref={img2Ref} />
     </section>
   );
 }

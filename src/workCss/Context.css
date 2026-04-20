@@ -8,6 +8,14 @@
   padding: 0px 400px 0px 400px;
   background-color: var(--white-color);
 }
+
+@media (max-width: 768px) {
+  .context-section {
+    padding: 60px 24px;
+    height: auto;
+  }
+}
+
 .context-description {
   display: flex;
   flex-direction: column;

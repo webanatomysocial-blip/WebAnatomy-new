@@ -103,3 +103,33 @@
     gap: 50px;
   }
 }
+
+@media (max-width: 768px) {
+  .worker-details-section {
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .worker-info-column h2 {
+    font-size: 32px;
+  }
+
+  .worker-services-column h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .worker-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .stat-label,
+  .stat-value {
+    font-size: 14px;
+  }
+
+  .view-live-link {
+    font-size: 16px;
+  }
+}

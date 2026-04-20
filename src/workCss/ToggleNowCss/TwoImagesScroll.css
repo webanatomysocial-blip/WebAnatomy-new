@@ -8,6 +8,7 @@
   overflow: hidden;
   padding: 100px;
 }
+
 .TwoImagesScroll-work-section img {
   width: 50%;
   height: auto;
@@ -20,4 +21,26 @@
 
 .TwoImagesScroll-work-section img:nth-child(2) {
   transform: translateY(-250px);
+}
+
+@media (max-width: 768px) {
+  .TwoImagesScroll-work-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    height: auto;
+    min-height: 100vh;
+    gap: 40px;
+  }
+
+  .TwoImagesScroll-work-section img {
+    width: 100%;
+  }
+
+  .TwoImagesScroll-work-section img:nth-child(1) {
+    transform: translateY(0);
+  }
+
+  .TwoImagesScroll-work-section img:nth-child(2) {
+    transform: translateY(0);
+  }
 }
